@@ -1498,118 +1498,203 @@
   }
 
   function applySurprise(top, bottom, shoes, outerwear, form, family, baseIndex, generation) {
-    let nextTop = top;
-    let nextBottom = bottom;
-    let nextShoes = shoes;
+  let nextTop = top;
+  let nextBottom = bottom;
+  let nextShoes = shoes;
+  let nextOuterwear = outerwear;
 
-    const surpriseTopByMood = {
-      Cozy: "contrast-trim cardigan top",
-      Confident: "sleek square-neck fitted top",
-      Feminine: "soft wrap blouse with a gentle V-neck",
-      Powerful: "strong-shoulder blouse",
-      Relaxed: "classic Breton stripe tee",
-      Elegant: "clean bateau-neck top",
-      Romantic: "gentle sweetheart-neck blouse",
-      Minimalist: "sleek sleeveless shell top",
-      Playful: "color-pop knit top"
-    };
-
-    const surpriseBottomByFamily = {
-      polishedWork: "wide-leg trousers",
-      cityWork: "polished midi skirt",
-      relaxedHome: "soft midi skirt",
-      everydayCity: "soft midi skirt",
-      coffeePolished: "easy A-line skirt",
-      dateRomantic: "slip midi skirt",
-      dateConfident: "tailored trousers",
-      dinnerElegant: "satin midi skirt",
-      travelSmart: "pull-on ankle pants",
-      familySoft: "simple midi skirt",
-      specialDressy: "sleek column skirt",
-      weekendRelaxed: "soft wide-leg pants",
-      outdoorEasy: "cropped casual pants"
-    };
-
-    const surpriseShoesByFamily = {
-      polishedWork: "pointed ballet flats",
-      cityWork: "low block heels",
-      relaxedHome: "soft flats",
-      everydayCity: "soft loafers",
-      coffeePolished: "ballet flats",
-      dateRomantic: "pointed slingbacks",
-      dateConfident: "elegant heels",
-      dinnerElegant: "pointed slingbacks",
-      travelSmart: "walking loafers",
-      familySoft: "easy loafers",
-      specialDressy: "dressy ankle boots",
-      weekendRelaxed: "casual boots",
-      outdoorEasy: "clean ankle boots"
-    };
-
-    const mode = generation % 3;
-
-    if (mode === 0) {
-      nextTop = surpriseTopByMood[form.mood] || nextTop;
-    } else if (mode === 1) {
-      nextBottom = surpriseBottomByFamily[family] || nextBottom;
-    } else {
-      nextShoes = surpriseShoesByFamily[family] || nextShoes;
+  const softerVersion = {
+    "Date Night": {
+      top: "soft wrap blouse with a gentle V-neck",
+      bottom: "slip midi skirt",
+      shoes: "pointed slingbacks"
+    },
+    "Work": {
+      top: "clean collared blouse",
+      bottom: "tailored ankle trousers",
+      shoes: "classic loafers"
+    },
+    "Coffee Meeting": {
+      top: "light puff-sleeve blouse",
+      bottom: "easy A-line skirt",
+      shoes: "ballet flats"
     }
+  };
 
-    if (form.weather === "Rainy" && ["elegant heels", "flat sandals", "elegant heeled sandals"].includes(nextShoes)) {
-      nextShoes = "ankle boots";
+  const sharperVersion = {
+    "Date Night": {
+      top: "silk-look blouse",
+      bottom: "tailored trousers",
+      shoes: "elegant heels"
+    },
+    "Work": {
+      top: "structured button-up shirt",
+      bottom: "wide-leg trousers",
+      shoes: "low block heels"
+    },
+    "Coffee Meeting": {
+      top: "clean bateau-neck top",
+      bottom: "wide-leg trousers",
+      shoes: "loafers"
     }
-    if (form.weather === "Snowy" && ["pointed slingbacks", "elegant heels", "flat sandals"].includes(nextShoes)) {
-      nextShoes = "ankle boots";
-    }
-    if (form.environment === "Home") {
-      nextShoes = "soft flats";
-    }
+  };
 
-    return { top: nextTop, bottom: nextBottom, shoes: nextShoes, outerwear };
+  const playfulVersion = {
+    top: "color-pop knit top",
+    bottom: "soft midi skirt",
+    shoes: "pointed ballet flats"
+  };
+
+  const mode = generation % 3;
+
+  if (mode === 0 && softerVersion[form.occasion]) {
+    nextTop = softerVersion[form.occasion].top;
+    nextBottom = softerVersion[form.occasion].bottom;
+    nextShoes = softerVersion[form.occasion].shoes;
   }
 
-  function buildWhy(form, surprise) {
-    const weatherText = {
-      Sunny: "the brighter weather",
-      Cloudy: "the softer weather",
-      Rainy: "the rainy conditions",
-      Windy: "the windy conditions",
-      Snowy: "the cold snowy weather",
-      Stormy: "the stormy forecast",
-      "Mixed Weather": "the mixed conditions"
-    }[form.weather];
-
-    let sentence1 = `This works because ${weatherText}, your ${form.occasion.toLowerCase()} plans, and your ${form.mood.toLowerCase()} mood all point toward a look that feels realistic and wearable.`;
-
-    let sentence2 = "";
-    if (form.comfort === "Maximum Comfort") {
-      sentence2 = "Comfort stays high here, so the outfit leans into softer and easier pieces without feeling careless.";
-    } else if (form.comfort === "Style First" || form.comfort === "Statement Look") {
-      sentence2 = "The styling direction makes the look feel more polished and noticeable while still staying practical.";
-    } else if (form.effort === "Quick & Easy") {
-      sentence2 = "It also stays simple enough for a lower-effort day.";
-    } else if (form.effort === "Full Styled Look") {
-      sentence2 = "It also gives you a more complete and intentionally styled result.";
-    } else {
-      sentence2 = "The balance between style and comfort keeps it easy to wear in real life.";
-    }
-
-    if (surprise) {
-      sentence2 = "Surprise Me adds a tasteful twist, so the outfit feels fresher without becoming random or overdone.";
-    }
-
-    return `${sentence1} ${sentence2}`;
+  if (mode === 1 && sharperVersion[form.occasion]) {
+    nextTop = sharperVersion[form.occasion].top;
+    nextBottom = sharperVersion[form.occasion].bottom;
+    nextShoes = sharperVersion[form.occasion].shoes;
   }
+
+  if (mode === 2) {
+    if (form.mood === "Playful" || form.mood === "Confident") {
+      nextTop = playfulVersion.top;
+      nextBottom = playfulVersion.bottom;
+      nextShoes = playfulVersion.shoes;
+    } else {
+      nextTop = "soft satin shirt";
+      nextBottom = "polished midi skirt";
+      nextShoes = "refined flats";
+    }
+  }
+
+  if (form.weather === "Rainy" && ["elegant heels", "flat sandals", "elegant heeled sandals"].includes(nextShoes)) {
+    nextShoes = "ankle boots";
+  }
+
+  if (form.weather === "Snowy" && ["pointed slingbacks", "elegant heels", "flat sandals"].includes(nextShoes)) {
+    nextShoes = "ankle boots";
+  }
+
+  if (form.environment === "Home") {
+    nextShoes = "soft flats";
+    nextOuterwear = "no outerwear needed";
+  }
+
+  return {
+    top: nextTop,
+    bottom: nextBottom,
+    shoes: nextShoes,
+    outerwear: nextOuterwear
+  };
+}
+
+function buildWhy(form, surprise) {
+  const weatherText = {
+    Sunny: "the brighter weather",
+    Cloudy: "the softer, more muted weather",
+    Rainy: "the rainy conditions",
+    Windy: "the windy conditions",
+    Snowy: "the cold snowy weather",
+    Stormy: "the stormy forecast",
+    "Mixed Weather": "the mixed conditions"
+  }[form.weather];
+
+  const occasionText = {
+    Work: "something polished and dependable",
+    "Casual Day": "something easy and naturally put together",
+    "Coffee Meeting": "something feminine but relaxed",
+    "Date Night": "something flattering and a little more special",
+    Dinner: "something refined without feeling overdone",
+    "Travel Day": "something practical that still looks considered",
+    "Family Event": "something soft, approachable, and pulled together",
+    "Special Occasion": "something elegant and intentionally styled",
+    "Weekend Outing": "something comfortable with a bit of personality"
+  }[form.occasion] || "something that feels right for the moment";
+
+  const moodText = {
+    Cozy: "softer textures and gentler structure",
+    Confident: "cleaner lines and a sharper finish",
+    Feminine: "a softer shape and more delicate styling",
+    Powerful: "more structure and visual definition",
+    Relaxed: "ease without losing shape",
+    Elegant: "refined lines and a smoother finish",
+    Romantic: "flattering details and softer movement",
+    Minimalist: "clean simplicity and restraint",
+    Playful: "a light twist without losing balance"
+  }[form.mood] || "a balanced styling direction";
+
+  let sentence1 = `This works because ${weatherText}, your ${form.occasion.toLowerCase()} plans, and your ${form.mood.toLowerCase()} mood all support ${occasionText}.`;
+
+  let sentence2 = `The styling leans into ${moodText}, so the look feels intentional rather than random.`;
+
+  if (form.comfort === "Maximum Comfort") {
+    sentence2 = "The softer balance keeps the outfit comfortable and easy to wear, without making it feel flat or careless.";
+  } else if (form.comfort === "Style First") {
+    sentence2 = "The stronger styling direction makes the look feel more elevated, while still keeping it wearable in real life.";
+  } else if (form.comfort === "Statement Look") {
+    sentence2 = "One stronger element gives the outfit more personality, while the rest keeps it balanced.";
+  }
+
+  if (form.effort === "Quick & Easy") {
+    sentence2 = "It also stays simple enough for a lower-effort day, which keeps the result realistic and easy to reach for.";
+  } else if (form.effort === "Full Styled Look") {
+    sentence2 = "It also feels more fully styled, with enough polish to look intentional from head to toe.";
+  }
+
+  if (surprise) {
+    sentence2 = "This version keeps the same logic, but adds a tasteful twist so the outfit feels fresher without becoming too much.";
+  }
+
+  return `${sentence1} ${sentence2}`;
+}
 
   function buildNote(form, surprise) {
-    if (surprise) return "This version feels slightly fresher and more styled, but still easy to wear.";
-    if (form.occasion === "Work") return "This look keeps you polished without feeling overdressed.";
-    if (form.occasion === "Date Night" || form.occasion === "Dinner") return "This outfit feels put together and flattering without trying too hard.";
-    if (form.environment === "Travel") return "This look is practical enough for movement, but still feels pulled together.";
-    if (form.comfort === "Maximum Comfort") return "This outfit stays grounded in comfort while still feeling intentional.";
-    return "This look stays grounded in real-life pieces most women already own or can easily build around.";
+  if (surprise) {
+    return "This version feels a little fresher and more styled, but still stays easy to wear.";
   }
+
+  if (form.occasion === "Work") {
+    return "This look keeps you polished and capable without feeling stiff or overdressed.";
+  }
+
+  if (form.occasion === "Coffee Meeting") {
+    return "This outfit feels soft and presentable, with just enough polish for an easy daytime plan.";
+  }
+
+  if (form.occasion === "Date Night") {
+    return "This outfit feels flattering, feminine, and intentional without looking like you tried too hard.";
+  }
+
+  if (form.occasion === "Dinner") {
+    return "This look has a more refined evening feel, but still stays relaxed enough to wear naturally.";
+  }
+
+  if (form.occasion === "Travel Day") {
+    return "This look is practical enough for movement, but still feels neat and pulled together.";
+  }
+
+  if (form.occasion === "Family Event") {
+    return "This outfit feels warm, approachable, and easy to wear for a longer day around other people.";
+  }
+
+  if (form.occasion === "Special Occasion") {
+    return "This look feels more dressed and intentional, with enough elegance to stand out in the right way.";
+  }
+
+  if (form.occasion === "Weekend Outing") {
+    return "This outfit keeps things relaxed, but still gives the look some shape and personality.";
+  }
+
+  if (form.comfort === "Maximum Comfort") {
+    return "This outfit stays grounded in comfort while still feeling considered.";
+  }
+
+  return "This look feels realistic, wearable, and naturally put together for the day ahead.";
+}
 
   function generateOutfit(form, generation = 0, surprise = false) {
     const family = getFamily(form);
