@@ -1295,23 +1295,43 @@
     let nextShoes = shoes;
     let nextOuterwear = outerwear;
 
-    if (form.temperature === "Hot") {
-      nextTop = choose([
-        "light scoop-neck knit top",
-        "soft draped blouse",
-        "easy cotton crewneck tee",
-        "sleek sleeveless shell top"
-      ], baseIndex);
+   if (form.temperature === "Hot") {
+  const romanticDatePriority =
+    form.occasion === "Date Night" &&
+    ["Romantic", "Feminine", "Elegant"].includes(form.mood) &&
+    ["Style First", "Statement Look"].includes(form.comfort);
 
-      if (["warm wool coat", "puffer coat", "heavy winter coat", "elegant coat"].includes(nextOuterwear)) {
-        nextOuterwear = "no outerwear needed";
-      }
+  if (romanticDatePriority) {
+    nextTop = choose([
+      "soft wrap blouse with a gentle V-neck",
+      "gentle sweetheart-neck blouse",
+      "silk-look blouse",
+      "delicate draped top",
+      "feminine square-neck top"
+    ], baseIndex);
+  } else {
+    nextTop = choose([
+      "light scoop-neck knit top",
+      "soft draped blouse",
+      "easy cotton crewneck tee",
+      "sleek sleeveless shell top"
+    ], baseIndex);
+  }
 
-      if (["ankle boots", "dressy ankle boots", "tall boots", "winter-ready boots"].includes(nextShoes)) {
-        nextShoes = choose(["white sneakers", "soft loafers", "comfort flats", "dress flats"], baseIndex);
-      }
-    }
+  if (["warm wool coat", "puffer coat", "heavy winter coat", "elegant coat"].includes(nextOuterwear)) {
+    nextOuterwear = "no outerwear needed";
+  }
 
+  if (["ankle boots", "dressy ankle boots", "tall boots", "winter-ready boots"].includes(nextShoes)) {
+    nextShoes = choose([
+      "white sneakers",
+      "soft loafers",
+      "comfort flats",
+      "dress flats",
+      "low block heels"
+    ], baseIndex);
+  }
+}
     if (["Freezing", "Cold", "Cool"].includes(form.temperature)) {
       if (["flat sandals", "elegant heeled sandals"].includes(nextShoes)) nextShoes = "ankle boots";
       if (form.temperature === "Freezing") {
