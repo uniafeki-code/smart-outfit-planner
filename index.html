@@ -1439,8 +1439,33 @@
     }
 
     if (form.effort === "Full Styled Look") {
-      nextOuterwear = choose(["tailored blazer", "elegant coat", "styled layering piece", "refined longline jacket"], baseIndex);
-      nextShoes = choose(["ankle boots", "pointed slingbacks", "low block heels", "elegant heels"], baseIndex);
+      const hotEveningLook =
+        form.temperature === "Hot" &&
+        ["Date Night", "Dinner", "Special Occasion"].includes(form.occasion);
+
+      if (hotEveningLook) {
+        nextOuterwear = choose([
+          "no outerwear needed",
+          "light blazer",
+          "cropped blazer",
+          "soft evening layer",
+          "refined light layer"
+        ], baseIndex);
+      } else {
+        nextOuterwear = choose([
+          "tailored blazer",
+          "refined longline jacket",
+          "soft blazer",
+          "cropped tailored jacket"
+        ], baseIndex);
+      }
+
+      nextShoes = choose([
+        "ankle boots",
+        "pointed slingbacks",
+        "low block heels",
+        "elegant heels"
+      ], baseIndex);
     }
 
     return { top: nextTop, bottom: nextBottom, shoes: nextShoes, outerwear: nextOuterwear };
