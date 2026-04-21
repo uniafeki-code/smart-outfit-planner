@@ -928,25 +928,29 @@
         "sleek square-neck fitted top",
         "silk-look blouse",
         "polished high-neck top",
-        "sharp V-neck knit top"
+        "sharp V-neck knit top",
+        "refined draped blouse"
       ],
       bottoms: [
         "straight-leg work pants",
         "wide-leg trousers",
         "polished midi skirt",
-        "dark straight jeans"
+        "dark straight jeans",
+        "tailored ankle trousers"
       ],
       shoes: [
         "classic loafers",
         "pointed ballet flats",
         "low block heels",
-        "ankle boots"
+        "ankle boots",
+        "refined slingback flats"
       ],
       outerwear: [
         "soft blazer",
         "cropped jacket",
         "trench coat",
-        "structured jacket"
+        "structured jacket",
+        "refined city blazer"
       ]
     },
 
@@ -980,32 +984,33 @@
 
     everydayCity: {
       tops: [
-        "easy cotton crewneck tee",
-        "light relaxed knit top",
         "clean crewneck top",
         "soft draped blouse",
         "light puff-sleeve blouse",
-        "classic Breton stripe tee"
+        "classic Breton stripe tee",
+        "easy V-neck knit top",
+        "sleek casual shell top"
       ],
       bottoms: [
         "straight jeans",
-        "relaxed trousers",
+        "cropped casual pants",
         "soft midi skirt",
-        "cropped casual pants"
+        "relaxed straight-leg trousers",
+        "easy city trousers"
       ],
       shoes: [
         "white sneakers",
         "soft loafers",
-        "comfort flats",
+        "ballet flats",
         "clean ankle boots",
-        "ballet flats"
+        "refined flats"
       ],
       outerwear: [
-        "light cardigan",
         "cropped jacket",
         "soft trench coat",
-        "no outerwear needed",
-        "easy blazer"
+        "easy blazer",
+        "light cardigan",
+        "no outerwear needed"
       ]
     },
 
@@ -1015,25 +1020,30 @@
         "clean bateau-neck top",
         "light puff-sleeve blouse",
         "soft satin shirt",
-        "scoop-neck knit top"
+        "scoop-neck knit top",
+        "feminine square-neck top",
+        "soft draped blouse"
       ],
       bottoms: [
         "wide-leg trousers",
         "easy A-line skirt",
-        "classic jeans",
-        "ankle-length pants"
+        "ankle-length pants",
+        "soft flowy midi skirt",
+        "polished straight jeans"
       ],
       shoes: [
         "loafers",
         "ballet flats",
         "ankle boots",
+        "refined flats",
         "minimal sneakers"
       ],
       outerwear: [
-        "cropped jacket",
-        "light cardigan",
         "soft blazer",
-        "trench coat"
+        "cropped jacket",
+        "light romantic layer",
+        "trench coat",
+        "light cardigan"
       ]
     },
 
@@ -1156,28 +1166,31 @@
       tops: [
         "soft wrap blouse with a gentle V-neck",
         "light puff-sleeve blouse",
-        "light relaxed knit top",
         "fine rib cardigan with a round neck",
-        "soft draped blouse"
+        "soft draped blouse",
+        "gentle scoop-neck knit top",
+        "soft gathered blouse"
       ],
       bottoms: [
         "comfortable jeans",
-        "easy trousers",
         "simple midi skirt",
-        "soft straight pants"
+        "soft straight pants",
+        "relaxed cotton midi skirt",
+        "easy family trousers"
       ],
       shoes: [
         "comfort flats",
+        "soft ballet flats",
         "easy loafers",
-        "sneakers",
-        "ankle boots"
+        "ankle boots",
+        "clean everyday sneakers"
       ],
       outerwear: [
         "light cardigan",
-        "soft trench coat",
+        "soft wrap layer",
+        "easy blazer",
         "cropped jacket",
-        "no outerwear needed",
-        "easy blazer"
+        "no outerwear needed"
       ]
     },
 
@@ -1212,29 +1225,33 @@
 
     weekendRelaxed: {
       tops: [
-        "classic Breton stripe tee",
         "light relaxed knit top",
-        "clean crewneck top",
         "color-pop knit top",
-        "contrast-trim cardigan top"
+        "contrast-trim cardigan top",
+        "soft crewneck weekend sweater",
+        "easy slouchy knit top",
+        "casual stripe tee"
       ],
       bottoms: [
         "relaxed denim",
         "soft wide-leg pants",
-        "casual midi skirt",
-        "easy pull-on trousers"
+        "easy pull-on trousers",
+        "relaxed A-line skirt",
+        "weekend lounge trousers"
       ],
       shoes: [
         "sneakers",
-        "loafers",
         "casual boots",
-        "flat sandals"
+        "flat sandals",
+        "easy slip-on flats",
+        "soft loafers"
       ],
       outerwear: [
-        "light cardigan",
-        "cropped jacket",
         "throw-on cardigan",
-        "no outerwear needed"
+        "light utility layer",
+        "cropped jacket",
+        "no outerwear needed",
+        "soft weekend layer"
       ]
     },
 
@@ -1379,26 +1396,71 @@
     let nextOuterwear = outerwear;
 
     if (form.weather === "Rainy") {
-      if (["flat sandals", "elegant heeled sandals"].includes(nextShoes)) nextShoes = "ankle boots";
-      nextOuterwear = choose(["classic trench coat", "water-resistant jacket", "rain-ready layer"], baseIndex);
+      nextShoes = choose([
+        "ankle boots",
+        "clean ankle boots",
+        "walking loafers",
+        "comfort flats"
+      ], baseIndex);
+
+      nextOuterwear = choose([
+        "classic trench coat",
+        "water-resistant jacket",
+        "rain-ready layer",
+        "structured weather-safe layer"
+      ], baseIndex);
     }
 
     if (form.weather === "Snowy") {
-      nextShoes = choose(["tall boots", "ankle boots", "winter-ready boots"], baseIndex);
-      nextOuterwear = choose(["warm wool coat", "puffer coat", "heavy winter coat"], baseIndex);
+      nextShoes = choose([
+        "tall boots",
+        "ankle boots",
+        "winter-ready boots",
+        "warm lined ankle boots"
+      ], baseIndex);
+
+      nextOuterwear = choose([
+        "warm wool coat",
+        "puffer coat",
+        "heavy winter coat",
+        "structured winter coat"
+      ], baseIndex);
     }
 
     if (form.weather === "Windy") {
-      nextOuterwear = choose(["structured jacket", "light coat", "wind-ready trench", "zip-front jacket"], baseIndex);
-    }
-
-    if (form.weather === "Sunny" && form.temperature !== "Cold" && form.temperature !== "Freezing") {
-      if (nextOuterwear === "trench coat" || nextOuterwear === "light coat") {
-        nextOuterwear = choose(["no outerwear needed", "light cardigan", "soft blazer"], baseIndex);
+      if (
+        !["Rainy", "Snowy"].includes(form.weather)
+      ) {
+        nextOuterwear = choose([
+          "structured jacket",
+          "light coat",
+          "wind-ready trench",
+          "zip-front jacket"
+        ], baseIndex);
       }
     }
 
-    return { top: nextTop, bottom: nextBottom, shoes: nextShoes, outerwear: nextOuterwear };
+    if (
+      form.weather === "Sunny" &&
+      !["Cold", "Freezing"].includes(form.temperature)
+    ) {
+      if (
+        ["trench coat", "light coat", "structured winter coat"].includes(nextOuterwear)
+      ) {
+        nextOuterwear = choose([
+          "no outerwear needed",
+          "light cardigan",
+          "soft blazer"
+        ], baseIndex);
+      }
+    }
+
+    return {
+      top: nextTop,
+      bottom: nextBottom,
+      shoes: nextShoes,
+      outerwear: nextOuterwear
+    };
   }
 
   function applyComfortRules(top, bottom, shoes, outerwear, form, baseIndex) {
@@ -1407,13 +1469,62 @@
     let nextShoes = shoes;
     let nextOuterwear = outerwear;
 
+    const officeComfortLock =
+      form.occasion === "Work" &&
+      form.environment === "Office" &&
+      form.comfort === "Maximum Comfort";
+
     if (form.comfort === "Maximum Comfort") {
-      nextShoes = choose(["comfort sneakers", "soft flats", "walking loafers", "easy slip-ons"], baseIndex);
-      nextBottom = choose(["soft travel pants", "relaxed trousers", "straight jeans", "soft straight pants"], baseIndex);
+      if (officeComfortLock) {
+        nextShoes = choose([
+          "classic loafers",
+          "pointed ballet flats",
+          "comfort-smart flats",
+          "low block heels"
+        ], baseIndex);
+
+        nextBottom = choose([
+          "tailored ankle trousers",
+          "straight-leg work pants",
+          "wide-leg trousers",
+          "polished midi skirt"
+        ], baseIndex);
+
+        if (
+          nextTop.includes("tee") ||
+          nextTop.includes("jersey")
+        ) {
+          nextTop = choose([
+            "clean collared blouse",
+            "soft V-neck knit top",
+            "refined mock-neck top",
+            "sleek square-neck fitted top"
+          ], baseIndex);
+        }
+      } else {
+        nextShoes = choose([
+          "comfort sneakers",
+          "soft flats",
+          "walking loafers",
+          "easy slip-ons"
+        ], baseIndex);
+
+        nextBottom = choose([
+          "soft travel pants",
+          "relaxed trousers",
+          "straight jeans",
+          "soft straight pants"
+        ], baseIndex);
+      }
     }
 
     if (form.comfort === "Style First") {
-      nextShoes = choose(["pointed ballet flats", "ankle boots", "elegant heels", "pointed slingbacks"], baseIndex);
+      nextShoes = choose([
+        "pointed ballet flats",
+        "ankle boots",
+        "elegant heels",
+        "pointed slingbacks"
+      ], baseIndex);
     }
 
     if (form.comfort === "Statement Look") {
@@ -1435,7 +1546,11 @@
     let nextOuterwear = outerwear;
 
     if (form.effort === "Quick & Easy") {
-      nextOuterwear = choose(["easy cardigan", "light jacket", "no outerwear needed"], baseIndex);
+      nextOuterwear = choose([
+        "easy cardigan",
+        "light jacket",
+        "no outerwear needed"
+      ], baseIndex);
     }
 
     if (form.effort === "Full Styled Look") {
@@ -1443,32 +1558,59 @@
         form.temperature === "Hot" &&
         ["Date Night", "Dinner", "Special Occasion"].includes(form.occasion);
 
+      const alreadyElegantShoes =
+        nextShoes.includes("heels") ||
+        nextShoes.includes("slingbacks") ||
+        nextShoes.includes("pointed") ||
+        nextShoes.includes("dress");
+
+      const alreadyPolishedOuterwear =
+        nextOuterwear.includes("blazer") ||
+        nextOuterwear.includes("tailored") ||
+        nextOuterwear.includes("structured") ||
+        nextOuterwear.includes("elegant");
+
       if (hotEveningLook) {
-        nextOuterwear = choose([
-          "no outerwear needed",
-          "light blazer",
-          "cropped blazer",
-          "soft evening layer",
-          "refined light layer"
-        ], baseIndex);
+        if (
+          nextOuterwear.includes("coat") ||
+          nextOuterwear.includes("heavy") ||
+          nextOuterwear.includes("winter")
+        ) {
+          nextOuterwear = choose([
+            "no outerwear needed",
+            "light blazer",
+            "cropped blazer",
+            "soft evening layer",
+            "refined light layer"
+          ], baseIndex);
+        }
       } else {
-        nextOuterwear = choose([
-          "tailored blazer",
-          "refined longline jacket",
-          "soft blazer",
-          "cropped tailored jacket"
-        ], baseIndex);
+        if (!alreadyPolishedOuterwear) {
+          nextOuterwear = choose([
+            "tailored blazer",
+            "refined longline jacket",
+            "soft blazer",
+            "cropped tailored jacket"
+          ], baseIndex);
+        }
       }
 
-      nextShoes = choose([
-        "ankle boots",
-        "pointed slingbacks",
-        "low block heels",
-        "elegant heels"
-      ], baseIndex);
+      if (!alreadyElegantShoes) {
+        nextShoes = choose([
+          "pointed slingbacks",
+          "low block heels",
+          "elegant heels",
+          "refined flats"
+        ], baseIndex);
+      }
     }
 
-    return { top: nextTop, bottom: nextBottom, shoes: nextShoes, outerwear: nextOuterwear };
+    return {
+      top: nextTop,
+      bottom: nextBottom,
+      shoes: nextShoes,
+      outerwear: nextOuterwear
+    };
   }
 
   function applyEnvironmentRules(top, bottom, shoes, outerwear, form, baseIndex) {
@@ -1503,85 +1645,420 @@
   let nextShoes = shoes;
   let nextOuterwear = outerwear;
 
-  const softerVersion = {
-    "Date Night": {
-      top: "soft wrap blouse with a gentle V-neck",
-      bottom: "slip midi skirt",
-      shoes: "pointed slingbacks"
-    },
-    "Work": {
-      top: "clean collared blouse",
+  const softerSwap = {
+    polishedWork: {
+      top: "soft V-neck knit top",
       bottom: "tailored ankle trousers",
-      shoes: "classic loafers"
+      shoes: "pointed ballet flats",
+      outerwear: "soft blazer"
     },
-    "Coffee Meeting": {
-      top: "light puff-sleeve blouse",
-      bottom: "easy A-line skirt",
-      shoes: "ballet flats"
-    }
-  };
-
-  const sharperVersion = {
-    "Date Night": {
+    cityWork: {
+      top: "refined draped blouse",
+      bottom: "tailored ankle trousers",
+      shoes: "refined slingback flats",
+      outerwear: "refined city blazer"
+    },
+    coffeePolished: {
+      top: "soft draped blouse",
+      bottom: "soft flowy midi skirt",
+      shoes: "refined flats",
+      outerwear: "light romantic layer"
+    },
+    dateRomantic: {
+      top: "gentle sweetheart-neck blouse",
+      bottom: "slip midi skirt",
+      shoes: "pointed slingbacks",
+      outerwear: "soft evening layer"
+    },
+    dateConfident: {
       top: "silk-look blouse",
       bottom: "tailored trousers",
-      shoes: "elegant heels"
+      shoes: "elegant heels",
+      outerwear: "cropped blazer"
     },
-    "Work": {
-      top: "structured button-up shirt",
-      bottom: "wide-leg trousers",
-      shoes: "low block heels"
-    },
-    "Coffee Meeting": {
+    dinnerElegant: {
       top: "clean bateau-neck top",
-      bottom: "wide-leg trousers",
-      shoes: "loafers"
+      bottom: "satin midi skirt",
+      shoes: "dressy flats",
+      outerwear: "refined light layer"
+    },
+    travelSmart: {
+      top: "fine rib cardigan with a round neck",
+      bottom: "pull-on ankle pants",
+      shoes: "walking loafers",
+      outerwear: "light cardigan"
+    },
+    familySoft: {
+      top: "gentle scoop-neck knit top",
+      bottom: "relaxed cotton midi skirt",
+      shoes: "soft ballet flats",
+      outerwear: "soft wrap layer"
+    },
+    weekendRelaxed: {
+      top: "easy V-neck knit top",
+      bottom: "relaxed A-line skirt",
+      shoes: "easy slip-on flats",
+      outerwear: "light utility layer"
+    },
+    outdoorEasy: {
+      top: "classic Breton stripe tee",
+      bottom: "cropped casual pants",
+      shoes: "clean ankle boots",
+      outerwear: "light utility layer"
+    },
+    specialDressy: {
+      top: "refined mock-neck top",
+      bottom: "sleek column skirt",
+      shoes: "dress flats",
+      outerwear: "refined light layer"
+    },
+    relaxedHome: {
+      top: "fine rib cardigan with a round neck",
+      bottom: "soft straight pants",
+      shoes: "soft flats",
+      outerwear: "no outerwear needed"
+    },
+    everydayCity: {
+      top: "light puff-sleeve blouse",
+      bottom: "soft midi skirt",
+      shoes: "ballet flats",
+      outerwear: "cropped jacket"
     }
   };
 
-  const playfulVersion = {
-    top: "color-pop knit top",
-    bottom: "soft midi skirt",
-    shoes: "pointed ballet flats"
+  const sharperSwap = {
+    polishedWork: {
+      top: "tailored square-neck blouse",
+      bottom: "wide-leg trousers",
+      shoes: "low block heels",
+      outerwear: "tailored blazer"
+    },
+    cityWork: {
+      top: "sleek square-neck fitted top",
+      bottom: "wide-leg trousers",
+      shoes: "low block heels",
+      outerwear: "structured jacket"
+    },
+    coffeePolished: {
+      top: "feminine square-neck top",
+      bottom: "wide-leg trousers",
+      shoes: "loafers",
+      outerwear: "soft blazer"
+    },
+    dateRomantic: {
+      top: "silk-look blouse",
+      bottom: "tailored trousers",
+      shoes: "elegant heels",
+      outerwear: "cropped blazer"
+    },
+    dateConfident: {
+      top: "tailored square-neck blouse",
+      bottom: "wide-leg trousers",
+      shoes: "pointed slingbacks",
+      outerwear: "tailored blazer"
+    },
+    dinnerElegant: {
+      top: "silk-look blouse",
+      bottom: "elegant trousers",
+      shoes: "pointed slingbacks",
+      outerwear: "soft blazer"
+    },
+    travelSmart: {
+      top: "soft draped blouse",
+      bottom: "stretch trousers",
+      shoes: "soft ballet flats",
+      outerwear: "cropped jacket"
+    },
+    familySoft: {
+      top: "soft wrap blouse with a gentle V-neck",
+      bottom: "easy trousers",
+      shoes: "easy loafers",
+      outerwear: "easy blazer"
+    },
+    weekendRelaxed: {
+      top: "color-pop knit top",
+      bottom: "soft wide-leg pants",
+      shoes: "loafers",
+      outerwear: "cropped jacket"
+    },
+    outdoorEasy: {
+      top: "contrast-trim cardigan top",
+      bottom: "relaxed denim",
+      shoes: "walking loafers",
+      outerwear: "structured jacket"
+    },
+    specialDressy: {
+      top: "tailored square-neck blouse",
+      bottom: "tailored wide-leg pants",
+      shoes: "statement heels",
+      outerwear: "tailored blazer"
+    },
+    relaxedHome: {
+      top: "soft crewneck knit sweater",
+      bottom: "soft midi skirt",
+      shoes: "cozy house shoes",
+      outerwear: "no outerwear needed"
+    },
+    everydayCity: {
+      top: "soft draped blouse",
+      bottom: "cropped casual pants",
+      shoes: "soft loafers",
+      outerwear: "easy blazer"
+    }
+  };
+
+  const moodAccent = {
+    Cozy: "soft crewneck knit sweater",
+    Confident: "sleek square-neck fitted top",
+    Feminine: "soft wrap blouse with a gentle V-neck",
+    Powerful: "bold structured top",
+    Relaxed: "light relaxed knit top",
+    Elegant: "clean bateau-neck top",
+    Romantic: "gentle sweetheart-neck blouse",
+    Minimalist: "refined mock-neck top",
+    Playful: "color-pop knit top"
   };
 
   const mode = generation % 3;
 
-  if (mode === 0 && softerVersion[form.occasion]) {
-    nextTop = softerVersion[form.occasion].top;
-    nextBottom = softerVersion[form.occasion].bottom;
-    nextShoes = softerVersion[form.occasion].shoes;
+  if (mode === 0 && softerSwap[family]) {
+    nextTop = softerSwap[family].top;
+    nextBottom = softerSwap[family].bottom;
+    nextShoes = softerSwap[family].shoes;
+    nextOuterwear = softerSwap[family].outerwear;
   }
 
-  if (mode === 1 && sharperVersion[form.occasion]) {
-    nextTop = sharperVersion[form.occasion].top;
-    nextBottom = sharperVersion[form.occasion].bottom;
-    nextShoes = sharperVersion[form.occasion].shoes;
+  if (mode === 1 && sharperSwap[family]) {
+    nextTop = sharperSwap[family].top;
+    nextBottom = sharperSwap[family].bottom;
+    nextShoes = sharperSwap[family].shoes;
+    nextOuterwear = sharperSwap[family].outerwear;
   }
 
   if (mode === 2) {
-    if (form.mood === "Playful" || form.mood === "Confident") {
-      nextTop = playfulVersion.top;
-      nextBottom = playfulVersion.bottom;
-      nextShoes = playfulVersion.shoes;
-    } else {
-      nextTop = "soft satin shirt";
-      nextBottom = "polished midi skirt";
-      nextShoes = "refined flats";
+    nextTop = moodAccent[form.mood] || nextTop;
+
+    if (["Romantic", "Feminine", "Elegant"].includes(form.mood) && !["Work", "Travel Day"].includes(form.occasion)) {
+      nextBottom = choose([
+        "slip midi skirt",
+        "soft flowy midi skirt",
+        "easy A-line skirt",
+        "polished midi skirt"
+      ], baseIndex);
+    }
+
+    if (["Confident", "Powerful", "Minimalist"].includes(form.mood)) {
+      nextBottom = choose([
+        "tailored ankle trousers",
+        "wide-leg trousers",
+        "straight-leg work pants",
+        "elegant trousers"
+      ], baseIndex);
     }
   }
 
-  if (form.weather === "Rainy" && ["elegant heels", "flat sandals", "elegant heeled sandals"].includes(nextShoes)) {
-    nextShoes = "ankle boots";
+  if (form.weather === "Rainy") {
+    nextShoes = choose([
+      "ankle boots",
+      "clean ankle boots",
+      "walking loafers",
+      "comfort flats"
+    ], baseIndex);
+
+    if (
+      nextOuterwear === "no outerwear needed" ||
+      nextOuterwear.includes("evening layer")
+    ) {
+      nextOuterwear = choose([
+        "classic trench coat",
+        "water-resistant jacket",
+        "rain-ready layer"
+      ], baseIndex);
+    }
   }
 
-  if (form.weather === "Snowy" && ["pointed slingbacks", "elegant heels", "flat sandals"].includes(nextShoes)) {
-    nextShoes = "ankle boots";
+  if (form.weather === "Snowy") {
+    nextShoes = choose([
+      "tall boots",
+      "ankle boots",
+      "winter-ready boots",
+      "warm lined ankle boots"
+    ], baseIndex);
+
+    nextOuterwear = choose([
+      "warm wool coat",
+      "puffer coat",
+      "heavy winter coat",
+      "structured winter coat"
+    ], baseIndex);
   }
 
   if (form.environment === "Home") {
     nextShoes = "soft flats";
     nextOuterwear = "no outerwear needed";
+  }
+
+  if (
+    form.temperature === "Hot" &&
+    ["Date Night", "Dinner", "Special Occasion"].includes(form.occasion) &&
+    (nextOuterwear.includes("coat") || nextOuterwear.includes("winter"))
+  ) {
+    nextOuterwear = choose([
+      "no outerwear needed",
+      "light blazer",
+      "cropped blazer",
+      "soft evening layer",
+      "refined light layer"
+    ], baseIndex);
+  }
+
+  return {
+    top: nextTop,
+    bottom: nextBottom,
+    shoes: nextShoes,
+    outerwear: nextOuterwear
+  };
+}
+
+function applyFinalHardLock(top, bottom, shoes, outerwear, form, baseIndex) {
+  let nextTop = top;
+  let nextBottom = bottom;
+  let nextShoes = shoes;
+  let nextOuterwear = outerwear;
+
+  if (form.weather === "Rainy") {
+    nextShoes = choose([
+      "ankle boots",
+      "clean ankle boots",
+      "walking loafers",
+      "comfort flats"
+    ], baseIndex);
+
+    if (
+      nextOuterwear === "no outerwear needed" ||
+      nextOuterwear.includes("evening layer") ||
+      nextOuterwear.includes("light layer")
+    ) {
+      nextOuterwear = choose([
+        "classic trench coat",
+        "water-resistant jacket",
+        "rain-ready layer"
+      ], baseIndex);
+    }
+  }
+
+  if (form.weather === "Snowy") {
+    nextShoes = choose([
+      "tall boots",
+      "ankle boots",
+      "winter-ready boots",
+      "warm lined ankle boots"
+    ], baseIndex);
+
+    nextOuterwear = choose([
+      "warm wool coat",
+      "puffer coat",
+      "heavy winter coat",
+      "structured winter coat"
+    ], baseIndex);
+  }
+
+  if (form.environment === "Office" && form.occasion === "Work") {
+    if (
+      nextBottom.includes("jeans") ||
+      nextBottom.includes("leggings") ||
+      nextBottom.includes("travel pants")
+    ) {
+      nextBottom = choose([
+        "tailored ankle trousers",
+        "straight-leg work pants",
+        "wide-leg trousers",
+        "polished midi skirt"
+      ], baseIndex);
+    }
+
+    if (
+      nextShoes.includes("sneakers") ||
+      nextShoes.includes("slip-on") ||
+      nextShoes.includes("slides")
+    ) {
+      nextShoes = choose([
+        "classic loafers",
+        "pointed ballet flats",
+        "comfort-smart flats",
+        "low block heels"
+      ], baseIndex);
+    }
+  }
+
+  if (form.environment === "Travel") {
+    if (
+      nextShoes.includes("heels") ||
+      nextShoes.includes("slingbacks") ||
+      nextShoes.includes("statement")
+    ) {
+      nextShoes = choose([
+        "comfort sneakers",
+        "walking loafers",
+        "soft ballet flats",
+        "slip-on shoes"
+      ], baseIndex);
+    }
+
+    if (
+      nextBottom.includes("column skirt") ||
+      nextBottom.includes("slip midi skirt")
+    ) {
+      nextBottom = choose([
+        "stretch trousers",
+        "travel-friendly pants",
+        "pull-on ankle pants",
+        "relaxed jeans"
+      ], baseIndex);
+    }
+  }
+
+  if (form.environment === "Home") {
+    nextShoes = "soft flats";
+    nextOuterwear = "no outerwear needed";
+  }
+
+  if (["Hot"].includes(form.temperature)) {
+    if (
+      nextOuterwear.includes("coat") ||
+      nextOuterwear.includes("winter") ||
+      nextOuterwear.includes("puffer")
+    ) {
+      if (["Date Night", "Dinner", "Special Occasion"].includes(form.occasion)) {
+        nextOuterwear = choose([
+          "no outerwear needed",
+          "light blazer",
+          "cropped blazer",
+          "soft evening layer",
+          "refined light layer"
+        ], baseIndex);
+      } else {
+        nextOuterwear = choose([
+          "no outerwear needed",
+          "light cardigan",
+          "soft blazer"
+        ], baseIndex);
+      }
+    }
+  }
+
+  if (["Freezing", "Cold", "Cool"].includes(form.temperature)) {
+    if (
+      nextShoes.includes("sandals") ||
+      nextShoes.includes("heels") && form.weather === "Snowy"
+    ) {
+      nextShoes = choose([
+        "ankle boots",
+        "clean ankle boots",
+        "tall boots",
+        "winter-ready boots"
+      ], baseIndex);
+    }
   }
 
   return {
@@ -1725,6 +2202,8 @@ function buildWhy(form, surprise) {
     if (surprise) {
       ({ top, bottom, shoes, outerwear } = applySurprise(top, bottom, shoes, outerwear, form, family, baseIndex, generation));
     }
+
+    ({ top, bottom, shoes, outerwear } = applyFinalHardLock(top, bottom, shoes, outerwear, form, baseIndex));
 
     const why = buildWhy(form, surprise);
     const note = buildNote(form, surprise);
