@@ -389,7 +389,6 @@
 
     .mobile-ad-stack {
       display: none;
-      width: 100%;
       margin: 18px 0;
       gap: 14px;
     }
@@ -550,13 +549,13 @@
       }
 
       h1 {
-        font-size: clamp(34px, 8.5vw, 44px);
-        line-height: 1.08;
+        font-size: clamp(40px, 10vw, 52px);
+        line-height: 1.04;
       }
 
       .hero p {
-        font-size: 16px;
-        line-height: 1.55;
+        font-size: 18px;
+        line-height: 1.6;
         max-width: 100%;
       }
 
@@ -579,7 +578,7 @@
       }
 
       .main-card-header h2 {
-        font-size: 26px;
+        font-size: 31px;
       }
 
       .main-card-header p,
@@ -590,10 +589,9 @@
       .triple-card p,
       .why-box p,
       .wide-box,
-      .part span,
       .ad-box p {
-        font-size: 16px;
-        line-height: 1.65;
+        font-size: 18px;
+        line-height: 1.7;
       }
 
       .mini-badge,
@@ -601,7 +599,7 @@
       .small-tag,
       .why-box .head,
       .ad-box .label {
-        font-size: 12px;
+        font-size: 13px;
         line-height: 1.35;
         letter-spacing: 0.12em;
       }
@@ -621,17 +619,16 @@
       }
 
       .field label,
-      .part strong,
       .wide-box .label {
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.4;
       }
 
       .field input,
       .field select {
-        font-size: 17px;
-        min-height: 60px;
-        padding: 15px 16px;
+        font-size: 19px;
+        min-height: 64px;
+        padding: 16px 18px;
         border-radius: 18px;
         border: 1.5px solid #d7bcc8;
         background: #ffffff;
@@ -655,9 +652,9 @@
       .actions .btn {
         width: 100%;
         flex: 1 1 100%;
-        min-height: 56px;
-        font-size: 17px;
-        padding: 14px 16px;
+        min-height: 60px;
+        font-size: 19px;
+        padding: 15px 18px;
         border-radius: 18px;
       }
 
@@ -666,13 +663,36 @@
       }
 
       .result-title {
-        font-size: 24px;
+        font-size: 36px;
+        line-height: 1.08;
       }
 
       .part {
-        min-height: 96px;
-        padding: 16px 18px;
+        min-height: 132px;
+        padding: 20px 20px;
       }
+      .part strong {
+        font-size: 22px;
+        line-height: 1.25;
+        margin-bottom: 12px;
+      }
+
+      .part span {
+        font-size: 24px;
+        line-height: 1.35;
+        font-weight: 700;
+      }
+
+      .wide-box {
+        font-size: 20px;
+        line-height: 1.72;
+      }
+
+      .why-box p {
+        font-size: 18px;
+        line-height: 1.75;
+      }
+
 
       .wide-box,
       .why-box,
@@ -695,7 +715,7 @@
       .seo-card h3,
       .faq h3,
       .triple-card h4 {
-        font-size: 23px;
+        font-size: 26px;
         line-height: 1.2;
       }
 
@@ -715,20 +735,20 @@
         margin: 18px 0 20px;
       }
 
+      .mobile-ad-results {
+        margin: 16px 0 18px;
+      }
+
       .mobile-ad-top {
-        width: 100%;
         margin-top: 16px;
-        margin-bottom: 10px;
       }
 
       .mobile-ad-inline {
-        width: 100%;
         margin-top: 16px;
-        margin-bottom: 12px;
+        margin-bottom: 8px;
       }
 
       .mobile-ad-stack .ad-box {
-        width: 100%;
         min-height: 160px;
         padding: 20px 18px;
         border-radius: 22px;
@@ -850,7 +870,6 @@
         temperature, occasion, mood, comfort, effort, and environment — without overthinking.
       </p>
     </section>
-    <!-- Mobile Ad #1: full width between hero and Free Outfit Tool -->
     <div class="mobile-ad-stack mobile-only mobile-ad-top" id="mobileAdTop">
       <div class="ad-box mobile-ad-slot">
         <div class="label">Ad Space</div>
@@ -921,7 +940,15 @@
             <button class="btn btn-outline" id="surpriseBtn">✨ Surprise Me</button>
             <button class="btn btn-outline" id="againBtn">🔄 Generate Again (3 left)</button>
           </div>
-          <!-- Mobile Ad #2: full width directly below action buttons -->
+          <div class="mobile-ad-stack mobile-only mobile-ad-inline" id="mobileAdInline">
+            <div class="ad-box mobile-ad-slot">
+              <div class="label">Ad Space</div>
+              <p>Reserved for Google AdSense placement.</p>
+            </div>
+          </div>
+
+
+
           <div class="result-grid">
             <div class="result-card">
               <div class="result-top">
@@ -944,18 +971,17 @@
                 <div id="stylingResult"></div>
               </div>
 
+              <div class="mobile-ad-stack mobile-only mobile-ad-results" id="mobileAdResults">
+                <div class="ad-box mobile-ad-slot">
+                  <div class="label">Ad Space</div>
+                  <p>Reserved for Google AdSense placement.</p>
+                </div>
+              </div>
+
               <div class="why-box">
                 <div class="head">Why this works</div>
                 <p id="whyResult"></p>
                 <p id="noteResult"></p>
-              </div>
-            </div>
-
-
-            <div class="mobile-ad-stack mobile-only mobile-ad-inline" id="mobileAdInline">
-              <div class="ad-box mobile-ad-slot">
-                <div class="label">Ad Space</div>
-                <p>Reserved for Google AdSense placement.</p>
               </div>
             </div>
 
