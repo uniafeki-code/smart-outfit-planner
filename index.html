@@ -389,6 +389,7 @@
 
     .mobile-ad-stack {
       display: none;
+      width: 100%;
       margin: 18px 0;
       gap: 14px;
     }
@@ -715,15 +716,19 @@
       }
 
       .mobile-ad-top {
+        width: 100%;
         margin-top: 16px;
+        margin-bottom: 10px;
       }
 
       .mobile-ad-inline {
+        width: 100%;
         margin-top: 16px;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
       }
 
       .mobile-ad-stack .ad-box {
+        width: 100%;
         min-height: 160px;
         padding: 20px 18px;
         border-radius: 22px;
@@ -845,6 +850,7 @@
         temperature, occasion, mood, comfort, effort, and environment — without overthinking.
       </p>
     </section>
+    <!-- Mobile Ad #1: full width between hero and Free Outfit Tool -->
     <div class="mobile-ad-stack mobile-only mobile-ad-top" id="mobileAdTop">
       <div class="ad-box mobile-ad-slot">
         <div class="label">Ad Space</div>
@@ -915,7 +921,7 @@
             <button class="btn btn-outline" id="surpriseBtn">✨ Surprise Me</button>
             <button class="btn btn-outline" id="againBtn">🔄 Generate Again (3 left)</button>
           </div>
-
+          <!-- Mobile Ad #2: full width directly below action buttons -->
           <div class="result-grid">
             <div class="result-card">
               <div class="result-top">
@@ -945,6 +951,14 @@
               </div>
             </div>
 
+
+            <div class="mobile-ad-stack mobile-only mobile-ad-inline" id="mobileAdInline">
+              <div class="ad-box mobile-ad-slot">
+                <div class="label">Ad Space</div>
+                <p>Reserved for Google AdSense placement.</p>
+              </div>
+            </div>
+
             <div class="side-stack">
               <div class="upgrade-card">
                 <h3>🔒 Unlock My Full Wardrobe Assistant</h3>
@@ -967,13 +981,6 @@
                   <div>✨ Get a smart result without wardrobe setup</div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div class="mobile-ad-stack mobile-only mobile-ad-inline" id="mobileAdInline">
-            <div class="ad-box mobile-ad-slot">
-              <div class="label">Ad Space</div>
-              <p>Reserved for Google AdSense placement.</p>
             </div>
           </div>
         </div>
