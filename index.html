@@ -544,25 +544,26 @@
       }
 
       .eyebrow {
-        font-size: 11px;
-        margin-bottom: 10px;
+        font-size: 22px;
+        margin-bottom: 12px;
+        letter-spacing: 0.16em;
       }
 
       h1 {
-        font-size: clamp(40px, 10vw, 52px);
-        line-height: 1.04;
+        font-size: clamp(46px, 10vw, 52px);
+        line-height: 1.08;
       }
 
       .hero p {
-        font-size: 18px;
-        line-height: 1.6;
+        font-size: 28px;
+        line-height: 1.45;
         max-width: 100%;
       }
 
       .top-grid,
       .result-grid,
       .three-grid {
-        gap: 16px;
+        gap: 18px;
       }
 
       .main-card-header,
@@ -574,11 +575,12 @@
       .love-card,
       .ad-box,
       .modal-box {
-        padding: 20px;
+        padding: 22px;
       }
 
       .main-card-header h2 {
-        font-size: 31px;
+        font-size: 58px;
+        line-height: 1.05;
       }
 
       .main-card-header p,
@@ -589,9 +591,10 @@
       .triple-card p,
       .why-box p,
       .wide-box,
+      .part span,
       .ad-box p {
-        font-size: 18px;
-        line-height: 1.7;
+        font-size: 32px;
+        line-height: 1.42;
       }
 
       .mini-badge,
@@ -599,35 +602,36 @@
       .small-tag,
       .why-box .head,
       .ad-box .label {
-        font-size: 13px;
-        line-height: 1.35;
-        letter-spacing: 0.12em;
+        font-size: 24px;
+        line-height: 1.3;
+        letter-spacing: 0.08em;
       }
 
       .form-grid,
       .result-parts {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 18px;
       }
 
       .field {
         background: #fffafc;
         border: 1px solid #ecd9e3;
         border-radius: 20px;
-        padding: 12px;
+        padding: 14px;
         box-shadow: 0 6px 18px rgba(123, 85, 104, 0.05);
       }
 
       .field label,
+      .part strong,
       .wide-box .label {
-        font-size: 18px;
-        line-height: 1.4;
+        font-size: 44px;
+        line-height: 1.15;
       }
 
       .field input,
       .field select {
-        font-size: 19px;
-        min-height: 64px;
+        font-size: 30px;
+        min-height: 72px;
         padding: 16px 18px;
         border-radius: 18px;
         border: 1.5px solid #d7bcc8;
@@ -638,6 +642,10 @@
         -webkit-appearance: none;
       }
 
+      .field input::placeholder {
+        font-size: 30px;
+      }
+
       .field input:focus,
       .field select:focus {
         border-color: #b98da1;
@@ -645,54 +653,33 @@
       }
 
       .actions {
-        gap: 12px;
-        margin-top: 20px;
+        gap: 14px;
+        margin-top: 22px;
       }
 
-      .actions .btn {
+      .actions .btn,
+      .btn {
         width: 100%;
         flex: 1 1 100%;
-        min-height: 60px;
-        font-size: 19px;
-        padding: 15px 18px;
+        min-height: 64px;
+        font-size: 28px;
+        padding: 16px 18px;
         border-radius: 18px;
       }
 
       .result-card {
-        padding: 20px;
+        padding: 22px;
       }
 
       .result-title {
-        font-size: 36px;
-        line-height: 1.08;
+        font-size: 58px;
+        line-height: 1.05;
       }
 
       .part {
-        min-height: 132px;
-        padding: 20px 20px;
+        min-height: 120px;
+        padding: 18px 20px;
       }
-      .part strong {
-        font-size: 22px;
-        line-height: 1.25;
-        margin-bottom: 12px;
-      }
-
-      .part span {
-        font-size: 24px;
-        line-height: 1.35;
-        font-weight: 700;
-      }
-
-      .wide-box {
-        font-size: 20px;
-        line-height: 1.72;
-      }
-
-      .why-box p {
-        font-size: 18px;
-        line-height: 1.75;
-      }
-
 
       .wide-box,
       .why-box,
@@ -702,7 +689,7 @@
       .faq,
       .triple-card,
       .ad-box {
-        padding: 20px;
+        padding: 22px;
       }
 
       .upgrade-card,
@@ -715,28 +702,24 @@
       .seo-card h3,
       .faq h3,
       .triple-card h4 {
-        font-size: 38px;
-        line-height: 1.2;
+        font-size: 44px;
+        line-height: 1.12;
       }
 
       .love-list {
-        gap: 8px;
-        margin-top: 12px;
+        gap: 10px;
+        margin-top: 14px;
       }
 
       .faq summary {
-        font-size: 36px;
-        line-height: 1.45;
+        font-size: 30px;
+        line-height: 1.35;
       }
 
       .mobile-ad-stack {
         display: grid;
         gap: 14px;
         margin: 18px 0 20px;
-      }
-
-      .mobile-ad-results {
-        margin: 16px 0 18px;
       }
 
       .mobile-ad-top {
@@ -759,14 +742,14 @@
       }
 
       .mobile-ad-stack .ad-box .label {
-        font-size: 12px;
-        letter-spacing: 0.14em;
+        font-size: 24px;
+        letter-spacing: 0.08em;
         color: #8b6577;
       }
 
       .mobile-ad-stack .ad-box p {
-        font-size: 15px;
-        line-height: 1.6;
+        font-size: 28px;
+        line-height: 1.4;
         color: #6a515d;
       }
 
@@ -777,8 +760,8 @@
       }
 
       .footer-top > div:first-child {
-        font-size: 15px;
-        line-height: 1.6;
+        font-size: 44px;
+        line-height: 1.2;
         color: #6f5864;
       }
 
@@ -786,17 +769,17 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 14px;
+        gap: 16px;
         width: 100%;
       }
 
       .footer-links a {
         display: inline-block;
         font-size: 44px;
-        line-height: 1.5;
+        line-height: 1.2;
         font-weight: 700;
         color: #6d4d5b;
-        padding: 4px 0;
+        padding: 6px 0;
         opacity: 1;
         text-decoration: none;
       }
@@ -809,14 +792,14 @@
         margin-top: 40px;
         padding-top: 24px;
         border-top: 1px solid #ead8df;
-        font-size: 15px;
-        line-height: 1.55;
+        font-size: 30px;
+        line-height: 1.35;
       }
 
       .copyright {
         margin-top: 18px;
-        font-size: 14px;
-        line-height: 1.6;
+        font-size: 44px;
+        line-height: 1.15;
         color: #8b7581;
       }
 
@@ -832,6 +815,7 @@
         display: none;
       }
     }
+
     .premium-preview {
   margin-top: 28px;
   text-align: center;
