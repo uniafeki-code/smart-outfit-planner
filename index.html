@@ -116,8 +116,8 @@
     .top-grid {
       margin-top: 24px;
       display: grid;
-      grid-template-columns: minmax(0, 1.72fr) minmax(220px, 0.42fr);
-      gap: 20px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
       align-items: start;
     }
 
@@ -335,12 +335,6 @@
     .why-box p + p { margin-top: 12px; font-style: italic; color: var(--primary); }
 
     .side-stack { display: grid; gap: 16px; }
-
-    .sticky-col {
-      width: 100%;
-      max-width: 250px;
-      justify-self: end;
-    }
     .upgrade-card,
     .love-card,
     .ad-box,
@@ -387,7 +381,7 @@
     }
 
     .ad-box {
-      min-height: 220px;
+      min-height: 250px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -412,17 +406,12 @@
       line-height: 1.7;
       font-size: 15px;
     }
-    .sticky-col { position: sticky; top: 22px; }
-
-    .sticky-col .ad-box {
-      min-height: 200px;
-      padding: 18px;
-      border-radius: 24px;
-    }
-
-    .sticky-col .ad-box p {
-      font-size: 14px;
-      line-height: 1.6;
+    .sticky-col {
+      position: static;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      align-items: stretch;
     }
 
     .three-grid {
@@ -545,25 +534,10 @@
     .legal-block li { color: var(--text-soft); line-height: 1.75; font-size: 15px; }
     .legal-block ul { margin: 8px 0 0 18px; padding: 0; }
 
-    @media (min-width: 1081px) {
-      .main-card {
-        min-width: 0;
-      }
-
-      .top-grid > .card.main-card {
-        min-width: 0;
-      }
-    }
-
     @media (max-width: 1080px) {
-      .top-grid,
       .result-grid,
       .three-grid { grid-template-columns: 1fr; }
-      .sticky-col {
-        position: static;
-        display: none;
-        max-width: none;
-      }
+      .sticky-col { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
@@ -837,10 +811,6 @@
       .sticky-col {
         display: none;
       }
-
-      .side-stack {
-        grid-template-columns: 1fr;
-      }
     }
     .premium-preview {
   margin-top: 28px;
@@ -861,6 +831,20 @@
   cursor: zoom-in;
 }
 
+
+.desktop-ad-row .ad-box {
+  min-height: 180px;
+}
+
+@media (min-width: 769px) {
+  .top-grid > .card.main-card {
+    width: 100%;
+  }
+
+  .desktop-ad-row {
+    width: 100%;
+  }
+}
 
 
 .premium-preview-note {
@@ -1015,7 +999,7 @@
         </div>
       </section>
 
-      <aside class="sticky-col desktop-only">
+      <aside class="sticky-col desktop-only desktop-ad-row">
         <div class="ad-box">
           <div class="label">Ad Space</div>
           <p>Reserved for Google AdSense placement.</p>
