@@ -43,6 +43,9 @@
       padding: 28px 18px 80px;
     }
 
+    .mobile-only { display: none; }
+    .desktop-only { display: block; }
+
     .hero {
       position: relative;
       overflow: hidden;
@@ -174,27 +177,31 @@
     .field.full { grid-column: 1 / -1; }
     .field label {
       display: block;
-      margin-bottom: 8px;
-      font-size: 14px;
-      font-weight: 700;
+      margin-bottom: 10px;
+      font-size: 15px;
+      font-weight: 800;
       color: #876775;
+      letter-spacing: -0.01em;
     }
     .field input,
     .field select {
       width: 100%;
-      border: 1px solid var(--line);
+      border: 1.5px solid #dfc9d4;
       border-radius: 18px;
-      padding: 14px 16px;
-      font-size: 15px;
+      padding: 16px 18px;
+      min-height: 58px;
+      font-size: 17px;
       color: var(--text);
       background: #fff;
       outline: none;
-      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease;
+      box-shadow: 0 3px 12px rgba(123, 85, 104, 0.04);
     }
     .field input:focus,
     .field select:focus {
       border-color: #cdaebb;
       box-shadow: 0 0 0 4px rgba(205, 174, 187, 0.16);
+      transform: translateY(-1px);
     }
 
     .actions {
@@ -208,8 +215,8 @@
       border: none;
       cursor: pointer;
       border-radius: 18px;
-      padding: 14px 22px;
-      font-size: 15px;
+      padding: 15px 22px;
+      font-size: 16px;
       font-weight: 800;
       transition: transform 0.12s ease, background 0.18s ease, border-color 0.18s ease;
     }
@@ -379,6 +386,12 @@
       flex-direction: column;
       justify-content: center;
     }
+
+    .mobile-ad-stack {
+      display: none;
+      margin-top: 20px;
+      gap: 14px;
+    }
     .ad-box .label {
       font-size: 11px;
       letter-spacing: 0.2em;
@@ -523,7 +536,13 @@
 
     @media (max-width: 760px) {
       .wrap { padding-inline: 14px; }
-      .hero { padding: 42px 16px; }
+      .hero { padding: 34px 16px 36px; border-radius: 28px; }
+      .eyebrow { font-size: 11px; margin-bottom: 10px; }
+      h1 { font-size: clamp(36px, 9vw, 52px); line-height: 1.08; }
+      .hero p { font-size: 18px; line-height: 1.55; max-width: 100%; }
+      .top-grid,
+      .result-grid,
+      .three-grid { gap: 16px; }
       .main-card-header,
       .main-card-body,
       .triple-card,
@@ -532,11 +551,57 @@
       .upgrade-card,
       .love-card,
       .ad-box,
-      .modal-box { padding: 18px; }
+      .modal-box { padding: 20px; }
+      .main-card-header h2 { font-size: 26px; }
+      .main-card-header p,
+      .upgrade-card p,
+      .love-card p,
+      .seo-card p,
+      .faq p,
+      .triple-card p,
+      .ad-box p { font-size: 17px; line-height: 1.75; }
+      .mini-badge { font-size: 15px; padding: 13px 16px; }
       .form-grid,
-      .result-parts { grid-template-columns: 1fr; }
-      .actions .btn { width: 100%; }
+      .result-parts { grid-template-columns: 1fr; gap: 14px; }
+      .field label { font-size: 16px; margin-bottom: 10px; }
+      .field input,
+      .field select { font-size: 18px; min-height: 62px; padding: 17px 18px; border-radius: 20px; }
+      .actions { gap: 10px; margin-top: 18px; }
+      .actions .btn {
+        width: auto;
+        flex: 1 1 calc(50% - 8px);
+        min-height: 56px;
+        font-size: 17px;
+        padding: 14px 16px;
+      }
+      #againBtn { flex-basis: 100%; }
+      .result-card { padding: 20px; }
+      .result-title { font-size: 24px; }
+      .small-tag,
+      .why-box .head,
+      .ad-box .label { font-size: 13px; letter-spacing: 0.16em; }
+      .part { min-height: 96px; padding: 16px; }
+      .part strong,
+      .wide-box .label { font-size: 16px; }
+      .part span,
+      .wide-box,
+      .why-box p,
+      .love-list { font-size: 17px; line-height: 1.7; }
+      .upgrade-card h3,
+      .love-card h3,
+      .seo-card h3,
+      .faq h3 { font-size: 22px; }
+      .triple-card h4 { font-size: 20px; }
+      .faq summary { font-size: 18px; }
       .footer-top { flex-direction: column; align-items: flex-start; }
+      .footer-links { gap: 12px; }
+      .footer-links a,
+      footer,
+      .copyright { font-size: 14px; }
+      .desktop-only { display: none !important; }
+      .mobile-only { display: block; }
+      .mobile-ad-stack { display: grid; }
+      .sticky-col { display: none; }
     }
     .premium-preview {
   margin-top: 28px;
@@ -574,6 +639,14 @@
         temperature, occasion, mood, comfort, effort, and environment — without overthinking.
       </p>
     </section>
+    <div class="mobile-ad-stack mobile-only">
+      <div class="ad-box">
+        <div class="label">Ad Space</div>
+        <p>Reserved for Google AdSense placement.</p>
+      </div>
+    </div>
+
+
 
     <div class="top-grid">
       <section class="card main-card">
@@ -636,6 +709,14 @@
             <button class="btn btn-outline" id="surpriseBtn">✨ Surprise Me</button>
             <button class="btn btn-outline" id="againBtn">🔄 Generate Again (3 left)</button>
           </div>
+          <div class="mobile-ad-stack mobile-only">
+            <div class="ad-box">
+              <div class="label">Ad Space</div>
+              <p>Reserved for Google AdSense placement.</p>
+            </div>
+          </div>
+
+
 
           <div class="result-grid">
             <div class="result-card">
@@ -693,7 +774,7 @@
         </div>
       </section>
 
-      <aside class="sticky-col">
+      <aside class="sticky-col desktop-only">
         <div class="ad-box">
           <div class="label">Ad Space</div>
           <p>Reserved for Google AdSense placement.</p>
