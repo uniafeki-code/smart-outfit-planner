@@ -529,270 +529,409 @@
     .legal-block ul { margin: 8px 0 0 18px; padding: 0; }
 
 
-  @media (max-width: 768px) {
+    /* DESKTOP POLISH V1 — compact, clean, one-color system */
+    @media (min-width: 1090px) {
+      .wrap { padding-top: 18px; }
+      .hero { padding: 28px 34px; border-radius: 30px; min-height: 210px; }
+      .eyebrow { font-size: 15px; letter-spacing: 0.18em; margin-bottom: 10px; }
+      h1 { font-size: clamp(40px, 4.2vw, 58px); margin-bottom: 10px; }
+      .hero p { font-size: 17px; line-height: 1.45; }
+      .top-grid { margin-top: 18px; grid-template-columns: minmax(0, 1.72fr) minmax(260px, 0.52fr); gap: 18px; }
+      .main-card-header { padding: 18px 22px 10px; }
+      .main-card-header h2 { font-size: 34px; line-height: 1.08; margin-bottom: 8px; }
+      .main-card-header p { font-size: 14px; line-height: 1.5; }
+      .mini-badge { font-size: 13px; padding: 9px 13px; border-radius: 15px; }
+      .main-card-body { padding: 16px 22px 22px; }
+      .form-grid { gap: 12px 14px; }
+      .field label { font-size: 13px; margin-bottom: 7px; }
+      .field input, .field select { font-size: 20px; min-height: 46px; padding: 11px 14px; border-radius: 15px; }
+      .actions { margin-top: 16px; gap: 10px; }
+      .btn { font-size: 17px; padding: 12px 18px; border-radius: 15px; }
+      .ad-box { min-height: 185px; padding: 20px; }
+      .result-grid { margin-top: 22px; gap: 16px; }
+      .result-card { padding: 20px; border-radius: 24px; }
+      .result-title { font-size: 32px; line-height: 1.1; }
+      .result-top { margin-bottom: 14px; }
+      .part { min-height: 74px; padding: 12px 14px; }
+      .part strong { font-size: 17px; margin-bottom: 6px; }
+      .part span { font-size: 20px; line-height: 1.35; }
+      .wide-box { font-size: 17px; line-height: 1.55; padding: 12px 14px; }
+      .why-box { padding: 15px; }
+      .why-box .head { font-size: 13px; letter-spacing: 0.14em; }
+      .why-box p { font-size: 15px; line-height: 1.6; }
+      .upgrade-card, .love-card, .seo-card, .faq, .triple-card { padding: 22px 24px; }
+      .upgrade-card h3, .love-card h3 { font-size: 30px; line-height: 1.12; }
+      .upgrade-card p, .love-card p, .love-list, .seo-card p, .faq p, .triple-card p { font-size: 16px; line-height: 1.6; }
+      .three-grid { margin-top: 22px; gap: 16px; }
+      .triple-card h4 { font-size: 22px; }
+      .seo-card h3, .faq h3 { font-size: 40px; line-height: 1.1; }
+      .faq summary { font-size: 18px; }
+      footer { font-size: 15px; }
+      .footer-links { gap: 22px; font-weight: 700; }
+      .copyright { font-size: 13px; color: #9b8792; }
+    }
 
-  .wrap {
-    padding: 12px 14px 40px;
-  }
+    @media (max-width: 1080px) {
+      .top-grid,
+      .result-grid,
+      .three-grid { grid-template-columns: 1fr; }
+      .sticky-col { position: static; }
+    }
 
-  .hero {
-    padding: 24px 18px;
-    border-radius: 24px;
-    min-height: auto;
-  }
+    @media (max-width: 768px) {
+      .wrap { padding-inline: 14px; }
 
-  .eyebrow {
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    margin-bottom: 8px;
-  }
+      .hero {
+        padding: 26px 18px;
+        border-radius: 26px;
+      }
 
-  h1 {
-    font-size: clamp(30px, 8vw, 38px);
-    line-height: 1.12;
-    margin-bottom: 10px;
-  }
+      .eyebrow {
+        font-size: 22px;
+        margin-bottom: 12px;
+        letter-spacing: 0.16em;
+      }
 
-  .hero p {
-    font-size: 15px;
-    line-height: 1.5;
-    max-width: 100%;
-  }
+      h1 {
+        font-size: clamp(46px, 10vw, 52px);
+        line-height: 1.08;
+      }
 
-  .top-grid,
-  .result-grid,
-  .three-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-top: 16px;
-  }
+      .hero p {
+        font-size: 28px;
+        line-height: 1.45;
+        max-width: 100%;
+      }
 
-  .main-card-header,
-  .main-card-body,
-  .upgrade-card,
-  .love-card,
-  .seo-card,
-  .faq,
-  .triple-card,
-  .ad-box,
-  .modal-box {
-    padding: 18px;
-  }
+      .top-grid,
+      .result-grid,
+      .three-grid {
+        gap: 18px;
+      }
 
-  .main-card-header {
-    border-radius: 22px 22px 0 0;
-  }
+      .main-card-header,
+      .main-card-body,
+      .triple-card,
+      .seo-card,
+      .faq,
+      .upgrade-card,
+      .love-card,
+      .ad-box,
+      .modal-box {
+        padding: 22px;
+      }
 
-  .main-card-header h2 {
-    font-size: 24px;
-    line-height: 1.15;
-    margin-bottom: 8px;
-  }
+      .main-card-header h2 {
+        font-size: 58px;
+        line-height: 1.05;
+      }
 
-  .main-card-header p,
-  .seo-card p,
-  .faq p,
-  .upgrade-card p,
-  .love-list,
-  .triple-card p,
-  .why-box p,
-  .wide-box,
-  .part span,
-  .ad-box p {
-    font-size: 14px;
-    line-height: 1.55;
-  }
+      .main-card-header p,
+      .seo-card p,
+      .faq p,
+      .upgrade-card p,
+      .love-list,
+      .triple-card p,
+      .why-box p,
+      .wide-box,
+      .part span,
+      .ad-box p {
+        font-size: 30px;
+        line-height: 1.42;
+      }
 
-  .mini-badge,
-  .result-chip,
-  .small-tag,
-  .why-box .head,
-  .ad-box .label {
-    font-size: 11px;
-    line-height: 1.3;
-    letter-spacing: 0.08em;
-  }
+      .mini-badge,
+      .result-chip,
+      .small-tag,
+      .why-box .head,
+      .ad-box .label {
+        font-size: 24px;
+        line-height: 1.3;
+        letter-spacing: 0.08em;
+      }
 
-  .form-grid,
-  .result-parts {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
+      .form-grid,
+      .result-parts {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
 
-  .field {
-    background: #fffafc;
-    border: 1px solid #ecd9e3;
-    border-radius: 18px;
-    padding: 12px;
-    box-shadow: 0 4px 14px rgba(123, 85, 104, 0.04);
-  }
+      .field {
+        background: #fffafc;
+        border: 1px solid #ecd9e3;
+        border-radius: 20px;
+        padding: 14px;
+        box-shadow: 0 6px 18px rgba(123, 85, 104, 0.05);
+      }
 
-  .field label,
-  .part strong,
-  .wide-box .label {
-    font-size: 14px;
-    line-height: 1.3;
-    margin-bottom: 6px;
-  }
+      .field label,
+      .part strong,
+      .wide-box .label {
+        font-size: 44px;
+        line-height: 1.15;
+      }
 
-  .field input,
-  .field select {
-    font-size: 15px;
-    min-height: 52px;
-    padding: 12px 14px;
-    border-radius: 14px;
-    border: 1.5px solid #d7bcc8;
-    background: #ffffff;
-    color: #533c47;
-    box-shadow: none;
-    appearance: none;
-    -webkit-appearance: none;
-  }
+      .field input,
+      .field select {
+        font-size: 30px;
+        min-height: 72px;
+        padding: 16px 18px;
+        border-radius: 18px;
+        border: 1.5px solid #d7bcc8;
+        background: #ffffff;
+        color: #533c47;
+        box-shadow: none;
+        appearance: none;
+        -webkit-appearance: none;
+      }
 
-  .field input::placeholder {
-    font-size: 15px;
-  }
+      .field input::placeholder {
+        font-size: 30px;
+      }
 
-  .actions {
-    gap: 10px;
-    margin-top: 18px;
-  }
+      .field input:focus,
+      .field select:focus {
+        border-color: #b98da1;
+        box-shadow: 0 0 0 4px rgba(185, 141, 161, 0.14);
+      }
 
-  .actions .btn,
-  .btn {
-    width: 100%;
-    min-height: 54px;
-    font-size: 15px;
-    padding: 14px 16px;
-    border-radius: 16px;
-    font-weight: 700;
-  }
+      .actions {
+        gap: 14px;
+        margin-top: 22px;
+      }
 
-  .result-card {
-    padding: 18px;
-    border-radius: 22px;
-  }
+      .actions .btn,
+      .btn {
+        width: 100%;
+        flex: 1 1 100%;
+        min-height: 64px;
+        font-size: 28px;
+        padding: 16px 18px;
+        border-radius: 18px;
+      }
 
-  .result-title {
-    font-size: 24px;
-    line-height: 1.12;
-  }
+      .result-card {
+        padding: 22px;
+      }
 
-  .part {
-    min-height: auto;
-    padding: 14px;
-    border-radius: 16px;
-  }
+      .result-title {
+        font-size: 58px;
+        line-height: 1.05;
+      }
 
-  .wide-box,
-  .why-box {
-    padding: 16px;
-    border-radius: 18px;
-  }
+      .part {
+        min-height: 120px;
+        padding: 18px 20px;
+      }
 
-  .upgrade-card,
-  .love-card,
-  .seo-card,
-  .faq,
-  .triple-card {
-    border-radius: 22px;
-  }
+      .wide-box,
+      .why-box,
+      .upgrade-card,
+      .love-card,
+      .seo-card,
+      .faq,
+      .triple-card,
+      .ad-box {
+        padding: 22px;
+      }
 
-  .upgrade-card h3,
-  .love-card h3,
-  .seo-card h3,
-  .faq h3,
-  .triple-card h4,
-  .legal-block h4,
-  .modal-head h3 {
-    font-size: 20px !important;
-    line-height: 1.2 !important;
-  }
+      .upgrade-card,
+      .love-card {
+        border-radius: 22px;
+      }
 
-  .faq summary {
-    font-size: 15px !important;
-    line-height: 1.45 !important;
-  }
+      .upgrade-card h3,
+      .love-card h3,
+      .seo-card h3,
+      .faq h3,
+      .triple-card h4 {
+        font-size: 44px;
+        line-height: 1.12;
+      }
 
-  .mobile-ad-stack {
-    display: grid;
-    gap: 12px;
-    margin: 16px 0;
-  }
+      .love-list {
+        gap: 10px;
+        margin-top: 14px;
+      }
 
-  .mobile-ad-stack .ad-box {
-    min-height: 110px;
-    padding: 16px;
-    border-radius: 18px;
-    background: linear-gradient(180deg, #fffafc 0%, #fff6fa 100%);
-    border: 1px solid #ddc6d1;
-    box-shadow: 0 6px 18px rgba(123, 85, 104, 0.05);
-  }
+      .faq summary {
+        font-size: 30px;
+        line-height: 1.35;
+      }
 
-  .mobile-ad-stack .ad-box p {
-    font-size: 13px;
-    line-height: 1.45;
-  }
+      .mobile-ad-stack {
+        display: grid;
+        gap: 14px;
+        margin: 18px 0 20px;
+      }
 
-  .footer-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-  }
+      .mobile-ad-top {
+        margin-top: 16px;
+      }
 
-  .footer-top > div:first-child {
-    font-size: 14px !important;
-    line-height: 1.5 !important;
-    color: #6f5864;
-  }
+      .mobile-ad-inline {
+        margin-top: 16px;
+        margin-bottom: 8px;
+      }
 
-  .footer-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    width: 100%;
-  }
+      .mobile-ad-stack .ad-box {
+        min-height: 160px;
+        padding: 20px 18px;
+        border-radius: 22px;
+        justify-content: center;
+        border: 1.5px solid #ddc6d1;
+        background: linear-gradient(180deg, #fffafc 0%, #fff6fa 100%);
+        box-shadow: 0 10px 24px rgba(123, 85, 104, 0.08);
+      }
 
-  .footer-links a {
-    font-size: 14px !important;
-    line-height: 1.4 !important;
-    font-weight: 700;
-    color: #6d4d5b;
-    padding: 2px 0;
-    text-decoration: none;
-  }
+      .mobile-ad-stack .ad-box .label {
+        font-size: 24px;
+        letter-spacing: 0.08em;
+        color: #8b6577;
+      }
 
-  footer {
-    margin-top: 28px;
-    padding-top: 20px;
-    border-top: 1px solid #ead8df;
-  }
+      .mobile-ad-stack .ad-box p {
+        font-size: 28px;
+        line-height: 1.4;
+        color: #6a515d;
+      }
 
-  .copyright {
-    margin-top: 14px;
-    font-size: 12px !important;
-    line-height: 1.4 !important;
-    color: #8b7581;
-  }
+      .seo-card p,
+      .faq p,
+      .upgrade-card p,
+      .love-list,
+      .triple-card p,
+      .why-box p {
+        font-size: 34px;
+        line-height: 1.44;
+      }
 
-  .desktop-only {
-    display: none !important;
-  }
 
-  .mobile-only {
-    display: block;
-  }
+      .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
 
-  .sticky-col {
-    display: none;
-  }
+      .footer-top > div:first-child {
+        font-size: 44px;
+        line-height: 1.14;
+        color: #6f5864;
+      }
 
-  .close-btn {
-    font-size: 14px !important;
-    line-height: 1.2 !important;
-    padding: 8px 10px;
-  }
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        width: 100%;
+      }
+
+      .footer-links a {
+        display: inline-block;
+        font-size: 44px;
+        line-height: 1.14;
+        font-weight: 700;
+        color: #6d4d5b;
+        padding: 6px 0;
+        opacity: 1;
+        text-decoration: none;
+      }
+
+      .footer-links a:hover {
+        color: #5a3f4b;
+      }
+
+      footer {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid #ead8df;
+        font-size: 30px;
+        line-height: 1.35;
+      }
+
+      .copyright {
+        margin-top: 18px;
+        font-size: 44px;
+        line-height: 1.14;
+        color: #8b7581;
+      }
+
+      .desktop-only {
+        display: none !important;
+      }
+
+      .mobile-only {
+        display: block;
+      }
+
+      .sticky-col {
+        display: none;
+      }
+
+      /* FINAL MOBILE-ONLY LOWER TEXT ALIGNMENT */
+      .upgrade-card h3,
+      .love-card h3,
+      .seo-card h3,
+      .faq h3,
+      .triple-card h4,
+      .legal-block h4,
+      .modal-head h3 {
+        font-size: 44px !important;
+        line-height: 1.12 !important;
+      }
+
+      .upgrade-card p,
+      .love-list,
+      .triple-card p,
+      .seo-card p,
+      .faq p,
+      .faq summary,
+      .legal-block p,
+      .legal-block li,
+      .modal-head p {
+        font-size: 34px !important;
+        line-height: 1.44 !important;
+      }
+
+      .footer-top > div:first-child,
+      .footer-links a,
+      .copyright {
+        font-size: 44px !important;
+        line-height: 1.14 !important;
+      }
+
+      .close-btn {
+        font-size: 28px !important;
+        line-height: 1.2 !important;
+      }
+    }
+
+    .premium-preview {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.premium-preview-modal {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.premium-preview-modal img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  border: 1px solid rgba(140, 110, 120, 0.12);
+  cursor: zoom-in;
+}
+
+
+
+.premium-preview-note {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #8a6879;
 }
   </style>
 </head>
