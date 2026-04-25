@@ -5,11 +5,11 @@
   <meta name="author" content="UniaFeki Publishing" />
   <meta property="og:site_name" content="UniaFeki Publishing" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <meta name="description" content="Get instant outfit ideas based on weather, mood, occasion, and comfort. A free smart outfit planner for women with premium wardrobe styling options." />
+  <meta name="description" content="Get instant outfit ideas based on weather, mood, occasion, and comfort. A free smart outfit generator for women with premium wardrobe styling options." />
   <meta name="keywords" content="what should i wear today, free outfit planner for women, outfit generator, outfit ideas, work outfit ideas, date night outfit ideas, casual outfit planner, smart outfit tool" />
   <meta name="theme-color" content="#7b5568" />
   <meta property="og:title" content="What Should I Wear Today? | Free Outfit Planner for Women" />
-  <meta property="og:description" content="A free smart outfit planner for women with premium wardrobe styling options." />
+  <meta property="og:description" content="A free smart outfit generator for women with premium wardrobe styling options." />
   <meta property="og:type" content="website" />
   <style>
     :root {
@@ -528,14 +528,8 @@
     .legal-block li { color: var(--text-soft); line-height: 1.75; font-size: 15px; }
     .legal-block ul { margin: 8px 0 0 18px; padding: 0; }
 
-    @media (max-width: 1080px) {
-      .top-grid,
-      .result-grid,
-      .three-grid { grid-template-columns: 1fr; }
-      .sticky-col { position: static; }
-    }
 
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
 
   .wrap {
     padding: 12px 14px 40px;
@@ -800,43 +794,15 @@
     padding: 8px 10px;
   }
 }
-
-
-    .premium-preview {
-  margin-top: 28px;
-  text-align: center;
-}
-
-.premium-preview-modal {
-  margin-top: 24px;
-  text-align: center;
-}
-
-.premium-preview-modal img {
-  width: 100%;
-  max-width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  border: 1px solid rgba(140, 110, 120, 0.12);
-  cursor: zoom-in;
-}
-
-
-
-.premium-preview-note {
-  margin-top: 10px;
-  font-size: 13px;
-  color: #8a6879;
-}
   </style>
 </head>
 <body>
   <div class="wrap">
     <section class="hero">
-      <div class="eyebrow">Smart Outfit Planner</div>
+      <div class="eyebrow">Smart Outfit Generator</div>
       <h1>What Should I Wear Today?</h1>
       <p>
-        A smart free outfit tool that helps women choose what to wear based on weather,
+        A smart free outfit generator that helps women choose what to wear based on weather,
         temperature, occasion, mood, comfort, effort, and environment — without overthinking.
       </p>
     </section>
@@ -853,7 +819,7 @@
       <section class="card main-card">
         <div class="main-card-header">
           <div>
-            <h2>Free Outfit Tool</h2>
+            <h2>Smart Free Outfit Generator</h2>
             <p>
               Full premium-feeling demo. No wardrobe setup required. Just answer a few things
               about today and get a smart outfit suggestion instantly.
@@ -1012,7 +978,7 @@
 
     <section class="seo-card">
       <h3>Daily Outfit Help for Real Life</h3>
-      <p>Choosing what to wear should not feel stressful. Smart Outfit Planner helps women make faster, better outfit decisions based on real-life situations — not perfect Pinterest boards.</p>
+      <p>Choosing what to wear should not feel stressful. Smart Outfit Generator helps women make faster, better outfit decisions based on real-life situations — not perfect Pinterest boards.</p>
       <p class="desktop-only" style="margin-top:14px;">Whether you're getting ready for work, a casual day out, a coffee meeting, date night, dinner, travel day, or a special event, this free outfit tool helps you decide what actually works.</p>
       <p class="desktop-only" style="margin-top:14px;">From rainy day outfit ideas to work outfit inspiration, casual everyday looks, and confidence-boosting style suggestions, the goal is simple: help you stop overthinking and start feeling good in what you wear.</p>
     </section>
@@ -1021,7 +987,7 @@
       <h3>FAQ</h3>
       <details>
         <summary>Is this outfit tool really free?</summary>
-        <p>Yes. You can use the Smart Outfit Planner for free directly on this website.</p>
+        <p>Yes. You can use the Smart Outfit Generator for free directly on this website.</p>
       </details>
       <details>
         <summary>Do I need to create an account?</summary>
@@ -1043,11 +1009,12 @@
 
     <footer>
       <div class="footer-top">
-        <div>Smart Outfit Planner — free daily outfit tool.</div>
+        <div>Smart Free Outfit Generator — free daily outfit tool.</div>
         <div class="footer-links">
           <a href="#" id="privacyBtn">Privacy Policy</a>
           <a href="#" id="termsBtn">Terms of Use</a>
           <a href="https://uniafekipublishing.etsy.com" target="_blank" rel="noopener noreferrer">Contact via Etsy</a>
+      
         </div>
       </div>
       <div class="copyright">© 2026 UniaFeki Publishing. All rights reserved.</div>
@@ -1158,6 +1125,25 @@
       <p>For support regarding the premium product, please contact us via Etsy: UniaFeki Publishing.</p>
     </div>
   </div>
+
+  <div class="modal" id="ftcModal" aria-hidden="true">
+    <div class="modal-box legal-block">
+      <div class="modal-head">
+        <div>
+          <h3>FTC Disclosure</h3>
+          <p>Clear information about ads and external links.</p>
+        </div>
+        <button class="close-btn" data-close="ftcModal">Close</button>
+      </div>
+      <h4>Advertising Disclosure</h4>
+      <p>This website may display advertisements, including Google AdSense or similar advertising placements.</p>
+      <h4>Affiliate / External Links</h4>
+      <p>Some links may lead to external platforms such as Etsy. If affiliate links are added in the future, we may earn a commission at no extra cost to you.</p>
+      <h4>Editorial Independence</h4>
+      <p>Advertising does not change the purpose of this free outfit generator. The tool is designed to provide helpful outfit suggestions for everyday use.</p>
+    </div>
+  </div>
+
 
   <script>
   const weatherOptions = ["Sunny", "Cloudy", "Rainy", "Windy", "Snowy", "Stormy", "Mixed Weather"];
