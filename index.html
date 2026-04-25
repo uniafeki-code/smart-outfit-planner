@@ -795,14 +795,46 @@
         margin-top: 8px;
       }
 
-      /* Mobile ads — subtle, non-aggressive */
+      /* Mobile result flow — force a clean linear column so the side-stack
+         (Premium card, "Why Women Love This Tool") drops BELOW the entire
+         result card. Without this, grid gap and source order can make the
+         in-result mobile ad visually drift toward the side-stack content. */
+      .result-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+      }
+      .result-card { order: 0; }
+      .side-stack {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 4px;
+      }
+
+      /* Mobile ads — subtle, non-aggressive, anchored to their parent block.
+         Tight margins so each ad hugs the section it belongs to and reads
+         visually as part of THAT section, not the next one. */
       .mobile-ad-stack {
         display: grid;
-        gap: 12px;
-        margin: 14px 0 6px;
+        gap: 0;
+        margin: 0;
       }
-      .mobile-ad-inline { margin-top: 14px; margin-bottom: 6px; }
-      .mobile-ad-results { margin-top: 14px; margin-bottom: 6px; }
+      /* Ad #1 — directly under the action buttons row */
+      .mobile-ad-inline {
+        margin-top: 12px !important;
+        margin-bottom: 0 !important;
+      }
+      /* Ad #2 — inside the result card, directly before .why-box */
+      .mobile-ad-results {
+        margin-top: 12px !important;
+        margin-bottom: 12px !important;
+      }
+      /* Kill the default top margin .why-box has, so ad #2 visually leads
+         straight into "Why this works" with controlled spacing. */
+      .mobile-ad-results + .why-box { margin-top: 0 !important; }
+
       .mobile-ad-stack .ad-box {
         min-height: 110px;
         padding: 16px;
