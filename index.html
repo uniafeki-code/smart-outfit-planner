@@ -2,1000 +2,992 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>What Should I Wear Today? Free Outfit Generator for Women</title>
   <meta name="author" content="UniaFeki Publishing" />
-  <meta property="og:site_name" content="UniaFeki Publishing" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <meta name="description" content="Get instant outfit ideas based on weather, mood, occasion, and comfort. A free smart outfit generator for women with premium wardrobe styling options." />
-  <meta name="keywords" content="what should i wear today, free outfit planner for women, outfit generator, outfit ideas, work outfit ideas, date night outfit ideas, casual outfit planner, smart outfit tool" />
+  <meta name="description" content="Use this free outfit generator for women to decide what to wear today based on weather, temperature, mood, occasion, comfort, effort, and environment." />
+  <meta name="keywords" content="what should i wear today, outfit generator, outfit planner for women, what to wear today, outfit ideas, mood outfit generator, weather outfit planner, date night outfit ideas, work outfit ideas" />
   <meta name="theme-color" content="#7b5568" />
-  <meta property="og:title" content="What Should I Wear Today? | Free Outfit Planner for Women" />
-  <meta property="og:description" content="A free smart outfit generator for women with premium wardrobe styling options." />
+
+  <meta property="og:site_name" content="UniaFeki Publishing" />
+  <meta property="og:title" content="What Should I Wear Today? Free Outfit Generator for Women" />
+  <meta property="og:description" content="Get instant outfit ideas based on weather, mood, occasion, comfort, effort, and environment." />
   <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Google AdSense Auto Ads: keep inside <head>, outside <style> -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6560091199416357" crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Smart Outfit Generator",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Web",
+        "description": "A free outfit generator for women that suggests what to wear based on weather, temperature, occasion, mood, comfort, effort, and environment.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "UniaFeki Publishing"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is this outfit generator free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The outfit generator is free to use directly on this website."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the outfit generator use AI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. It uses a rule-based styling system that combines weather, temperature, occasion, mood, comfort, effort, and environment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to create an account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. You can use the free outfit generator without creating an account."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is included in the premium version?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The premium version is a Google Sheets outfit decision assistant with wardrobe organization, deeper personalization, and alternative outfit suggestions."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --bg: #fcf7fa;
+      --bg-2: #fffafd;
       --card: #ffffff;
-      --card-soft: #fff8fb;
-      --text: #533c47;
-      --text-soft: #7d6672;
+      --soft: #fff4f8;
+      --text: #513944;
+      --muted: #7e6672;
       --primary: #7b5568;
       --primary-dark: #684455;
       --line: #eadbe3;
-      --line-2: #dcc5d1;
-      --shadow: 0 16px 40px rgba(80, 52, 66, 0.08);
-      --radius-xl: 28px;
+      --line-2: #d9c1cd;
+      --shadow: 0 18px 46px rgba(80, 52, 66, 0.09);
+      --radius: 24px;
       --max: 1180px;
     }
 
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Inter, Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #fbf6f8 0%, #f9f0f4 22%, #fcf7fa 65%, #ffffff 100%);
       color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255, 225, 239, .65), transparent 34%),
+        linear-gradient(180deg, #fbf6f8 0%, #f9eff4 26%, #fcf7fa 68%, #ffffff 100%);
     }
+
     a { color: inherit; text-decoration: none; }
 
     .wrap {
-      max-width: var(--max);
+      width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
-      padding: 24px 18px 72px;
+      padding: 18px 0 56px;
     }
-
-    .mobile-only { display: none; }
-    .desktop-only { display: block; }
 
     .hero {
       position: relative;
       overflow: hidden;
       border-radius: 34px;
-      padding: 40px 34px;
-      text-align: center;
+      padding: 42px 34px;
       background:
-        linear-gradient(rgba(255, 249, 252, 0.82), rgba(255, 249, 252, 0.93)),
-        url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80') center center/cover no-repeat;
-      border: 1px solid rgba(255,255,255,0.7);
+        linear-gradient(rgba(255,249,252,.86), rgba(255,249,252,.96)),
+        url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=78") center/cover no-repeat;
+      border: 1px solid rgba(255,255,255,.74);
       box-shadow: var(--shadow);
-      isolation: isolate;
-    }
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 30px;
-      background: rgba(255,255,255,0.24);
-      border: 1px solid rgba(255,255,255,0.35);
-      backdrop-filter: blur(3px);
-      z-index: -1;
-    }
-    .hero::before {
-      width: 160px;
-      height: 90px;
-      left: 7%;
-      bottom: 20px;
-      transform: rotate(-8deg);
-    }
-    .hero::after {
-      width: 180px;
-      height: 104px;
-      right: 8%;
-      bottom: 18px;
-      transform: rotate(8deg);
+      text-align: center;
     }
 
     .eyebrow {
       display: inline-flex;
-      gap: 8px;
       align-items: center;
-      justify-content: center;
-      color: #9f7b8f;
-      font-weight: 700;
-      letter-spacing: 0.2em;
+      gap: 8px;
+      margin-bottom: 12px;
+      color: #9c7589;
       font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .18em;
       text-transform: uppercase;
-      margin-bottom: 14px;
     }
 
     h1 {
-      font-size: clamp(44px, 5vw, 72px);
-      line-height: 1.05;
-      margin: 0 0 16px;
+      margin: 0;
       color: var(--primary);
-      letter-spacing: -0.03em;
+      font-size: clamp(40px, 5vw, 68px);
+      line-height: 1.04;
+      letter-spacing: -.04em;
     }
 
     .hero p {
-      max-width: 900px;
-      margin: 0 auto;
-      font-size: 19px;
-      line-height: 1.55;
-      color: #6c5561;
+      max-width: 850px;
+      margin: 16px auto 0;
+      color: #69515d;
+      font-size: 18px;
+      line-height: 1.58;
     }
 
-    .top-grid {
-      margin-top: 24px;
+    .hero-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.78);
+      border-radius: 999px;
+      padding: 10px 14px;
+      color: #775869;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .seo-intro {
+      margin-top: 22px;
       display: grid;
-      grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.6fr);
-      gap: 22px;
-      align-items: start;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+      gap: 18px;
+      align-items: stretch;
     }
 
-    .card {
+    .panel {
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
+      padding: 24px;
     }
 
-    .main-card { overflow: hidden; }
-    .main-card-header {
-      padding: 24px 24px 12px;
-      background: rgba(255,255,255,0.9);
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: flex-start;
-      flex-wrap: wrap;
-    }
-    .main-card-header h2 {
+    .panel h2,
+    .panel h3 {
       margin: 0 0 10px;
-      font-size: 46px;
       color: var(--primary);
-      letter-spacing: -0.02em;
+      letter-spacing: -.025em;
+      line-height: 1.12;
     }
-    .main-card-header p {
+
+    .panel h2 { font-size: clamp(26px, 3vw, 38px); }
+    .panel h3 { font-size: 24px; }
+
+    .panel p {
       margin: 0;
-      max-width: 760px;
-      color: var(--text-soft);
-      line-height: 1.65;
+      color: var(--muted);
+      line-height: 1.72;
       font-size: 16px;
     }
 
-    .mini-badge {
-      flex-shrink: 0;
+    .mini-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+      color: #624b57;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .app-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .app-card {
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .app-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 26px 26px 12px;
+      background: rgba(255,255,255,.88);
+    }
+
+    .app-head h2 {
+      margin: 0 0 8px;
+      color: var(--primary);
+      font-size: 36px;
+      line-height: 1.08;
+      letter-spacing: -.025em;
+    }
+
+    .app-head p {
+      margin: 0;
+      max-width: 780px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .badge {
+      flex: 0 0 auto;
+      padding: 10px 14px;
+      border-radius: 16px;
       background: #f8edf3;
       color: #8a6678;
       border: 1px solid var(--line);
-      padding: 12px 16px;
-      border-radius: 18px;
-      font-weight: 700;
-      font-size: 14px;
+      font-size: 13px;
+      font-weight: 900;
       white-space: nowrap;
     }
 
-    .main-card-body {
-      padding: 22px 24px 26px;
-      background: linear-gradient(180deg, #fffdfd 0%, #fdf9fb 100%);
+    .app-body {
+      padding: 22px 26px 26px;
+      background: linear-gradient(180deg, #fffdfd 0%, #fdf8fb 100%);
     }
 
     .form-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
     }
+
     .field.full { grid-column: 1 / -1; }
-    .field label {
+    .field.half { grid-column: span 2; }
+
+    label {
       display: block;
-      margin-bottom: 10px;
-      font-size: 15px;
-      font-weight: 800;
-      color: #876775;
-      letter-spacing: -0.01em;
+      margin: 0 0 7px;
+      color: #846374;
+      font-size: 13px;
+      font-weight: 900;
     }
-    .field input,
-    .field select {
+
+    input,
+    select {
       width: 100%;
+      min-height: 50px;
       border: 1.5px solid #dfc9d4;
-      border-radius: 18px;
-      padding: 16px 18px;
-      min-height: 58px;
-      font-size: 32px;
-      color: var(--text);
+      border-radius: 16px;
+      padding: 12px 14px;
       background: #fff;
+      color: var(--text);
+      font-size: 16px;
       outline: none;
-      transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease;
-      box-shadow: 0 3px 12px rgba(123, 85, 104, 0.04);
+      box-shadow: 0 3px 12px rgba(123,85,104,.04);
+      transition: border-color .15s ease, box-shadow .15s ease;
     }
-    .field input:focus,
-    .field select:focus {
-      border-color: #cdaebb;
-      box-shadow: 0 0 0 4px rgba(205, 174, 187, 0.16);
-      transform: translateY(-1px);
+
+    input:focus,
+    select:focus {
+      border-color: #b98da1;
+      box-shadow: 0 0 0 4px rgba(185,141,161,.16);
     }
 
     .actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 22px;
+      gap: 10px;
+      margin-top: 18px;
     }
+
     .btn {
       appearance: none;
-      border: none;
+      border: 0;
       cursor: pointer;
-      border-radius: 18px;
-      padding: 15px 22px;
-      font-size: 22px;
-      font-weight: 800;
-      transition: transform 0.12s ease, background 0.18s ease, border-color 0.18s ease;
+      border-radius: 16px;
+      padding: 13px 18px;
+      min-height: 48px;
+      font-size: 16px;
+      font-weight: 900;
+      transition: transform .12s ease, background .15s ease, border-color .15s ease;
     }
+
     .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: var(--primary); color: #fff; }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
     .btn-primary:hover { background: var(--primary-dark); }
-    .btn-outline { background: #fff; color: var(--primary); border: 1px solid var(--line-2); }
-    .btn-outline.active { background: #f8edf3; border-color: #cdaebb; }
-    .btn-disabled { opacity: 0.48; pointer-events: none; }
+
+    .btn-outline {
+      background: #fff;
+      color: var(--primary);
+      border: 1px solid var(--line-2);
+    }
+
+    .btn-soft {
+      background: #f8edf3;
+      color: var(--primary);
+      border: 1px solid var(--line);
+    }
 
     .result-grid {
-      margin-top: 26px;
+      margin-top: 24px;
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(290px, 0.92fr);
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
       gap: 18px;
+      align-items: start;
     }
-    .result-card {
+
+    .result-card,
+    .side-card {
       background: #fcf7fa;
       border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 24px;
+      border-radius: 24px;
+      padding: 22px;
     }
+
     .result-top {
       display: flex;
       justify-content: space-between;
-      gap: 14px;
       align-items: flex-start;
-      margin-bottom: 18px;
+      gap: 14px;
+      margin-bottom: 16px;
     }
+
     .small-tag {
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #a27d90;
-      font-weight: 800;
       margin-bottom: 6px;
+      color: #a27d90;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
     }
+
     .result-title {
-      font-size: 44px;
-      font-weight: 800;
       margin: 0;
       color: var(--primary);
-      letter-spacing: -0.02em;
+      font-size: 34px;
+      line-height: 1.08;
+      letter-spacing: -.025em;
     }
+
     .result-chip {
+      flex: 0 0 auto;
+      padding: 9px 11px;
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 10px 12px;
+      border-radius: 14px;
+      color: #876476;
       font-size: 12px;
-      font-weight: 700;
-      color: #8a6879;
+      font-weight: 900;
       white-space: nowrap;
     }
 
-    .result-parts {
+    .parts {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
     }
-    .part {
+
+    .part,
+    .wide,
+    .why,
+    .upgrade-inline {
       background: #fff;
       border: 1px solid #eee1e8;
       border-radius: 18px;
-      padding: 14px 16px;
-      min-height: 88px;
-    }
-    .part strong {
-      display: block;
-      color: #806171;
-      margin-bottom: 8px;
-      font-size: 28px;
-    }
-    .part span {
-      line-height: 1.55;
-      font-size: 34px;
+      padding: 15px;
     }
 
-    .wide-box {
-      margin-top: 12px;
-      background: #fff;
-      border: 1px solid #eee1e8;
-      border-radius: 18px;
-      padding: 14px 16px;
-      line-height: 1.7;
-      font-size: 28px;
-    }
-    .wide-box .label {
-      font-weight: 800;
-      color: #806171;
+    .part strong,
+    .wide strong {
+      display: block;
       margin-bottom: 6px;
-      display: block;
-    }
-
-    .why-box {
-      margin-top: 14px;
-      background: #fff;
-      border: 1px solid #eee1e8;
-      border-radius: 20px;
-      padding: 18px;
-    }
-    .why-box .head {
-      font-size: 30px;
-      font-weight: 800;
-      letter-spacing: 0.18em;
+      color: #806171;
+      font-size: 13px;
+      font-weight: 900;
       text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .part span,
+    .wide span {
+      color: #513944;
+      font-size: 17px;
+      line-height: 1.48;
+    }
+
+    .wide,
+    .why,
+    .upgrade-inline {
+      margin-top: 12px;
+    }
+
+    .why-title {
+      margin-bottom: 8px;
       color: #a07c90;
-      margin-bottom: 10px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
     }
-    .why-box p {
+
+    .why p {
       margin: 0;
-      line-height: 1.8;
-      font-size: 30px;
       color: #5d4854;
-    }
-    .why-box p + p { margin-top: 12px; font-style: italic; color: var(--primary); }
-
-    .side-stack { display: grid; gap: 16px; }
-    .upgrade-card,
-    .love-card,
-    .ad-box,
-    .triple-card,
-    .seo-card,
-    .faq,
-    .modal-box {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
-    }
-    .upgrade-card,
-    .love-card,
-    .ad-box,
-    .seo-card,
-    .faq { padding: 22px; }
-
-    .upgrade-card h3,
-    .love-card h3,
-    .seo-card h3,
-    .faq h3 {
-      margin: 0 0 12px;
-      font-size: 58px;
-      color: var(--primary);
-      letter-spacing: -0.02em;
-    }
-    .upgrade-card p,
-    .love-card p,
-    .seo-card p,
-    .faq p {
-      margin: 0;
-      color: var(--text-soft);
-      line-height: 1.7;
-      font-size: 15px;
-    }
-    .love-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 14px;
-      font-size: 15px;
-      color: #634c58;
       line-height: 1.65;
+      font-size: 15px;
     }
 
-    .ad-box {
-      min-height: 250px;
+    .why p + p {
+      margin-top: 10px;
+      color: var(--primary);
+      font-style: italic;
+    }
+
+    .micro-actions {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
     }
 
-    .mobile-ad-stack {
-      display: none;
-      margin: 18px 0;
+    .micro-actions .btn {
+      min-height: 42px;
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+
+    .side-stack {
+      display: grid;
       gap: 14px;
     }
-    .ad-box .label {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #a08493;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-    .ad-box p {
-      margin: 0;
-      color: var(--text-soft);
-      line-height: 1.7;
-      font-size: 15px;
-    }
-    .sticky-col { position: sticky; top: 22px; }
 
-    .three-grid {
-      margin-top: 24px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+    .side-card {
+      background: #fff;
     }
-    .triple-card { padding: 22px; }
-    .triple-card h4 {
+
+    .side-card h3 {
       margin: 0 0 10px;
       color: var(--primary);
-      font-size: 21px;
-      letter-spacing: -0.02em;
+      font-size: 24px;
+      line-height: 1.12;
+      letter-spacing: -.02em;
     }
-    .triple-card p {
+
+    .side-card p {
       margin: 0;
-      line-height: 1.75;
-      color: var(--text-soft);
+      color: var(--muted);
+      line-height: 1.65;
       font-size: 15px;
     }
 
-    .seo-card,
-    .faq { margin-top: 24px; }
-    .faq details {
+    .check-list {
+      display: grid;
+      gap: 9px;
+      margin-top: 12px;
+      color: #624b57;
+      line-height: 1.55;
+      font-size: 15px;
+    }
+
+    .content-grid,
+    .weather-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .topic-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .topic-card h3 {
+      margin: 0 0 9px;
+      color: var(--primary);
+      font-size: 20px;
+      line-height: 1.18;
+    }
+
+    .topic-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .seo-block,
+    .faq,
+    .legal-note {
+      margin-top: 22px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .seo-block h2,
+    .faq h2 {
+      margin: 0 0 12px;
+      color: var(--primary);
+      font-size: 34px;
+      line-height: 1.12;
+      letter-spacing: -.025em;
+    }
+
+    .seo-block p,
+    .legal-note p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .seo-block p + p { margin-top: 12px; }
+
+    details {
       border-top: 1px solid var(--line);
       padding: 14px 0;
     }
-    .faq details:first-of-type { border-top: 0; padding-top: 0; }
-    .faq summary {
-      list-style: none;
+
+    details:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    summary {
       cursor: pointer;
-      font-weight: 800;
+      list-style: none;
       color: var(--primary);
       font-size: 16px;
-      position: relative;
-      padding-right: 22px;
+      font-weight: 900;
+      line-height: 1.4;
     }
-    .faq summary::-webkit-details-marker { display: none; }
-    .faq summary::after {
-      content: '+';
-      position: absolute;
-      right: 0;
-      top: 0;
-      color: #a07c90;
-      font-size: 18px;
-      font-weight: 700;
+
+    summary::-webkit-details-marker { display: none; }
+
+    details p {
+      margin: 9px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 15px;
     }
-    .faq details[open] summary::after { content: '–'; }
-    .faq details p { margin-top: 10px; color: var(--text-soft); line-height: 1.75; }
 
     footer {
-      margin-top: 28px;
+      margin-top: 26px;
+      padding-top: 22px;
       border-top: 1px solid #efe1e8;
-      padding: 24px 0 10px;
       color: #7d6974;
       font-size: 14px;
     }
+
     .footer-top {
       display: flex;
       justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
+      gap: 18px;
       align-items: center;
+      flex-wrap: wrap;
     }
-    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
-    .footer-links a { transition: color 0.18s ease, opacity 0.18s ease; }
-    .footer-links a:hover { color: var(--primary-dark); opacity: 1; }
-    .copyright { margin-top: 14px; font-size: 12px; color: #aa96a1; }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .copyright {
+      margin-top: 12px;
+      color: #a58f9b;
+      font-size: 12px;
+    }
 
     .modal {
       position: fixed;
       inset: 0;
-      background: rgba(60, 43, 53, 0.48);
+      z-index: 40;
       display: none;
       align-items: center;
       justify-content: center;
       padding: 18px;
-      z-index: 40;
+      background: rgba(60,43,53,.52);
     }
+
     .modal.show { display: flex; }
+
     .modal-box {
-      width: min(720px, 100%);
-      padding: 24px;
+      width: min(760px, 100%);
       max-height: 88vh;
       overflow: auto;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 24px;
     }
+
     .modal-head {
       display: flex;
       justify-content: space-between;
-      align-items: start;
       gap: 14px;
+      align-items: flex-start;
       margin-bottom: 16px;
     }
-    .modal-head h3 { margin: 0 0 8px; color: var(--primary); font-size: 28px; }
-    .modal-head p { margin: 0; color: var(--text-soft); line-height: 1.7; }
-    .close-btn {
-      background: #f8edf3;
-      border: 1px solid var(--line);
+
+    .modal-head h3 {
+      margin: 0 0 6px;
       color: var(--primary);
-      border-radius: 14px;
-      font-weight: 800;
-      cursor: pointer;
-      padding: 10px 12px;
+      font-size: 28px;
     }
-    .premium-list { display: grid; gap: 10px; margin-bottom: 18px; }
+
+    .modal-head p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .close-btn {
+      cursor: pointer;
+      border: 1px solid var(--line);
+      background: #f8edf3;
+      color: var(--primary);
+      border-radius: 12px;
+      padding: 9px 11px;
+      font-weight: 900;
+    }
+
+    .premium-list {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
     .premium-item {
       border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 14px 16px;
+      border-radius: 16px;
+      padding: 13px 14px;
       color: #5c4652;
-      line-height: 1.6;
+      line-height: 1.55;
       background: #fff;
     }
-    .premium-item.em { background: #faf3f6; color: var(--primary); font-weight: 700; }
 
-    .legal-block h4 { margin: 18px 0 8px; color: var(--primary); font-size: 17px; }
+    .premium-item.em {
+      background: #faf3f6;
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .preview {
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .preview img {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 18px;
+      border: 1px solid rgba(140,110,120,.14);
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    }
+
+    .preview p {
+      margin: 9px 0 0;
+      color: #8a6879;
+      font-size: 13px;
+    }
+
+    .legal-block h4 {
+      margin: 18px 0 8px;
+      color: var(--primary);
+      font-size: 17px;
+    }
+
     .legal-block h4:first-child { margin-top: 0; }
-    .legal-block p,
-    .legal-block li { color: var(--text-soft); line-height: 1.75; font-size: 15px; }
-    .legal-block ul { margin: 8px 0 0 18px; padding: 0; }
 
-
-    /* DESKTOP POLISH V1 — compact, clean, one-color system */
-    @media (min-width: 1090px) {
-      .wrap { padding-top: 18px; }
-      .hero { padding: 28px 34px; border-radius: 30px; min-height: 210px; }
-      .eyebrow { font-size: 15px; letter-spacing: 0.18em; margin-bottom: 10px; }
-      h1 { font-size: clamp(40px, 4.2vw, 58px); margin-bottom: 10px; }
-      .hero p { font-size: 17px; line-height: 1.45; }
-      .top-grid { margin-top: 18px; grid-template-columns: minmax(0, 1.72fr) minmax(260px, 0.52fr); gap: 18px; }
-      .main-card-header { padding: 18px 22px 10px; }
-      .main-card-header h2 { font-size: 34px; line-height: 1.08; margin-bottom: 8px; }
-      .main-card-header p { font-size: 14px; line-height: 1.5; }
-      .mini-badge { font-size: 13px; padding: 9px 13px; border-radius: 15px; }
-      .main-card-body { padding: 16px 22px 22px; }
-      .form-grid { gap: 12px 14px; }
-      .field label { font-size: 13px; margin-bottom: 7px; }
-      .field input, .field select { font-size: 20px; min-height: 46px; padding: 11px 14px; border-radius: 15px; }
-      .actions { margin-top: 16px; gap: 10px; }
-      .btn { font-size: 17px; padding: 12px 18px; border-radius: 15px; }
-      .ad-box { min-height: 185px; padding: 20px; }
-      .result-grid { margin-top: 22px; gap: 16px; }
-      .result-card { padding: 20px; border-radius: 24px; }
-      .result-title { font-size: 32px; line-height: 1.1; }
-      .result-top { margin-bottom: 14px; }
-      .part { min-height: 74px; padding: 12px 14px; }
-      .part strong { font-size: 17px; margin-bottom: 6px; }
-      .part span { font-size: 20px; line-height: 1.35; }
-      .wide-box { font-size: 17px; line-height: 1.55; padding: 12px 14px; }
-      .why-box { padding: 15px; }
-      .why-box .head { font-size: 13px; letter-spacing: 0.14em; }
-      .why-box p { font-size: 15px; line-height: 1.6; }
-      .upgrade-card, .love-card, .seo-card, .faq, .triple-card { padding: 22px 24px; }
-      .upgrade-card h3, .love-card h3 { font-size: 30px; line-height: 1.12; }
-      .upgrade-card p, .love-card p, .love-list, .seo-card p, .faq p, .triple-card p { font-size: 16px; line-height: 1.6; }
-      .three-grid { margin-top: 22px; gap: 16px; }
-      .triple-card h4 { font-size: 22px; }
-      .seo-card h3, .faq h3 { font-size: 40px; line-height: 1.1; }
-      .faq summary { font-size: 18px; }
-      footer { font-size: 15px; }
-      .footer-links { gap: 22px; font-weight: 700; }
-      .copyright { font-size: 13px; color: #9b8792; }
+    .legal-block p {
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 15px;
     }
 
-    @media (max-width: 1080px) {
-      .top-grid,
+    @media (max-width: 980px) {
+      .seo-intro,
       .result-grid,
-      .three-grid { grid-template-columns: 1fr; }
-      .sticky-col { position: static; }
+      .content-grid,
+      .weather-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
-    /* MOBILE — clean, app-like, normal type scale.
-       Uses the same color tokens as desktop. */
-    @media (max-width: 768px) {
-      .wrap { padding: 16px 14px 56px; }
+    @media (max-width: 680px) {
+      .wrap {
+        width: min(100% - 24px, var(--max));
+        padding-top: 12px;
+      }
 
-      /* Hero */
       .hero {
-        padding: 28px 18px;
+        padding: 24px 16px;
         border-radius: 22px;
-        min-height: 0;
       }
-      .hero::before, .hero::after { display: none; }
+
       .eyebrow {
-        font-size: 11px;
-        letter-spacing: 0.18em;
-        margin-bottom: 10px;
+        font-size: 10px;
+        margin-bottom: 8px;
       }
+
       h1 {
-        font-size: clamp(28px, 7.5vw, 34px);
-        line-height: 1.12;
-        margin-bottom: 10px;
-        letter-spacing: -0.02em;
+        font-size: clamp(30px, 9vw, 38px);
+        line-height: 1.08;
       }
+
       .hero p {
+        margin-top: 10px;
         font-size: 15px;
         line-height: 1.55;
-        max-width: 100%;
       }
 
-      /* Grid spacing */
-      .top-grid,
-      .result-grid,
-      .three-grid { gap: 14px; }
+      .hero-links {
+        gap: 8px;
+        margin-top: 14px;
+      }
 
-      /* Main card */
-      .main-card-header {
+      .pill {
+        font-size: 12px;
+        padding: 8px 10px;
+      }
+
+      .panel,
+      .seo-block,
+      .faq,
+      .legal-note {
+        padding: 18px;
+        border-radius: 20px;
+      }
+
+      .panel h2,
+      .seo-block h2,
+      .faq h2 {
+        font-size: 24px;
+      }
+
+      .app-card {
+        border-radius: 22px;
+      }
+
+      .app-head {
+        display: block;
         padding: 18px 18px 8px;
-        gap: 10px;
       }
-      .main-card-header h2 {
-        font-size: 22px;
-        line-height: 1.15;
-        margin-bottom: 6px;
-      }
-      .main-card-header p {
-        font-size: 14px;
-        line-height: 1.55;
-      }
-      .mini-badge {
-        font-size: 11px;
-        padding: 7px 11px;
-        border-radius: 12px;
-      }
-      .main-card-body { padding: 16px 18px 20px; }
 
-      /* Form */
-      .form-grid,
-      .result-parts {
+      .app-head h2 {
+        font-size: 23px;
+      }
+
+      .app-head p {
+        font-size: 14px;
+      }
+
+      .badge {
+        display: inline-flex;
+        margin-top: 12px;
+        font-size: 11px;
+        padding: 8px 10px;
+      }
+
+      .app-body {
+        padding: 16px 18px 20px;
+      }
+
+      .form-grid {
         grid-template-columns: 1fr;
         gap: 12px;
       }
-      .field {
-        background: transparent;
-        border: 0;
-        padding: 0;
-        box-shadow: none;
-      }
-      .field label {
-        font-size: 13px;
-        font-weight: 700;
-        margin-bottom: 6px;
-        color: #876775;
-      }
-      .field input,
-      .field select {
-        font-size: 16px; /* prevents iOS zoom-on-focus */
-        min-height: 50px;
-        padding: 12px 14px;
-        border-radius: 14px;
-        border: 1.5px solid #dfc9d4;
-        background: #fff;
-        color: var(--text);
-        box-shadow: none;
-        appearance: none;
-        -webkit-appearance: none;
-      }
-      .field input::placeholder { font-size: 16px; }
-      .field input:focus,
-      .field select:focus {
-        border-color: #b98da1;
-        box-shadow: 0 0 0 3px rgba(185, 141, 161, 0.16);
-        transform: none;
+
+      .field.full,
+      .field.half {
+        grid-column: auto;
       }
 
-      /* Buttons */
-      .actions {
-        gap: 10px;
-        margin-top: 18px;
+      label {
+        font-size: 13px;
+        margin-bottom: 6px;
       }
-      .actions .btn,
+
+      input,
+      select {
+        min-height: 50px;
+        font-size: 16px;
+        border-radius: 14px;
+        box-shadow: none;
+      }
+
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
       .btn {
         width: 100%;
-        flex: 1 1 100%;
-        min-height: 48px;
         font-size: 16px;
-        font-weight: 700;
-        padding: 12px 16px;
         border-radius: 14px;
       }
 
-      /* Results */
-      .result-card {
-        padding: 18px;
-        border-radius: 20px;
-      }
-      .result-top { margin-bottom: 14px; gap: 10px; }
-      .small-tag {
-        font-size: 10px;
-        letter-spacing: 0.16em;
-      }
-      .result-title {
-        font-size: 22px;
-        line-height: 1.15;
-      }
-      .result-chip {
-        font-size: 11px;
-        padding: 8px 10px;
-        border-radius: 12px;
-      }
-      .part {
-        min-height: 0;
-        padding: 12px 14px;
-        border-radius: 14px;
-      }
-      .part strong {
-        font-size: 13px;
-        margin-bottom: 4px;
-        color: #806171;
-      }
-      .part span {
-        font-size: 15px;
-        line-height: 1.5;
-      }
-      .wide-box {
-        padding: 12px 14px;
-        font-size: 15px;
-        line-height: 1.55;
-        border-radius: 14px;
-      }
-      .wide-box .label {
-        font-size: 13px;
-        margin-bottom: 4px;
-      }
-      .why-box {
+      .result-card,
+      .side-card {
         padding: 16px;
-        border-radius: 16px;
-      }
-      .why-box .head {
-        font-size: 11px;
-        letter-spacing: 0.16em;
-        margin-bottom: 8px;
-      }
-      .why-box p {
-        font-size: 15px;
-        line-height: 1.6;
+        border-radius: 18px;
       }
 
-      /* Side cards (premium upgrade, love, triple, seo, faq) */
-      .upgrade-card,
-      .love-card,
-      .seo-card,
-      .faq,
-      .triple-card,
-      .ad-box {
+      .result-top {
+        display: block;
+      }
+
+      .result-chip {
+        display: inline-flex;
+        margin-top: 10px;
+      }
+
+      .result-title {
+        font-size: 24px;
+      }
+
+      .parts {
+        grid-template-columns: 1fr;
+      }
+
+      .part span,
+      .wide span {
+        font-size: 15px;
+      }
+
+      .micro-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .topic-card {
         padding: 18px;
         border-radius: 18px;
       }
-      .upgrade-card h3,
-      .love-card h3,
-      .seo-card h3,
-      .faq h3 {
-        font-size: 20px;
-        line-height: 1.2;
-        margin-bottom: 10px;
-      }
-      .upgrade-card p,
-      .love-card p,
-      .seo-card p,
-      .faq p,
-      .triple-card p {
-        font-size: 15px;
-        line-height: 1.6;
-      }
-      .love-list {
-        font-size: 15px;
-        line-height: 1.6;
-        gap: 8px;
-        margin-top: 12px;
-      }
-      .triple-card h4 {
-        font-size: 17px;
-        margin-bottom: 8px;
-      }
 
-      /* FAQ */
-      .faq summary {
-        font-size: 15px;
-        line-height: 1.45;
-        padding-right: 24px;
-      }
-      .faq summary::after { font-size: 18px; }
-      .faq details p {
-        font-size: 15px;
-        line-height: 1.6;
-        margin-top: 8px;
-      }
-
-      /* Mobile result flow — force a clean linear column so the side-stack
-         (Premium card, "Why Women Love This Tool") drops BELOW the entire
-         result card. Without this, grid gap and source order can make the
-         in-result mobile ad visually drift toward the side-stack content. */
-      .result-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 16px !important;
-      }
-      .result-card { order: 0; }
-      .side-stack {
-        order: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        margin-top: 4px;
-      }
-
-      /* Mobile ads — subtle, non-aggressive, anchored to their parent block.
-         Tight margins so each ad hugs the section it belongs to and reads
-         visually as part of THAT section, not the next one. */
-      .mobile-ad-stack {
-        display: grid;
-        gap: 0;
-        margin: 0;
-      }
-      /* Ad #1 — directly under the action buttons row */
-      .mobile-ad-inline {
-        margin-top: 12px !important;
-        margin-bottom: 0 !important;
-      }
-      /* Ad #2 — inside the result card, directly before .why-box */
-      .mobile-ad-results {
-        margin-top: 12px !important;
-        margin-bottom: 12px !important;
-      }
-      /* Kill the default top margin .why-box has, so ad #2 visually leads
-         straight into "Why this works" with controlled spacing. */
-      .mobile-ad-results + .why-box { margin-top: 0 !important; }
-
-      .mobile-ad-stack .ad-box {
-        min-height: 110px;
-        padding: 16px;
-        border-radius: 16px;
-        border: 1px solid var(--line);
-        background: var(--card-soft);
-        box-shadow: none;
-        justify-content: center;
-      }
-      .ad-box .label,
-      .mobile-ad-stack .ad-box .label {
-        font-size: 10px;
-        letter-spacing: 0.18em;
-        color: #a08493;
-        margin-bottom: 6px;
-      }
-      .ad-box p,
-      .mobile-ad-stack .ad-box p {
-        font-size: 13px;
-        line-height: 1.5;
-        color: var(--text-soft);
-      }
-
-      /* Modals */
-      .modal { padding: 14px; }
-      .modal-box {
-        padding: 20px;
-        border-radius: 20px;
-        max-height: 90vh;
-      }
-      .modal-head h3 {
-        font-size: 20px;
-        line-height: 1.2;
-      }
-      .modal-head p {
-        font-size: 14px;
-        line-height: 1.5;
-      }
-      .premium-item {
-        padding: 12px 14px;
-        font-size: 15px;
-        line-height: 1.5;
-        border-radius: 14px;
-      }
-      .legal-block h4 { font-size: 16px; }
-      .legal-block p,
-      .legal-block li {
-        font-size: 14px;
-        line-height: 1.6;
-      }
-      .close-btn {
-        font-size: 13px;
-        padding: 8px 12px;
-        border-radius: 12px;
-      }
-
-      /* Footer — slightly more visible on mobile, still clean */
-      footer {
-        margin-top: 28px;
-        padding-top: 20px;
-        border-top: 1px solid #efe1e8;
-        font-size: 14px;
-        line-height: 1.55;
-      }
       .footer-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 14px;
+        display: block;
       }
-      .footer-top > div:first-child {
-        font-size: 15px;
-        font-weight: 600;
-        line-height: 1.5;
-        color: var(--text);
-      }
+
       .footer-links {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 18px;
-        width: 100%;
-      }
-      .footer-links a {
-        display: inline-block;
-        font-size: 15px;
-        font-weight: 700;
-        color: var(--primary);
-        padding: 4px 0;
-      }
-      .copyright {
         margin-top: 14px;
-        font-size: 13px;
-        font-weight: 500;
-        color: #8a7682;
       }
 
-      /* Visibility toggles */
-      .desktop-only { display: none !important; }
-      .mobile-only { display: block; }
-      .sticky-col { display: none; }
+      .modal {
+        padding: 12px;
+      }
+
+      .modal-box {
+        max-height: 90vh;
+        border-radius: 20px;
+        padding: 18px;
+      }
+
+      .modal-head h3 {
+        font-size: 22px;
+      }
     }
-
-    .premium-preview {
-  margin-top: 28px;
-  text-align: center;
-}
-
-.premium-preview-modal {
-  margin-top: 24px;
-  text-align: center;
-}
-
-.premium-preview-modal img {
-  width: 100%;
-  max-width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  border: 1px solid rgba(140, 110, 120, 0.12);
-  cursor: zoom-in;
-}
-
-
-
-.premium-preview-note {
-  margin-top: 10px;
-  font-size: 13px;
-  color: #8a6879;
-}
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6560091199416357"
-     crossorigin="anonymous"></script>
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <section class="hero">
+    <header class="hero">
       <div class="eyebrow">Smart Outfit Generator</div>
       <h1>What Should I Wear Today?</h1>
       <p>
-        A smart free outfit generator that helps women choose what to wear based on weather,
-        temperature, occasion, mood, comfort, effort, and environment — without overthinking.
+        Get a free outfit idea based on your weather, temperature, occasion, mood,
+        comfort level, effort level, and environment — without overthinking your closet.
       </p>
+      <div class="hero-links" aria-label="Popular outfit searches">
+        <span class="pill">Weather-based outfits</span>
+        <span class="pill">Mood-based styling</span>
+        <span class="pill">Work, date night & casual looks</span>
+      </div>
+    </header>
+
+    <section class="seo-intro" aria-label="Outfit generator introduction">
+      <div class="panel">
+        <h2>Free Outfit Generator Based on Weather, Mood and Occasion</h2>
+        <p>
+          This free outfit planner helps women decide what to wear today with a practical,
+          rule-based styling system. Choose your real-life situation — rainy workday, hot date night,
+          relaxed weekend, coffee meeting, travel day, family event or special occasion — and get
+          an outfit suggestion that makes sense for the moment.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h3>Designed for real mornings</h3>
+        <div class="mini-list">
+          <div>✓ No account needed</div>
+          <div>✓ No wardrobe setup required</div>
+          <div>✓ Works on phone, tablet and desktop</div>
+          <div>✓ Premium adds your real wardrobe later</div>
+        </div>
+      </div>
     </section>
-    <div class="top-grid">
-      <section class="card main-card">
-        <div class="main-card-header">
+
+    <main class="app-grid">
+      <section class="app-card" aria-label="Free outfit generator">
+        <div class="app-head">
           <div>
-            <h2>Smart Free Outfit Generator</h2>
+            <h2>Build Your Outfit</h2>
             <p>
-              Full premium-feeling demo. No wardrobe setup required. Just answer a few things
-              about today and get a smart outfit suggestion instantly.
+              Keep the full experience: the generator combines several styling signals instead of giving a random outfit.
+              Try different moods, occasions and weather combinations to get fresh results.
             </p>
           </div>
-          <div class="mini-badge">📱 No app needed</div>
+          <div class="badge">Free Demo • No App</div>
         </div>
 
-        <div class="main-card-body">
+        <div class="app-body">
           <div class="form-grid">
             <div class="field full">
-              <label for="name">Your Name (optional)</label>
-              <input id="name" type="text" placeholder="Emma" />
+              <label for="name">Your name (optional)</label>
+              <input id="name" type="text" placeholder="Emma" autocomplete="name" />
             </div>
 
             <div class="field">
@@ -1019,34 +1011,31 @@
             </div>
 
             <div class="field">
-              <label for="comfort">Comfort Level</label>
+              <label for="comfort">Comfort level</label>
               <select id="comfort"></select>
             </div>
 
             <div class="field">
-              <label for="effort">Effort Level</label>
+              <label for="effort">Effort level</label>
               <select id="effort"></select>
             </div>
 
-            <div class="field full">
+            <div class="field half">
               <label for="environment">Environment</label>
               <select id="environment"></select>
+            </div>
+
+            <div class="field half">
+              <label for="styleDirection">Style direction</label>
+              <select id="styleDirection"></select>
             </div>
           </div>
 
           <div class="actions">
             <button class="btn btn-primary" id="generateBtn">👗 Get My Outfit</button>
             <button class="btn btn-outline" id="surpriseBtn">✨ Surprise Me</button>
-            <button class="btn btn-outline" id="againBtn">🔄 Generate Again (3 left)</button>
+            <button class="btn btn-outline" id="againBtn">🔄 Generate Again</button>
           </div>
-          <div class="mobile-ad-stack mobile-only mobile-ad-inline" id="mobileAdInline">
-            <div class="ad-box mobile-ad-slot">
-              <div class="label">Ad Space</div>
-              <p>Reserved for Google AdSense placement.</p>
-            </div>
-          </div>
-
-
 
           <div class="result-grid">
             <div class="result-card">
@@ -1055,119 +1044,145 @@
                   <div class="small-tag">Main Result</div>
                   <h3 class="result-title" id="resultTitle">Today’s Outfit</h3>
                 </div>
-                <div class="result-chip">Free Demo</div>
+                <div class="result-chip" id="resultChip">Ready</div>
               </div>
 
-              <div class="result-parts">
+              <div class="parts">
                 <div class="part"><strong>Top</strong><span id="topResult"></span></div>
                 <div class="part"><strong>Bottom</strong><span id="bottomResult"></span></div>
                 <div class="part"><strong>Shoes</strong><span id="shoesResult"></span></div>
                 <div class="part"><strong>Outerwear</strong><span id="outerwearResult"></span></div>
               </div>
 
-              <div class="wide-box">
-                <span class="label">Styling detail</span>
-                <div id="stylingResult"></div>
+              <div class="wide">
+                <strong>Styling detail</strong>
+                <span id="stylingResult"></span>
               </div>
 
-              <div class="mobile-ad-stack mobile-only mobile-ad-results" id="mobileAdResults">
-                <div class="ad-box mobile-ad-slot">
-                  <div class="label">Ad Space</div>
-                  <p>Reserved for Google AdSense placement.</p>
-                </div>
+              <div class="wide">
+                <strong>Alternative twist</strong>
+                <span id="alternativeResult"></span>
               </div>
 
-              <div class="why-box">
-                <div class="head">Why this works</div>
+              <div class="why">
+                <div class="why-title">Why this works</div>
                 <p id="whyResult"></p>
                 <p id="noteResult"></p>
               </div>
+
+              <div class="micro-actions">
+                <button class="btn btn-soft" data-refine="softer">Make it softer</button>
+                <button class="btn btn-soft" data-refine="polished">Make it more polished</button>
+                <button class="btn btn-soft" data-refine="comfortable">Make it more comfortable</button>
+              </div>
             </div>
 
-            <div class="side-stack">
-              <div class="upgrade-card">
-                <h3>🔒 Unlock My Full Wardrobe Assistant</h3>
+            <aside class="side-stack" aria-label="Premium and benefits">
+              <div class="side-card">
+                <h3>🔒 Want Your Real Wardrobe Inside?</h3>
                 <p>
-                  Upgrade when you want deeper personalization, wardrobe-based suggestions,
-                  and alternative styling ideas.
+                  The free generator gives instant outfit ideas. Premium is for women who want to connect
+                  the logic to their real wardrobe in Google Sheets.
                 </p>
-                <div style="margin-top:16px;">
+                <div style="margin-top:14px;">
                   <button class="btn btn-primary" id="premiumBtn">See Premium Details</button>
                 </div>
               </div>
 
-              <div class="love-card">
-                <h3>✨ Why Women Love This Tool</h3>
-                <div class="love-list">
-                  <div>✨ Save time every morning</div>
+              <div class="side-card">
+                <h3>✨ Why Women Use It</h3>
+                <div class="check-list">
+                  <div>✨ Save time before leaving home</div>
                   <div>✨ Stop outfit decision fatigue</div>
-                  <div>✨ Feel more confident before leaving home</div>
-                  <div>✨ Dress for real life, not just inspiration boards</div>
-                  <div>✨ Get a smart result without wardrobe setup</div>
+                  <div>✨ Dress for weather and real life</div>
+                  <div>✨ Try different moods and occasions</div>
+                  <div>✨ Get ideas without installing an app</div>
                 </div>
               </div>
-            </div>
+            </aside>
           </div>
         </div>
       </section>
+    </main>
 
-      <aside class="sticky-col desktop-only">
-        <div class="ad-box">
-          <div class="label">Ad Space</div>
-          <p>Reserved for Google AdSense placement.</p>
-        </div>
-        <div style="height:16px;"></div>
-        <div class="ad-box">
-          <div class="label">Ad Space</div>
-          <p>Reserved for Google AdSense placement.</p>
-        </div>
-      </aside>
-    </div>
-
-    <section class="three-grid">
-      <div class="triple-card">
-        <h4>✨ Smart Inputs</h4>
-        <p>The tool combines weather, temperature, occasion, mood, comfort, effort, and environment to build a real-life outfit suggestion that feels logical and wearable.</p>
-      </div>
-      <div class="triple-card">
-        <h4>💎 Premium Upgrade</h4>
-        <p>Free gives you a strong result instantly. Premium adds your wardrobe, alternative looks, deeper personalization, and the full assistant experience.</p>
-      </div>
-      <div class="triple-card">
-        <h4>📌 Clear & Easy Access</h4>
-        <p>No app needed. Try the tool online, then upgrade only if you want the full Google Sheets system with wardrobe support and styling depth.</p>
-      </div>
+    <section class="content-grid" aria-label="Outfit ideas by occasion">
+      <article class="topic-card">
+        <h3>Work Outfit Ideas</h3>
+        <p>For office days, the generator leans toward polished tops, structured layers, trousers, midi skirts, loafers and low heels.</p>
+      </article>
+      <article class="topic-card">
+        <h3>Date Night Outfit Ideas</h3>
+        <p>For romantic or confident moods, it suggests softer necklines, sleek skirts, darker denim, elegant flats, slingbacks or heels.</p>
+      </article>
+      <article class="topic-card">
+        <h3>Casual Day Outfits</h3>
+        <p>For everyday errands and relaxed plans, it keeps the outfit easy, wearable and comfortable without looking unfinished.</p>
+      </article>
     </section>
 
-    <section class="seo-card">
-      <h3>Daily Outfit Help for Real Life</h3>
-      <p>Choosing what to wear should not feel stressful. Smart Outfit Generator helps women make faster, better outfit decisions based on real-life situations — not perfect Pinterest boards.</p>
-      <p class="desktop-only" style="margin-top:14px;">Whether you're getting ready for work, a casual day out, a coffee meeting, date night, dinner, travel day, or a special event, this free outfit tool helps you decide what actually works.</p>
-      <p class="desktop-only" style="margin-top:14px;">From rainy day outfit ideas to work outfit inspiration, casual everyday looks, and confidence-boosting style suggestions, the goal is simple: help you stop overthinking and start feeling good in what you wear.</p>
+    <section class="weather-grid" aria-label="Outfit ideas by weather">
+      <article class="topic-card">
+        <h3>Rainy Day Outfits</h3>
+        <p>Rainy weather triggers practical shoes and weather-friendly layers instead of fragile footwear or unrealistic styling.</p>
+      </article>
+      <article class="topic-card">
+        <h3>Hot Weather Outfits</h3>
+        <p>Hot days favor breathable tops, lighter silhouettes, fewer layers and shoes that match the occasion without adding heaviness.</p>
+      </article>
+      <article class="topic-card">
+        <h3>Cold Weather Outfits</h3>
+        <p>Cold and freezing temperatures add protective layers, closed shoes and warmer structure so the outfit still works outside.</p>
+      </article>
+    </section>
+
+    <section class="seo-block">
+      <h2>How This Outfit Generator Works</h2>
+      <p>
+        The tool starts with your occasion and environment, then adjusts the result with weather, temperature,
+        mood, comfort and effort. That means a rainy work outfit, a hot date night outfit and a relaxed weekend
+        outfit will not be treated the same way.
+      </p>
+      <p>
+        It is not an AI chatbot. It is a carefully connected styling logic system built to avoid common outfit conflicts:
+        sandals in snow, heavy coats in hot weather, office looks that feel too casual, or date night outfits that do not
+        match the mood.
+      </p>
     </section>
 
     <section class="faq" id="faq">
-      <h3>FAQ</h3>
+      <h2>FAQ</h2>
+
       <details>
-        <summary>Is this outfit tool really free?</summary>
-        <p>Yes. You can use the Smart Outfit Generator for free directly on this website.</p>
+        <summary>Is this outfit generator really free?</summary>
+        <p>Yes. You can use the free outfit generator directly on this page without creating an account.</p>
       </details>
+
       <details>
-        <summary>Do I need to create an account?</summary>
-        <p>No. You can use the tool instantly without creating an account or providing personal information.</p>
+        <summary>Does it use artificial intelligence?</summary>
+        <p>No. The tool uses a rule-based styling system that combines your selected weather, occasion, mood, comfort, effort and environment.</p>
       </details>
+
       <details>
-        <summary>Are my inputs saved or tracked?</summary>
-        <p>No. Your selections are used only to generate your outfit suggestion and are not stored by us.</p>
+        <summary>Can I use it on mobile?</summary>
+        <p>Yes. The layout is designed to work on mobile, tablet and desktop browsers.</p>
       </details>
+
       <details>
-        <summary>What do I get in Premium?</summary>
-        <p>The Premium version is the full Google Sheets Outfit Decision Assistant with wardrobe logic, alternative suggestions, and deeper personalization.</p>
+        <summary>Are my inputs saved?</summary>
+        <p>No. Your selections are used in your browser to generate the outfit suggestion. No account is required.</p>
       </details>
+
       <details>
-        <summary>Do I need an app for Premium?</summary>
-        <p>No. The Premium version works in Google Sheets on phone, tablet, or computer.</p>
+        <summary>What does Premium add?</summary>
+        <p>Premium adds a Google Sheets wardrobe assistant so you can organize your real clothes and get deeper outfit planning support.</p>
       </details>
+    </section>
+
+    <section class="legal-note">
+      <p>
+        This website provides lifestyle and styling suggestions for informational purposes only. Final outfit decisions,
+        purchases and personal style choices always remain with the user.
+      </p>
     </section>
 
     <footer>
@@ -1177,7 +1192,6 @@
           <a href="#" id="privacyBtn">Privacy Policy</a>
           <a href="#" id="termsBtn">Terms of Use</a>
           <a href="https://uniafekipublishing.etsy.com" target="_blank" rel="noopener noreferrer">Contact via Etsy</a>
-      
         </div>
       </div>
       <div class="copyright">© 2026 UniaFeki Publishing. All rights reserved.</div>
@@ -1189,26 +1203,29 @@
       <div class="modal-head">
         <div>
           <h3>Premium Includes</h3>
-          <p>Clear upgrade info before you decide.</p>
+          <p>The free generator stays useful. Premium adds your real wardrobe and deeper planning.</p>
         </div>
         <button class="close-btn" data-close="premiumModal">Close</button>
       </div>
+
       <div class="premium-list">
-        <div class="premium-item">📊 Full Google Sheets system</div>
+        <div class="premium-item">📊 Full Google Sheets outfit decision system</div>
         <div class="premium-item">👗 Personal wardrobe organization</div>
         <div class="premium-item">✨ Alternative outfit suggestions</div>
-        <div class="premium-item">🎯 Deep styling personalization</div>
-        <div class="premium-item">📱 Works on phone, tablet, and desktop</div>
+        <div class="premium-item">🎯 Deeper styling personalization</div>
+        <div class="premium-item">📱 Works on phone, tablet and desktop</div>
         <div class="premium-item">🔗 Instant access via PDF link</div>
         <div class="premium-item em">📌 Google Sheets Only — No App Required</div>
       </div>
+
       <a class="btn btn-primary" href="https://uniafekipublishing.etsy.com/listing/4486634808" target="_blank" rel="noopener noreferrer">Go to Etsy Premium</a>
-      <div class="premium-preview-modal">
-  <a href="outfit-preview.png" target="_blank" rel="noopener noreferrer">
-    <img src="outfit-preview.png" alt="Outfit Decision Assistant Google Sheets Preview" />
-  </a>
-  <p class="premium-preview-note">Click the image to enlarge</p>
-</div>
+
+      <div class="preview">
+        <a href="outfit-preview.png" target="_blank" rel="noopener noreferrer">
+          <img src="outfit-preview.png" alt="Outfit Decision Assistant Google Sheets Preview" />
+        </a>
+        <p>Click the image to enlarge</p>
+      </div>
     </div>
   </div>
 
@@ -1217,46 +1234,32 @@
       <div class="modal-head">
         <div>
           <h3>Privacy Policy</h3>
-          <p>Transparent and ad-friendly privacy information.</p>
+          <p>Transparent privacy information for this free outfit tool.</p>
         </div>
         <button class="close-btn" data-close="privacyModal">Close</button>
       </div>
 
-      <h4>1. Personal Data Collection</h4>
-      <p>We do not require account registration. We do not ask for email addresses, passwords, payment information, or identity documents on this website.</p>
-      <p>If you choose to enter your name for personalization, it is used only temporarily to display your result and is not stored, saved, or shared by us.</p>
-      <p>Your outfit selections are processed only to generate your result and are not permanently stored by us.</p>
+      <h4>1. Personal Data</h4>
+      <p>We do not require account registration. We do not ask for email addresses, passwords, payment information or identity documents on this website.</p>
+      <p>If you enter your name, it is used only temporarily in your browser to personalize your result.</p>
 
-      <h4>2. Analytics</h4>
-      <p>We may use privacy-friendly analytics provided through Vercel Analytics to understand general page visits, page views, and overall traffic patterns. These analytics help us improve the website experience.</p>
+      <h4>2. Outfit Inputs</h4>
+      <p>Your outfit selections are used to generate your suggestion. They are not stored by us as a personal wardrobe profile.</p>
 
-      <h4>3. Cookies and Third-Party Services</h4>
-      <p>This website may display advertising through Google AdSense or other third-party services. Google and its partners may use cookies or similar technologies to show relevant advertisements, improve ad performance, and measure engagement.</p>
-      <p>These technologies are managed by Google and other third-party providers, not directly by us.</p>
+      <h4>3. Advertising</h4>
+      <p>This website may display advertising through Google AdSense. Google and its partners may use cookies or similar technologies to show ads, measure performance and improve ad relevance.</p>
 
-      <h4>4. Advertising Preferences and User Choices</h4>
-      <p>Google may display personalized or non-personalized advertisements based on your browsing behavior, location, and other relevant factors.</p>
-      <p>Users can manage their advertising preferences through Google Ads Settings: https://adssettings.google.com/</p>
-      <p>You can also control or disable cookies through your browser settings. Please note that disabling some cookies may affect website functionality.</p>
+      <h4>4. Analytics</h4>
+      <p>We may use privacy-friendly analytics to understand general page visits and improve the website experience.</p>
 
-      <h4>5. Website Operator</h4>
-      <p>This website is operated by UniaFeki Publishing.</p>
-      <p>We are responsible for maintaining this website, its content, and the free outfit recommendation tool provided here.</p>
+      <h4>5. Premium Product</h4>
+      <p>The premium product is sold through Etsy. Purchases, payments, delivery and order handling are completed on Etsy under Etsy’s own policies.</p>
 
-      <h4>6. Consent to Use Technologies</h4>
-      <p>By continuing to use this website, you acknowledge that certain cookies, analytics tools, and advertising technologies may be used as described in this Privacy Policy.</p>
+      <h4>6. External Links</h4>
+      <p>This website may link to external platforms such as Etsy. We are not responsible for the privacy practices of third-party websites.</p>
 
-      <h4>7. Premium Product Access</h4>
-      <p>This website links to a premium product sold through Etsy. Purchases, payments, delivery, and order handling are completed on Etsy under Etsy’s own policies.</p>
-
-      <h4>8. External Links</h4>
-      <p>Our website may contain links to external platforms such as Etsy. We are not responsible for the privacy practices or content of third-party websites. Please review their policies separately.</p>
-
-      <h4>9. Updates to This Policy</h4>
-      <p>We may update this Privacy Policy from time to time to reflect legal, technical, or business changes. The latest version will always appear here.</p>
-
-      <h4>10. Contact</h4>
-      <p>For privacy questions or premium product support, please contact us through our Etsy shop: UniaFeki Publishing.</p>
+      <h4>7. Contact</h4>
+      <p>For privacy questions or premium product support, contact UniaFeki Publishing through Etsy.</p>
     </div>
   </div>
 
@@ -1265,1489 +1268,426 @@
       <div class="modal-head">
         <div>
           <h3>Terms of Use</h3>
-          <p>Clear usage rules for the free tool and premium version.</p>
+          <p>Usage rules for the free tool and premium version.</p>
         </div>
         <button class="close-btn" data-close="termsModal">Close</button>
       </div>
-      <h4>1. Informational Purpose Only</h4>
-      <p>This tool is designed to provide outfit suggestions for lifestyle support only. Final decisions always remain with the user.</p>
+
+      <h4>1. Informational Purpose</h4>
+      <p>This tool provides outfit suggestions for lifestyle support only. Final decisions always remain with the user.</p>
+
       <h4>2. No Guarantees</h4>
-      <p>We aim to provide useful and thoughtful outfit suggestions, but we do not guarantee perfect results for every wardrobe, body type, style preference, or occasion.</p>
+      <p>We aim to provide useful styling suggestions, but we do not guarantee perfect results for every wardrobe, body type, preference or occasion.</p>
+
       <h4>3. Free Tool and Premium Product</h4>
-      <p>The free version is available directly on this website. The premium version is offered separately through Etsy as a Google Sheets system with expanded features.</p>
-      <p>Purchases, refunds, delivery, and support for Premium are handled according to Etsy platform policies.</p>
+      <p>The free version is available on this website. The premium version is offered separately through Etsy as a Google Sheets system.</p>
+
       <h4>4. Intellectual Property</h4>
-      <p>All content on this website, including structure, design logic, branding, text, and premium system concepts, belongs to UniaFeki Publishing unless otherwise stated.</p>
-      <h4>5. Website Availability</h4>
-      <p>We aim to keep the website accessible and functional, but we do not guarantee uninterrupted availability. Features, layout, or services may change at any time without notice.</p>
-      <h4>6. Limitation of Liability</h4>
-      <p>We are not responsible for styling dissatisfaction, purchase decisions made by users, third-party platform issues, or interruptions outside our control.</p>
-      <h4>7. Use at Your Own Discretion</h4>
-      <p>Use of this website and its suggestions is entirely at your own discretion.</p>
-      <h4>8. Contact</h4>
-      <p>For support regarding the premium product, please contact us via Etsy: UniaFeki Publishing.</p>
+      <p>Website content, design logic, text and premium system concepts belong to UniaFeki Publishing unless otherwise stated.</p>
+
+      <h4>5. Availability</h4>
+      <p>We aim to keep the website accessible, but features, layout or services may change at any time.</p>
+
+      <h4>6. Contact</h4>
+      <p>For support regarding the premium product, contact UniaFeki Publishing through Etsy.</p>
     </div>
   </div>
 
-
   <script>
-  const weatherOptions = ["Sunny", "Cloudy", "Rainy", "Windy", "Snowy", "Stormy", "Mixed Weather"];
-  const temperatureOptions = ["Freezing", "Cold", "Cool", "Mild", "Warm", "Hot"];
-  const occasionOptions = ["Work", "Casual Day", "Coffee Meeting", "Date Night", "Dinner", "Travel Day", "Family Event", "Special Occasion", "Weekend Outing"];
-  const moodOptions = ["Cozy", "Confident", "Feminine", "Powerful", "Relaxed", "Elegant", "Romantic", "Minimalist", "Playful"];
-  const comfortOptions = ["Maximum Comfort", "Comfortable but Stylish", "Balanced", "Style First", "Statement Look"];
-  const effortOptions = ["Quick & Easy", "Everyday Ready", "Well Put Together", "Full Styled Look"];
-  const environmentOptions = ["Office", "City", "Outdoor", "Home", "Travel", "Social Event"];
-
-  const temperatureAdjustments = {
-    Freezing: [
-      "Add a thermal layer, closed shoes, and warm structure.",
-      "This temperature needs real warmth, not just visual balance.",
-      "Keep the outfit winter-ready with protective layers."
-    ],
-    Cold: [
-      "A knit layer or coat keeps the outfit balanced and realistic.",
-      "Closed-toe shoes make much more sense here.",
-      "This look works best with warmth built in."
-    ],
-    Cool: [
-      "Light layering helps the outfit feel complete.",
-      "Closed-toe shoes or ankle boots make the outfit more grounded.",
-      "This is the kind of weather where one extra layer helps."
-    ],
-    Mild: [
-      "You can keep the outfit balanced without heavy layers.",
-      "This weather allows a cleaner silhouette without too much bulk.",
-      "A light layer is optional, not required."
-    ],
-    Warm: [
-      "Breathable fabrics keep the look more comfortable.",
-      "Lighter structure usually works better here than anything heavy.",
-      "This outfit should feel easier and more open."
-    ],
-    Hot: [
-      "The look should stay light, breathable, and easy to wear.",
-      "Heavy layering would fight against the weather here.",
-      "Airier fabrics and lower bulk make the most sense."
-    ]
-  };
-
-  const families = {
-    polishedWork: {
-      tops: [
-        "structured button-up blouse",
-        "clean collared shirt",
-        "sharp V-neck top",
-        "refined mock-neck knit top",
-        "tailored square-neck blouse"
-      ],
-      bottoms: [
-        "tailored ankle trousers",
-        "straight-leg work pants",
-        "polished midi skirt",
-        "wide-leg trousers"
-      ],
-      shoes: [
-        "classic loafers",
-        "low block heels",
-        "pointed ballet flats",
-        "ankle boots"
-      ],
-      outerwear: [
-        "tailored blazer",
-        "soft trench",
-        "structured layer",
-        "cropped structured layer"
-      ]
-    },
-
-    cityWork: {
-      tops: [
-        "clean collared shirt",
-        "sleek square-neck fitted top",
-        "silk-look blouse",
-        "polished high-neck top",
-        "sharp V-neck top",
-        "refined draped blouse"
-      ],
-      bottoms: [
-        "straight-leg work pants",
-        "wide-leg trousers",
-        "polished midi skirt",
-        "dark straight jeans",
-        "tailored ankle trousers"
-      ],
-      shoes: [
-        "classic loafers",
-        "pointed ballet flats",
-        "low block heels",
-        "ankle boots",
-        "refined slingback flats"
-      ],
-      outerwear: [
-        "soft tailored blazer",
-        "cropped layer",
-        "trench coat",
-        "structured layer",
-        "city blazer"
-      ]
-    },
-
-    relaxedHome: {
-      tops: [
-        "soft cotton crewneck tee",
-        "soft jersey tee",
-        "light relaxed knit top",
-        "fine-rib round-neck cardigan",
-        "soft knit sweater"
-      ],
-      bottoms: [
-        "soft straight pants",
-        "relaxed trousers",
-        "straight jeans",
-        "soft midi skirt",
-        "easy leggings"
-      ],
-      shoes: [
-        "soft flats",
-        "easy slip-on flats",
-        "comfort slides",
-        "soft house slippers"
-      ],
-      outerwear: [
-        "no outerwear needed",
-        "light cardigan",
-        "soft knit layer"
-      ]
-    },
-
-    everydayCity: {
-      tops: [
-        "clean crew-neck top",
-        "soft draped blouse",
-        "light puff-sleeve blouse",
-        "classic Breton stripe tee",
-        "easy V-neck knit top",
-        "sleek sleeveless top"
-      ],
-      bottoms: [
-        "straight jeans",
-        "cropped casual pants",
-        "soft midi skirt",
-        "relaxed straight-leg trousers",
-        "relaxed city trousers"
-      ],
-      shoes: [
-        "white sneakers",
-        "soft leather loafers",
-        "ballet flats",
-        "sleek ankle boots",
-        "polished flats"
-      ],
-      outerwear: [
-        "cropped layer",
-        "soft trench",
-        "relaxed blazer",
-        "light cardigan",
-        "no outerwear needed"
-      ]
-    },
-
-    coffeePolished: {
-      tops: [
-        "soft wrap blouse with a gentle V-neck",
-        "clean bateau-neck knit top",
-        "light puff-sleeve blouse",
-        "soft satin blouse",
-        "scoop-neck knit top",
-        "feminine square-neck top",
-        "soft draped blouse"
-      ],
-      bottoms: [
-        "wide-leg trousers",
-        "easy A-line skirt",
-        "ankle-length pants",
-        "soft flowy midi skirt",
-        "clean straight jeans"
-      ],
-      shoes: [
-        "loafers",
-        "ballet flats",
-        "ankle boots",
-        "polished flats",
-        "minimal sneakers"
-      ],
-      outerwear: [
-        "soft tailored blazer",
-        "cropped layer",
-        "soft daytime layer",
-        "trench coat",
-        "light cardigan"
-      ]
-    },
-
-    dateRomantic: {
-      tops: [
-        "soft wrap blouse with a gentle V-neck",
-        "gentle sweetheart-neck blouse",
-        "soft ruffle blouse",
-        "soft satin blouse",
-        "delicate wrap top"
-      ],
-      bottoms: [
-        "slip midi skirt",
-        "sleek midi skirt",
-        "tailored trousers",
-        "dark straight jeans"
-      ],
-      shoes: [
-        "elegant heels",
-        "pointed slingbacks",
-        "polished flats",
-        "sleek ankle boots"
-      ],
-      outerwear: [
-        "tailored blazer",
-        "tailored coat",
-        "soft tailored blazer",
-        "no outerwear needed",
-        "cropped blazer"
-      ]
-    },
-
-    dateConfident: {
-      tops: [
-        "sleek square-neck fitted top",
-        "sharp V-neck top",
-        "structured collared shirt",
-        "clean bateau-neck knit top",
-        "tailored square-neck blouse"
-      ],
-      bottoms: [
-        "dark straight jeans",
-        "tailored trousers",
-        "slip midi skirt",
-        "wide-leg trousers"
-      ],
-      shoes: [
-        "pointed slingbacks",
-        "elegant heels",
-        "sleek ankle boots",
-        "pointed ballet flats"
-      ],
-      outerwear: [
-        "tailored blazer",
-        "tailored coat",
-        "structured layer",
-        "no outerwear needed"
-      ]
-    },
-
-    dinnerElegant: {
-      tops: [
-        "silk-look blouse",
-        "soft satin blouse",
-        "refined mock-neck knit top",
-        "soft draped blouse",
-        "clean bateau-neck knit top"
-      ],
-      bottoms: [
-        "satin midi skirt",
-        "elegant trousers",
-        "polished wide-leg pants",
-        "dark denim"
-      ],
-      shoes: [
-        "elegant heels",
-        "pointed slingbacks",
-        "polished flats",
-        "heeled ankle boots"
-      ],
-      outerwear: [
-        "tailored coat",
-        "tailored blazer",
-        "soft tailored blazer",
-        "no outerwear needed",
-        "sleek longline jacket"
-      ]
-    },
-
-    travelSmart: {
-      tops: [
-        "soft jersey tee",
-        "light relaxed knit top",
-        "clean crew-neck top",
-        "soft draped blouse",
-        "fine-rib round-neck cardigan"
-      ],
-      bottoms: [
-        "stretch trousers",
-        "travel-friendly pants",
-        "pull-on ankle pants",
-        "relaxed jeans"
-      ],
-      shoes: [
-        "comfort sneakers",
-        "comfortable loafers",
-        "soft ballet flats",
-        "slip-on flats"
-      ],
-      outerwear: [
-        "light cardigan",
-        "cropped layer",
-        "trench coat",
-        "no outerwear needed",
-        "light zip jacket"
-      ]
-    },
-
-    familySoft: {
-      tops: [
-        "soft wrap blouse with a gentle V-neck",
-        "light puff-sleeve blouse",
-        "fine-rib round-neck cardigan",
-        "soft draped blouse",
-        "gentle scoop-neck knit top",
-        "soft gathered blouse"
-      ],
-      bottoms: [
-        "comfortable jeans",
-        "simple midi skirt",
-        "soft straight pants",
-        "relaxed cotton midi skirt",
-        "soft tailored trousers"
-      ],
-      shoes: [
-        "comfort flats",
-        "soft ballet flats",
-        "easy loafers",
-        "ankle boots",
-        "clean everyday sneakers"
-      ],
-      outerwear: [
-        "light cardigan",
-        "soft knit layer",
-        "relaxed blazer",
-        "cropped layer",
-        "no outerwear needed"
-      ]
-    },
-
-    specialDressy: {
-      tops: [
-        "silk-look blouse",
-        "soft satin blouse",
-        "polished high-neck top",
-        "tailored square-neck blouse",
-        "refined mock-neck knit top"
-      ],
-      bottoms: [
-        "elegant midi skirt",
-        "tailored wide-leg pants",
-        "dressy trousers",
-        "sleek column skirt"
-      ],
-      shoes: [
-        "statement heels",
-        "elegant heeled sandals",
-        "elegant flats",
-        "dressy ankle boots"
-      ],
-      outerwear: [
-        "tailored coat",
-        "tailored blazer",
-        "soft tailored blazer",
-        "no outerwear needed",
-        "refined longline jacket"
-      ]
-    },
-
-    weekendRelaxed: {
-      tops: [
-        "light relaxed knit top",
-        "color-pop knit top",
-        "refined knit cardigan top",
-        "soft weekend knit sweater",
-        "easy slouchy knit top",
-        "casual stripe tee"
-      ],
-      bottoms: [
-        "relaxed denim",
-        "soft wide-leg pants",
-        "easy pull-on trousers",
-        "relaxed A-line skirt",
-        "relaxed lounge trousers"
-      ],
-      shoes: [
-        "sneakers",
-        "casual boots",
-        "flat sandals",
-        "easy slip-on flats",
-        "soft leather loafers"
-      ],
-      outerwear: [
-        "throw-on cardigan",
-        "light casual layer",
-        "cropped layer",
-        "no outerwear needed",
-        "easy weekend layer"
-      ]
-    },
-
-    outdoorEasy: {
-      tops: [
-        "soft cotton crewneck tee",
-        "light relaxed knit top",
-        "soft jersey tee",
-        "refined knit cardigan top",
-        "classic Breton stripe tee"
-      ],
-      bottoms: [
-        "relaxed denim",
-        "easy pull-on trousers",
-        "cropped casual pants",
-        "soft straight pants"
-      ],
-      shoes: [
-        "sneakers",
-        "sleek ankle boots",
-        "comfort flats",
-        "comfortable loafers"
-      ],
-      outerwear: [
-        "light zip jacket",
-        "structured layer",
-        "light tailored coat",
-        "light cardigan",
-        "light trench coat"
-      ]
-    }
-  };
-
-  let generateCount = 0;
-  let surpriseActive = false;
-
-  function choose(arr, a = 0, b = 0) {
-    return arr[(a + b + arr.length) % arr.length];
-  }
-
-  function fillSelect(id, options, defaultValue) {
-    const el = document.getElementById(id);
-    el.innerHTML = options.map(opt => `<option value="${opt}">${opt}</option>`).join("");
-    el.value = defaultValue;
-  }
-
-  function fillAll() {
-    fillSelect("weather", weatherOptions, "Sunny");
-    fillSelect("temperature", temperatureOptions, "Mild");
-    fillSelect("occasion", occasionOptions, "Casual Day");
-    fillSelect("mood", moodOptions, "Relaxed");
-    fillSelect("comfort", comfortOptions, "Balanced");
-    fillSelect("effort", effortOptions, "Everyday Ready");
-    fillSelect("environment", environmentOptions, "City");
-  }
-
-  function currentForm() {
-    return {
-      name: document.getElementById("name").value.trim(),
-      weather: document.getElementById("weather").value,
-      temperature: document.getElementById("temperature").value,
-      occasion: document.getElementById("occasion").value,
-      mood: document.getElementById("mood").value,
-      comfort: document.getElementById("comfort").value,
-      effort: document.getElementById("effort").value,
-      environment: document.getElementById("environment").value
+    const options = {
+      weather: ["Sunny", "Cloudy", "Rainy", "Windy", "Snowy", "Stormy", "Mixed Weather"],
+      temperature: ["Freezing", "Cold", "Cool", "Mild", "Warm", "Hot"],
+      occasion: ["Work", "Casual Day", "Coffee Meeting", "Date Night", "Dinner", "Travel Day", "Family Event", "Special Occasion", "Weekend Outing"],
+      mood: ["Cozy", "Confident", "Feminine", "Powerful", "Relaxed", "Elegant", "Romantic", "Minimalist", "Playful"],
+      comfort: ["Maximum Comfort", "Comfortable but Stylish", "Balanced", "Style First", "Statement Look"],
+      effort: ["Quick & Easy", "Everyday Ready", "Well Put Together", "Full Styled Look"],
+      environment: ["Office", "City", "Outdoor", "Home", "Travel", "Social Event"],
+      styleDirection: ["Balanced", "More Feminine", "More Minimal", "More Polished", "More Comfortable", "More Statement"]
     };
-  }
 
-  function getFamily(form) {
-    if (form.occasion === "Work" && form.environment === "Office") return "polishedWork";
-    if (form.occasion === "Work") return "cityWork";
-    if (form.occasion === "Casual Day" && form.environment === "Home") return "relaxedHome";
-    if (form.occasion === "Casual Day" && form.environment === "Outdoor") return "outdoorEasy";
-    if (form.occasion === "Casual Day") return "everydayCity";
-    if (form.occasion === "Coffee Meeting") return "coffeePolished";
-    if (form.occasion === "Date Night" && ["Romantic", "Feminine", "Elegant"].includes(form.mood)) return "dateRomantic";
-    if (form.occasion === "Date Night") return "dateConfident";
-    if (form.occasion === "Dinner") return "dinnerElegant";
-    if (form.occasion === "Travel Day") return "travelSmart";
-    if (form.occasion === "Family Event") return "familySoft";
-    if (form.occasion === "Special Occasion") return "specialDressy";
-    return "weekendRelaxed";
-  }
-
-  function filterForTemperature(top, shoes, outerwear, form, baseIndex) {
-    let nextTop = top;
-    let nextShoes = shoes;
-    let nextOuterwear = outerwear;
-
-   if (form.temperature === "Hot") {
-  const romanticDatePriority =
-    form.occasion === "Date Night" &&
-    ["Romantic", "Feminine", "Elegant"].includes(form.mood) &&
-    ["Style First", "Statement Look"].includes(form.comfort);
-
-  if (romanticDatePriority) {
-    nextTop = choose([
-      "soft wrap blouse with a gentle V-neck",
-      "gentle sweetheart-neck blouse",
-      "silk-look blouse",
-      "delicate draped top",
-      "feminine square-neck top"
-    ], baseIndex);
-  } else {
-    nextTop = choose([
-      "light scoop-neck top",
-      "soft draped blouse",
-      "soft cotton crewneck tee",
-      "sleek sleeveless shell top"
-    ], baseIndex);
-  }
-
-  if (["warm wool-blend coat", "puffer coat", "warm winter coat", "tailored coat"].includes(nextOuterwear)) {
-    nextOuterwear = "no outerwear needed";
-  }
-
-  if (["ankle boots", "dressy ankle boots", "tall boots", "winter-ready boots"].includes(nextShoes)) {
-    nextShoes = choose([
-      "white sneakers",
-      "soft leather loafers",
-      "comfort flats",
-      "elegant flats",
-      "low block heels"
-    ], baseIndex);
-  }
-}
-    if (["Freezing", "Cold", "Cool"].includes(form.temperature)) {
-      if (["flat sandals", "elegant heeled sandals"].includes(nextShoes)) nextShoes = "ankle boots";
-      if (form.temperature === "Freezing") {
-        nextOuterwear = choose(["warm wool-blend coat", "puffer coat", "warm winter coat"], baseIndex);
+    const families = {
+      polishedWork: {
+        tops: ["structured button-up blouse", "clean collared shirt", "refined mock-neck knit top", "tailored square-neck blouse", "silk-look blouse"],
+        bottoms: ["tailored ankle trousers", "straight-leg work pants", "polished midi skirt", "wide-leg trousers"],
+        shoes: ["classic loafers", "low block heels", "pointed ballet flats", "ankle boots"],
+        outerwear: ["tailored blazer", "soft trench", "structured layer", "cropped structured jacket"]
+      },
+      relaxedHome: {
+        tops: ["soft cotton crewneck tee", "light relaxed knit top", "fine-rib cardigan top", "soft knit sweater"],
+        bottoms: ["soft straight pants", "relaxed trousers", "straight jeans", "easy leggings"],
+        shoes: ["soft flats", "easy slip-on flats", "comfort slides", "soft house slippers"],
+        outerwear: ["no outerwear needed", "light cardigan", "soft knit layer"]
+      },
+      everydayCity: {
+        tops: ["clean crew-neck top", "soft draped blouse", "classic Breton stripe tee", "easy V-neck knit top", "sleek sleeveless top"],
+        bottoms: ["straight jeans", "cropped casual pants", "soft midi skirt", "relaxed city trousers"],
+        shoes: ["white sneakers", "soft leather loafers", "ballet flats", "sleek ankle boots"],
+        outerwear: ["cropped layer", "soft trench", "relaxed blazer", "light cardigan", "no outerwear needed"]
+      },
+      coffeePolished: {
+        tops: ["soft wrap blouse with a gentle V-neck", "clean bateau-neck knit top", "soft satin blouse", "feminine square-neck top"],
+        bottoms: ["wide-leg trousers", "easy A-line skirt", "ankle-length pants", "clean straight jeans"],
+        shoes: ["loafers", "ballet flats", "ankle boots", "minimal sneakers"],
+        outerwear: ["soft tailored blazer", "cropped layer", "trench coat", "light cardigan"]
+      },
+      dateRomantic: {
+        tops: ["soft wrap blouse with a gentle V-neck", "gentle sweetheart-neck blouse", "soft ruffle blouse", "soft satin blouse"],
+        bottoms: ["slip midi skirt", "sleek midi skirt", "tailored trousers", "dark straight jeans"],
+        shoes: ["elegant heels", "pointed slingbacks", "polished flats", "sleek ankle boots"],
+        outerwear: ["tailored blazer", "tailored coat", "soft tailored blazer", "no outerwear needed"]
+      },
+      dinnerElegant: {
+        tops: ["silk-look blouse", "soft satin blouse", "refined mock-neck knit top", "soft draped blouse"],
+        bottoms: ["satin midi skirt", "elegant trousers", "polished wide-leg pants", "dark denim"],
+        shoes: ["elegant heels", "pointed slingbacks", "polished flats", "heeled ankle boots"],
+        outerwear: ["tailored coat", "tailored blazer", "soft tailored blazer", "sleek longline jacket"]
+      },
+      travelSmart: {
+        tops: ["soft jersey tee", "light relaxed knit top", "clean crew-neck top", "fine-rib cardigan top"],
+        bottoms: ["stretch trousers", "travel-friendly pants", "pull-on ankle pants", "relaxed jeans"],
+        shoes: ["comfort sneakers", "comfortable loafers", "soft ballet flats", "slip-on flats"],
+        outerwear: ["light cardigan", "cropped layer", "trench coat", "light zip jacket"]
+      },
+      familySoft: {
+        tops: ["soft wrap blouse with a gentle V-neck", "light puff-sleeve blouse", "fine-rib cardigan top", "soft gathered blouse"],
+        bottoms: ["comfortable jeans", "simple midi skirt", "soft straight pants", "soft tailored trousers"],
+        shoes: ["comfort flats", "soft ballet flats", "easy loafers", "clean everyday sneakers"],
+        outerwear: ["light cardigan", "soft knit layer", "relaxed blazer", "cropped layer"]
+      },
+      specialDressy: {
+        tops: ["silk-look blouse", "soft satin blouse", "polished high-neck top", "tailored square-neck blouse"],
+        bottoms: ["elegant midi skirt", "tailored wide-leg pants", "dressy trousers", "sleek column skirt"],
+        shoes: ["statement heels", "elegant heeled sandals", "elegant flats", "dressy ankle boots"],
+        outerwear: ["tailored coat", "tailored blazer", "soft tailored blazer", "refined longline jacket"]
+      },
+      weekendRelaxed: {
+        tops: ["light relaxed knit top", "color-pop knit top", "soft weekend knit sweater", "casual stripe tee"],
+        bottoms: ["relaxed denim", "soft wide-leg pants", "easy pull-on trousers", "relaxed A-line skirt"],
+        shoes: ["sneakers", "casual boots", "flat sandals", "easy slip-on flats"],
+        outerwear: ["throw-on cardigan", "light casual layer", "cropped layer", "no outerwear needed"]
+      },
+      outdoorEasy: {
+        tops: ["soft cotton crewneck tee", "light relaxed knit top", "classic Breton stripe tee", "soft jersey tee"],
+        bottoms: ["relaxed denim", "easy pull-on trousers", "cropped casual pants", "soft straight pants"],
+        shoes: ["sneakers", "sleek ankle boots", "comfort flats", "comfortable loafers"],
+        outerwear: ["light zip jacket", "structured layer", "light trench coat", "light cardigan"]
       }
-    }
-
-    return { top: nextTop, shoes: nextShoes, outerwear: nextOuterwear };
-  }
-
-  function applyWeatherRules(top, bottom, shoes, outerwear, form, baseIndex) {
-    let nextTop = top;
-    let nextBottom = bottom;
-    let nextShoes = shoes;
-    let nextOuterwear = outerwear;
-
-    if (form.weather === "Rainy") {
-      nextShoes = choose([
-        "ankle boots",
-        "sleek ankle boots",
-        "comfortable loafers",
-        "comfort flats"
-      ], baseIndex);
-
-      nextOuterwear = choose([
-        "classic trench",
-        "light weatherproof jacket",
-        "light rain layer",
-        "tailored rain jacket"
-      ], baseIndex);
-    }
-
-    if (form.weather === "Snowy") {
-      nextShoes = choose([
-        "tall boots",
-        "ankle boots",
-        "winter-ready boots",
-        "warm lined ankle boots"
-      ], baseIndex);
-
-      nextOuterwear = choose([
-        "warm wool-blend coat",
-        "puffer coat",
-        "warm winter coat",
-        "warm tailored coat"
-      ], baseIndex);
-    }
-
-    if (form.weather === "Windy") {
-      if (
-        !["Rainy", "Snowy"].includes(form.weather)
-      ) {
-        nextOuterwear = choose([
-          "structured layer",
-          "light tailored coat",
-          "light trench coat",
-          "light zip jacket"
-        ], baseIndex);
-      }
-    }
-
-    if (
-      form.weather === "Sunny" &&
-      !["Cold", "Freezing"].includes(form.temperature)
-    ) {
-      if (
-        ["trench coat", "light tailored coat", "warm tailored coat"].includes(nextOuterwear)
-      ) {
-        nextOuterwear = choose([
-          "no outerwear needed",
-          "light cardigan",
-          "soft tailored blazer"
-        ], baseIndex);
-      }
-    }
-
-    return {
-      top: nextTop,
-      bottom: nextBottom,
-      shoes: nextShoes,
-      outerwear: nextOuterwear
     };
-  }
 
-  function applyComfortRules(top, bottom, shoes, outerwear, form, baseIndex) {
-    let nextTop = top;
-    let nextBottom = bottom;
-    let nextShoes = shoes;
-    let nextOuterwear = outerwear;
+    const stylingDetails = [
+      "Keep the colors connected with one repeated shade in your shoes, bag or accessory.",
+      "Add one intentional accessory so the outfit feels styled instead of accidental.",
+      "Use a clean front tuck or defined waist to make the look feel more finished.",
+      "Keep the outfit balanced by mixing one structured piece with one softer piece.",
+      "Choose simple jewelry and let the silhouette do most of the work."
+    ];
 
-    const officeComfortLock =
-      form.occasion === "Work" &&
-      form.environment === "Office" &&
-      form.comfort === "Maximum Comfort";
+    const alternativeTwists = [
+      "Swap the shoes for a flatter option if you want the same vibe with more comfort.",
+      "Add a belt or small bag if you want the outfit to feel more intentional.",
+      "Choose a softer color palette if you want the look to feel more feminine.",
+      "Use a darker base if you want the outfit to feel more polished.",
+      "Remove one accessory if you prefer a cleaner, more minimal version."
+    ];
 
-    if (form.comfort === "Maximum Comfort") {
-      if (officeComfortLock) {
-        nextShoes = choose([
-          "classic loafers",
-          "pointed ballet flats",
-          "polished comfort flats",
-          "low block heels"
-        ], baseIndex);
+    const notes = {
+      Freezing: "This temperature needs real warmth, not just a cute silhouette.",
+      Cold: "The outfit keeps warmth built in while still looking intentional.",
+      Cool: "A light layer helps the look feel complete without becoming heavy.",
+      Mild: "This weather allows a cleaner silhouette without too much bulk.",
+      Warm: "Breathable pieces keep the outfit comfortable and realistic.",
+      Hot: "The result avoids heavy layering so the outfit stays wearable."
+    };
 
-        nextBottom = choose([
-          "tailored ankle trousers",
-          "straight-leg work pants",
-          "wide-leg trousers",
-          "polished midi skirt"
-        ], baseIndex);
+    let generation = 0;
+    let refineMode = "";
 
-        if (
-          nextTop.includes("tee") ||
-          nextTop.includes("jersey")
-        ) {
-          nextTop = choose([
-            "clean collared shirt",
-            "soft V-neck top",
-            "refined mock-neck knit top",
-            "sleek square-neck fitted top"
-          ], baseIndex);
-        }
-      } else {
-        nextShoes = choose([
-          "comfort sneakers",
-          "soft flats",
-          "comfortable loafers",
-          "easy slip-on flats"
-        ], baseIndex);
+    function el(id) {
+      return document.getElementById(id);
+    }
 
-        nextBottom = choose([
-          "soft travel pants",
-          "relaxed trousers",
-          "straight jeans",
-          "soft straight pants"
-        ], baseIndex);
+    function fillSelect(id, list, value) {
+      el(id).innerHTML = list.map(item => `<option value="${item}">${item}</option>`).join("");
+      el(id).value = value;
+    }
+
+    function initForm() {
+      fillSelect("weather", options.weather, "Sunny");
+      fillSelect("temperature", options.temperature, "Mild");
+      fillSelect("occasion", options.occasion, "Casual Day");
+      fillSelect("mood", options.mood, "Relaxed");
+      fillSelect("comfort", options.comfort, "Balanced");
+      fillSelect("effort", options.effort, "Everyday Ready");
+      fillSelect("environment", options.environment, "City");
+      fillSelect("styleDirection", options.styleDirection, "Balanced");
+    }
+
+    function formData() {
+      return {
+        name: el("name").value.trim(),
+        weather: el("weather").value,
+        temperature: el("temperature").value,
+        occasion: el("occasion").value,
+        mood: el("mood").value,
+        comfort: el("comfort").value,
+        effort: el("effort").value,
+        environment: el("environment").value,
+        styleDirection: el("styleDirection").value
+      };
+    }
+
+    function pick(arr, offset = 0) {
+      return arr[Math.abs(generation + offset) % arr.length];
+    }
+
+    function familyKey(form) {
+      if (form.occasion === "Work") return "polishedWork";
+      if (form.occasion === "Casual Day" && form.environment === "Home") return "relaxedHome";
+      if (form.occasion === "Casual Day" && form.environment === "Outdoor") return "outdoorEasy";
+      if (form.occasion === "Casual Day") return "everydayCity";
+      if (form.occasion === "Coffee Meeting") return "coffeePolished";
+      if (form.occasion === "Date Night") return ["Romantic", "Feminine", "Elegant"].includes(form.mood) ? "dateRomantic" : "dinnerElegant";
+      if (form.occasion === "Dinner") return "dinnerElegant";
+      if (form.occasion === "Travel Day") return "travelSmart";
+      if (form.occasion === "Family Event") return "familySoft";
+      if (form.occasion === "Special Occasion") return "specialDressy";
+      return "weekendRelaxed";
+    }
+
+    function baseOutfit(form) {
+      const fam = families[familyKey(form)];
+      return {
+        top: pick(fam.tops, 1),
+        bottom: pick(fam.bottoms, 2),
+        shoes: pick(fam.shoes, 3),
+        outerwear: pick(fam.outerwear, 4)
+      };
+    }
+
+    function weatherRules(outfit, form) {
+      if (form.weather === "Rainy" || form.weather === "Stormy") {
+        outfit.shoes = pick(["ankle boots", "sleek ankle boots", "comfortable loafers", "weather-friendly flats"], 5);
+        outfit.outerwear = pick(["classic trench", "light weatherproof jacket", "tailored rain jacket", "practical structured layer"], 6);
       }
+
+      if (form.weather === "Snowy") {
+        outfit.shoes = pick(["winter-ready boots", "warm lined ankle boots", "tall boots", "ankle boots"], 7);
+        outfit.outerwear = pick(["warm wool-blend coat", "puffer coat", "warm winter coat", "warm tailored coat"], 8);
+      }
+
+      if (form.weather === "Windy") {
+        outfit.outerwear = pick(["structured layer", "light tailored coat", "light trench coat", "light zip jacket"], 9);
+      }
+
+      return outfit;
     }
 
-    if (form.comfort === "Style First") {
-      nextShoes = choose([
-        "pointed ballet flats",
-        "ankle boots",
-        "elegant heels",
-        "pointed slingbacks"
-      ], baseIndex);
-    }
+    function temperatureRules(outfit, form) {
+      if (form.temperature === "Hot") {
+        outfit.top = pick(["light scoop-neck top", "soft draped blouse", "sleek sleeveless shell top", "breathable cotton blouse"], 10);
 
-    if (form.comfort === "Statement Look") {
-      nextTop = choose([
-        "statement blouse with a clean neckline",
-        "bold tailored top",
-        "statement knit top",
-        "soft statement-sleeve blouse"
-      ], baseIndex);
-    }
-
-    return { top: nextTop, bottom: nextBottom, shoes: nextShoes, outerwear: nextOuterwear };
-  }
-
-  function applyEffortRules(top, bottom, shoes, outerwear, form, baseIndex) {
-    let nextTop = top;
-    let nextBottom = bottom;
-    let nextShoes = shoes;
-    let nextOuterwear = outerwear;
-
-    if (form.effort === "Quick & Easy") {
-      nextOuterwear = choose([
-        "easy cardigan",
-        "light jacket",
-        "no outerwear needed"
-      ], baseIndex);
-    }
-
-    if (form.effort === "Full Styled Look") {
-      const hotEveningLook =
-        form.temperature === "Hot" &&
-        ["Date Night", "Dinner", "Special Occasion"].includes(form.occasion);
-
-      const alreadyElegantShoes =
-        nextShoes.includes("heels") ||
-        nextShoes.includes("slingbacks") ||
-        nextShoes.includes("pointed") ||
-        nextShoes.includes("dress");
-
-      const alreadyPolishedOuterwear =
-        nextOuterwear.includes("blazer") ||
-        nextOuterwear.includes("tailored") ||
-        nextOuterwear.includes("structured") ||
-        nextOuterwear.includes("elegant");
-
-      if (hotEveningLook) {
-        if (
-          nextOuterwear.includes("coat") ||
-          nextOuterwear.includes("heavy") ||
-          nextOuterwear.includes("winter")
-        ) {
-          nextOuterwear = choose([
-            "no outerwear needed",
-            "light blazer",
-            "cropped blazer",
-            "light evening layer",
-            "light polished layer"
-          ], baseIndex);
+        if (outfit.outerwear.includes("coat") || outfit.outerwear.includes("puffer") || outfit.outerwear.includes("winter")) {
+          outfit.outerwear = "no outerwear needed";
         }
-      } else {
-        if (!alreadyPolishedOuterwear) {
-          nextOuterwear = choose([
-            "tailored blazer",
-            "refined longline jacket",
-            "soft tailored blazer",
-            "cropped blazer"
-          ], baseIndex);
+
+        if (["ankle boots", "dressy ankle boots", "winter-ready boots", "tall boots"].includes(outfit.shoes)) {
+          outfit.shoes = pick(["elegant flats", "soft leather loafers", "low block heels", "minimal sandals"], 11);
         }
       }
 
-      if (!alreadyElegantShoes) {
-        nextShoes = choose([
-          "pointed slingbacks",
-          "low block heels",
-          "elegant heels",
-          "polished flats"
-        ], baseIndex);
+      if (["Freezing", "Cold"].includes(form.temperature)) {
+        if (outfit.shoes.includes("sandals") || outfit.shoes.includes("slides")) {
+          outfit.shoes = pick(["ankle boots", "warm lined ankle boots", "classic loafers"], 12);
+        }
+
+        if (form.temperature === "Freezing") {
+          outfit.outerwear = pick(["warm wool-blend coat", "puffer coat", "warm winter coat"], 13);
+        }
       }
+
+      return outfit;
     }
 
-    return {
-      top: nextTop,
-      bottom: nextBottom,
-      shoes: nextShoes,
-      outerwear: nextOuterwear
-    };
-  }
+    function comfortRules(outfit, form) {
+      if (form.comfort === "Maximum Comfort" || form.styleDirection === "More Comfortable" || refineMode === "comfortable") {
+        outfit.shoes = pick(["comfort sneakers", "comfortable loafers", "soft ballet flats", "easy slip-on flats"], 14);
 
-  function applyEnvironmentRules(top, bottom, shoes, outerwear, form, baseIndex) {
-    let nextTop = top;
-    let nextBottom = bottom;
-    let nextShoes = shoes;
-    let nextOuterwear = outerwear;
-
-    if (form.environment === "Home") {
-      nextShoes = choose(["soft flats", "easy slip-on flats", "comfort slides"], baseIndex);
-      nextOuterwear = "no outerwear needed";
-    }
-
-    if (form.environment === "Travel") {
-      nextBottom = choose(["stretch trousers", "travel-friendly pants", "relaxed jeans", "pull-on ankle pants"], baseIndex);
-      nextShoes = choose(["comfort sneakers", "comfortable loafers", "soft ballet flats"], baseIndex);
-    }
-
-    if (form.environment === "Office" && form.occasion === "Work") {
-      nextShoes = choose(["classic loafers", "low block heels", "pointed ballet flats", "ankle boots"], baseIndex);
-      if (nextTop.includes("tee")) {
-        nextTop = choose(["structured button-up blouse", "clean collared shirt", "sharp V-neck top"], baseIndex);
+        if (form.occasion === "Work") {
+          outfit.bottom = pick(["tailored ankle trousers", "wide-leg trousers", "straight-leg work pants"], 15);
+        } else {
+          outfit.bottom = pick(["soft straight pants", "relaxed trousers", "straight jeans", "travel-friendly pants"], 16);
+        }
       }
-    }
 
-    return { top: nextTop, bottom: nextBottom, shoes: nextShoes, outerwear: nextOuterwear };
-  }
-
-  function applySurprise(top, bottom, shoes, outerwear, form, family, baseIndex, generation) {
-  let nextTop = top;
-  let nextBottom = bottom;
-  let nextShoes = shoes;
-  let nextOuterwear = outerwear;
-
-  const softerSwap = {
-    polishedWork: {
-      top: "soft V-neck top",
-      bottom: "tailored ankle trousers",
-      shoes: "pointed ballet flats",
-      outerwear: "soft tailored blazer"
-    },
-    cityWork: {
-      top: "refined draped blouse",
-      bottom: "tailored ankle trousers",
-      shoes: "refined slingback flats",
-      outerwear: "city blazer"
-    },
-    coffeePolished: {
-      top: "soft draped blouse",
-      bottom: "soft flowy midi skirt",
-      shoes: "polished flats",
-      outerwear: "soft daytime layer"
-    },
-    dateRomantic: {
-      top: "gentle sweetheart-neck blouse",
-      bottom: "slip midi skirt",
-      shoes: "pointed slingbacks",
-      outerwear: "light evening layer"
-    },
-    dateConfident: {
-      top: "silk-look blouse",
-      bottom: "tailored trousers",
-      shoes: "elegant heels",
-      outerwear: "cropped blazer"
-    },
-    dinnerElegant: {
-      top: "clean bateau-neck knit top",
-      bottom: "satin midi skirt",
-      shoes: "polished flats",
-      outerwear: "light polished layer"
-    },
-    travelSmart: {
-      top: "fine-rib round-neck cardigan",
-      bottom: "pull-on ankle pants",
-      shoes: "comfortable loafers",
-      outerwear: "light cardigan"
-    },
-    familySoft: {
-      top: "gentle scoop-neck knit top",
-      bottom: "relaxed cotton midi skirt",
-      shoes: "soft ballet flats",
-      outerwear: "soft knit layer"
-    },
-    weekendRelaxed: {
-      top: "easy V-neck knit top",
-      bottom: "relaxed A-line skirt",
-      shoes: "easy slip-on flats",
-      outerwear: "light casual layer"
-    },
-    outdoorEasy: {
-      top: "classic Breton stripe tee",
-      bottom: "cropped casual pants",
-      shoes: "sleek ankle boots",
-      outerwear: "light casual layer"
-    },
-    specialDressy: {
-      top: "refined mock-neck knit top",
-      bottom: "sleek column skirt",
-      shoes: "elegant flats",
-      outerwear: "light polished layer"
-    },
-    relaxedHome: {
-      top: "fine-rib round-neck cardigan",
-      bottom: "soft straight pants",
-      shoes: "soft flats",
-      outerwear: "no outerwear needed"
-    },
-    everydayCity: {
-      top: "light puff-sleeve blouse",
-      bottom: "soft midi skirt",
-      shoes: "ballet flats",
-      outerwear: "cropped layer"
-    }
-  };
-
-  const sharperSwap = {
-    polishedWork: {
-      top: "tailored square-neck blouse",
-      bottom: "wide-leg trousers",
-      shoes: "low block heels",
-      outerwear: "tailored blazer"
-    },
-    cityWork: {
-      top: "sleek square-neck fitted top",
-      bottom: "wide-leg trousers",
-      shoes: "low block heels",
-      outerwear: "structured layer"
-    },
-    coffeePolished: {
-      top: "feminine square-neck top",
-      bottom: "wide-leg trousers",
-      shoes: "loafers",
-      outerwear: "soft tailored blazer"
-    },
-    dateRomantic: {
-      top: "silk-look blouse",
-      bottom: "tailored trousers",
-      shoes: "elegant heels",
-      outerwear: "cropped blazer"
-    },
-    dateConfident: {
-      top: "tailored square-neck blouse",
-      bottom: "wide-leg trousers",
-      shoes: "pointed slingbacks",
-      outerwear: "tailored blazer"
-    },
-    dinnerElegant: {
-      top: "silk-look blouse",
-      bottom: "elegant trousers",
-      shoes: "pointed slingbacks",
-      outerwear: "soft tailored blazer"
-    },
-    travelSmart: {
-      top: "soft draped blouse",
-      bottom: "stretch trousers",
-      shoes: "soft ballet flats",
-      outerwear: "cropped layer"
-    },
-    familySoft: {
-      top: "soft wrap blouse with a gentle V-neck",
-      bottom: "easy trousers",
-      shoes: "easy loafers",
-      outerwear: "relaxed blazer"
-    },
-    weekendRelaxed: {
-      top: "color-pop knit top",
-      bottom: "soft wide-leg pants",
-      shoes: "loafers",
-      outerwear: "cropped layer"
-    },
-    outdoorEasy: {
-      top: "refined knit cardigan top",
-      bottom: "relaxed denim",
-      shoes: "comfortable loafers",
-      outerwear: "structured layer"
-    },
-    specialDressy: {
-      top: "tailored square-neck blouse",
-      bottom: "tailored wide-leg pants",
-      shoes: "statement heels",
-      outerwear: "tailored blazer"
-    },
-    relaxedHome: {
-      top: "soft knit sweater",
-      bottom: "soft midi skirt",
-      shoes: "soft house slippers",
-      outerwear: "no outerwear needed"
-    },
-    everydayCity: {
-      top: "soft draped blouse",
-      bottom: "cropped casual pants",
-      shoes: "soft leather loafers",
-      outerwear: "relaxed blazer"
-    }
-  };
-
-  const moodAccent = {
-    Cozy: "soft knit sweater",
-    Confident: "sleek square-neck fitted top",
-    Feminine: "soft wrap blouse with a gentle V-neck",
-    Powerful: "bold tailored top",
-    Relaxed: "light relaxed knit top",
-    Elegant: "clean bateau-neck knit top",
-    Romantic: "gentle sweetheart-neck blouse",
-    Minimalist: "refined mock-neck knit top",
-    Playful: "color-pop knit top"
-  };
-
-  const mode = generation % 3;
-
-  if (mode === 0 && softerSwap[family]) {
-    nextTop = softerSwap[family].top;
-    nextBottom = softerSwap[family].bottom;
-    nextShoes = softerSwap[family].shoes;
-    nextOuterwear = softerSwap[family].outerwear;
-  }
-
-  if (mode === 1 && sharperSwap[family]) {
-    nextTop = sharperSwap[family].top;
-    nextBottom = sharperSwap[family].bottom;
-    nextShoes = sharperSwap[family].shoes;
-    nextOuterwear = sharperSwap[family].outerwear;
-  }
-
-  if (mode === 2) {
-    nextTop = moodAccent[form.mood] || nextTop;
-
-    if (["Romantic", "Feminine", "Elegant"].includes(form.mood) && !["Work", "Travel Day"].includes(form.occasion)) {
-      nextBottom = choose([
-        "slip midi skirt",
-        "soft flowy midi skirt",
-        "easy A-line skirt",
-        "polished midi skirt"
-      ], baseIndex);
-    }
-
-    if (["Confident", "Powerful", "Minimalist"].includes(form.mood)) {
-      nextBottom = choose([
-        "tailored ankle trousers",
-        "wide-leg trousers",
-        "straight-leg work pants",
-        "elegant trousers"
-      ], baseIndex);
-    }
-  }
-
-  if (form.weather === "Rainy") {
-    nextShoes = choose([
-      "ankle boots",
-      "sleek ankle boots",
-      "comfortable loafers",
-      "comfort flats"
-    ], baseIndex);
-
-    if (
-      nextOuterwear === "no outerwear needed" ||
-      nextOuterwear.includes("evening layer")
-    ) {
-      nextOuterwear = choose([
-        "classic trench",
-        "light weatherproof jacket",
-        "light rain layer"
-      ], baseIndex);
-    }
-  }
-
-  if (form.weather === "Snowy") {
-    nextShoes = choose([
-      "tall boots",
-      "ankle boots",
-      "winter-ready boots",
-      "warm lined ankle boots"
-    ], baseIndex);
-
-    nextOuterwear = choose([
-      "warm wool-blend coat",
-      "puffer coat",
-      "warm winter coat",
-      "warm tailored coat"
-    ], baseIndex);
-  }
-
-  if (form.environment === "Home") {
-    nextShoes = "soft flats";
-    nextOuterwear = "no outerwear needed";
-  }
-
-  if (
-    form.temperature === "Hot" &&
-    ["Date Night", "Dinner", "Special Occasion"].includes(form.occasion) &&
-    (nextOuterwear.includes("coat") || nextOuterwear.includes("winter"))
-  ) {
-    nextOuterwear = choose([
-      "no outerwear needed",
-      "light blazer",
-      "cropped blazer",
-      "light evening layer",
-      "light polished layer"
-    ], baseIndex);
-  }
-
-  return {
-    top: nextTop,
-    bottom: nextBottom,
-    shoes: nextShoes,
-    outerwear: nextOuterwear
-  };
-}
-
-function applyFinalHardLock(top, bottom, shoes, outerwear, form, baseIndex) {
-  let nextTop = top;
-  let nextBottom = bottom;
-  let nextShoes = shoes;
-  let nextOuterwear = outerwear;
-
-  if (form.weather === "Rainy") {
-    nextShoes = choose([
-      "ankle boots",
-      "sleek ankle boots",
-      "comfortable loafers",
-      "comfort flats"
-    ], baseIndex);
-
-    if (
-      nextOuterwear === "no outerwear needed" ||
-      nextOuterwear.includes("evening layer") ||
-      nextOuterwear.includes("light layer")
-    ) {
-      nextOuterwear = choose([
-        "classic trench",
-        "light weatherproof jacket",
-        "light rain layer"
-      ], baseIndex);
-    }
-  }
-
-  if (form.weather === "Snowy") {
-    nextShoes = choose([
-      "tall boots",
-      "ankle boots",
-      "winter-ready boots",
-      "warm lined ankle boots"
-    ], baseIndex);
-
-    nextOuterwear = choose([
-      "warm wool-blend coat",
-      "puffer coat",
-      "warm winter coat",
-      "warm tailored coat"
-    ], baseIndex);
-  }
-
-  if (form.environment === "Office" && form.occasion === "Work") {
-    if (
-      nextBottom.includes("jeans") ||
-      nextBottom.includes("leggings") ||
-      nextBottom.includes("travel pants")
-    ) {
-      nextBottom = choose([
-        "tailored ankle trousers",
-        "straight-leg work pants",
-        "wide-leg trousers",
-        "polished midi skirt"
-      ], baseIndex);
-    }
-
-    if (
-      nextShoes.includes("sneakers") ||
-      nextShoes.includes("slip-on") ||
-      nextShoes.includes("slides")
-    ) {
-      nextShoes = choose([
-        "classic loafers",
-        "pointed ballet flats",
-        "polished comfort flats",
-        "low block heels"
-      ], baseIndex);
-    }
-  }
-
-  if (form.environment === "Travel") {
-    if (
-      nextShoes.includes("heels") ||
-      nextShoes.includes("slingbacks") ||
-      nextShoes.includes("statement")
-    ) {
-      nextShoes = choose([
-        "comfort sneakers",
-        "comfortable loafers",
-        "soft ballet flats",
-        "slip-on flats"
-      ], baseIndex);
-    }
-
-    if (
-      nextBottom.includes("column skirt") ||
-      nextBottom.includes("slip midi skirt")
-    ) {
-      nextBottom = choose([
-        "stretch trousers",
-        "travel-friendly pants",
-        "pull-on ankle pants",
-        "relaxed jeans"
-      ], baseIndex);
-    }
-  }
-
-  if (form.environment === "Home") {
-    nextShoes = "soft flats";
-    nextOuterwear = "no outerwear needed";
-  }
-
-  if (["Hot"].includes(form.temperature)) {
-    if (
-      nextOuterwear.includes("coat") ||
-      nextOuterwear.includes("winter") ||
-      nextOuterwear.includes("puffer")
-    ) {
-      if (["Date Night", "Dinner", "Special Occasion"].includes(form.occasion)) {
-        nextOuterwear = choose([
-          "no outerwear needed",
-          "light blazer",
-          "cropped blazer",
-          "light evening layer",
-          "light polished layer"
-        ], baseIndex);
-      } else {
-        nextOuterwear = choose([
-          "no outerwear needed",
-          "light cardigan",
-          "soft tailored blazer"
-        ], baseIndex);
+      if (form.comfort === "Style First" || form.comfort === "Statement Look") {
+        outfit.shoes = pick(["pointed slingbacks", "elegant heels", "pointed ballet flats", "sleek ankle boots"], 17);
       }
-    }
-  }
 
-  if (["Freezing", "Cold", "Cool"].includes(form.temperature)) {
-    if (
-      nextShoes.includes("sandals") ||
-      nextShoes.includes("heels") && form.weather === "Snowy"
-    ) {
-      nextShoes = choose([
-        "ankle boots",
-        "sleek ankle boots",
-        "tall boots",
-        "winter-ready boots"
-      ], baseIndex);
-    }
-  }
-
-  return {
-    top: nextTop,
-    bottom: nextBottom,
-    shoes: nextShoes,
-    outerwear: nextOuterwear
-  };
-}
-
-function buildWhy(form, surprise) {
-  const weatherText = {
-    Sunny: "the brighter weather",
-    Cloudy: "the softer, more muted weather",
-    Rainy: "the rainy conditions",
-    Windy: "the windy conditions",
-    Snowy: "the cold snowy weather",
-    Stormy: "the stormy forecast",
-    "Mixed Weather": "the mixed conditions"
-  }[form.weather];
-
-  const occasionText = {
-    Work: "something polished and dependable",
-    "Casual Day": "something easy and naturally put together",
-    "Coffee Meeting": "something feminine but relaxed",
-    "Date Night": "something flattering and a little more special",
-    Dinner: "something refined without feeling overdone",
-    "Travel Day": "something practical that still looks considered",
-    "Family Event": "something soft, approachable, and pulled together",
-    "Special Occasion": "something elegant and intentionally styled",
-    "Weekend Outing": "something comfortable with a bit of personality"
-  }[form.occasion] || "something that feels right for the moment";
-
-  const moodText = {
-    Cozy: "softer textures and gentler structure",
-    Confident: "cleaner lines and a sharper finish",
-    Feminine: "a softer shape and more delicate styling",
-    Powerful: "more structure and visual definition",
-    Relaxed: "ease without losing shape",
-    Elegant: "refined lines and a smoother finish",
-    Romantic: "flattering details and softer movement",
-    Minimalist: "clean simplicity and restraint",
-    Playful: "a light twist without losing balance"
-  }[form.mood] || "a balanced styling direction";
-
-  let sentence1 = `This works because ${weatherText}, your ${form.occasion.toLowerCase()} plans, and your ${form.mood.toLowerCase()} mood all support ${occasionText}.`;
-
-  let sentence2 = `The styling leans into ${moodText}, so the look feels intentional rather than random.`;
-
-  if (form.comfort === "Maximum Comfort") {
-    sentence2 = "The softer balance keeps the outfit comfortable and easy to wear, without making it feel flat or careless.";
-  } else if (form.comfort === "Style First") {
-    sentence2 = "The stronger styling direction makes the look feel more elevated, while still keeping it wearable in real life.";
-  } else if (form.comfort === "Statement Look") {
-    sentence2 = "One stronger element gives the outfit more personality, while the rest keeps it balanced.";
-  }
-
-  if (form.effort === "Quick & Easy") {
-    sentence2 = "It also stays simple enough for a lower-effort day, which keeps the result realistic and easy to reach for.";
-  } else if (form.effort === "Full Styled Look") {
-    sentence2 = "It also feels more fully styled, with enough polish to look intentional from head to toe.";
-  }
-
-  if (surprise) {
-    sentence2 = "This version keeps the same logic, but adds a tasteful twist so the outfit feels fresher without becoming too much.";
-  }
-
-  return `${sentence1} ${sentence2}`;
-}
-
-  function buildNote(form, surprise) {
-  if (surprise) {
-    return "This version feels a little fresher and more styled, but still stays easy to wear.";
-  }
-
-  if (form.occasion === "Work") {
-    return "This look keeps you polished and capable without feeling stiff or overdressed.";
-  }
-
-  if (form.occasion === "Coffee Meeting") {
-    return "This outfit feels soft and presentable, with just enough polish for an easy daytime plan.";
-  }
-
-  if (form.occasion === "Date Night") {
-    return "This outfit feels flattering, feminine, and intentional without looking like you tried too hard.";
-  }
-
-  if (form.occasion === "Dinner") {
-    return "This look has a more refined evening feel, but still stays relaxed enough to wear naturally.";
-  }
-
-  if (form.occasion === "Travel Day") {
-    return "This look is practical enough for movement, but still feels neat and pulled together.";
-  }
-
-  if (form.occasion === "Family Event") {
-    return "This outfit feels warm, approachable, and easy to wear for a longer day around other people.";
-  }
-
-  if (form.occasion === "Special Occasion") {
-    return "This look feels more dressed and intentional, with enough elegance to stand out in the right way.";
-  }
-
-  if (form.occasion === "Weekend Outing") {
-    return "This outfit keeps things relaxed, but still gives the look some shape and personality.";
-  }
-
-  if (form.comfort === "Maximum Comfort") {
-    return "This outfit stays grounded in comfort while still feeling considered.";
-  }
-
-  return "This look feels realistic, wearable, and naturally put together for the day ahead.";
-}
-
-  function generateOutfit(form, generation = 0, surprise = false) {
-    const family = getFamily(form);
-    const pool = families[family];
-
-    const baseIndex =
-      weatherOptions.indexOf(form.weather) +
-      temperatureOptions.indexOf(form.temperature) +
-      occasionOptions.indexOf(form.occasion) +
-      moodOptions.indexOf(form.mood) +
-      comfortOptions.indexOf(form.comfort) +
-      effortOptions.indexOf(form.effort) +
-      environmentOptions.indexOf(form.environment) +
-      generation;
-
-    let top = choose(pool.tops, baseIndex);
-    let bottom = choose(pool.bottoms, baseIndex, 1);
-    let shoes = choose(pool.shoes, baseIndex, 2);
-    let outerwear = choose(pool.outerwear, baseIndex, 3);
-    let stylingAdjustment = choose(temperatureAdjustments[form.temperature], baseIndex);
-
-    ({ top, shoes, outerwear } = filterForTemperature(top, shoes, outerwear, form, baseIndex));
-    ({ top, bottom, shoes, outerwear } = applyWeatherRules(top, bottom, shoes, outerwear, form, baseIndex));
-    ({ top, bottom, shoes, outerwear } = applyComfortRules(top, bottom, shoes, outerwear, form, baseIndex));
-    ({ top, bottom, shoes, outerwear } = applyEffortRules(top, bottom, shoes, outerwear, form, baseIndex));
-    ({ top, bottom, shoes, outerwear } = applyEnvironmentRules(top, bottom, shoes, outerwear, form, baseIndex));
-
-    if (surprise) {
-      ({ top, bottom, shoes, outerwear } = applySurprise(top, bottom, shoes, outerwear, form, family, baseIndex, generation));
+      return outfit;
     }
 
-    ({ top, bottom, shoes, outerwear } = applyFinalHardLock(top, bottom, shoes, outerwear, form, baseIndex));
+    function moodRules(outfit, form) {
+      if (form.mood === "Romantic" || form.styleDirection === "More Feminine" || refineMode === "softer") {
+        outfit.top = pick(["soft wrap blouse with a gentle V-neck", "gentle sweetheart-neck blouse", "soft satin blouse", "feminine square-neck top"], 18);
+      }
 
-    const why = buildWhy(form, surprise);
-    const note = buildNote(form, surprise);
+      if (form.mood === "Powerful" || form.mood === "Confident" || form.styleDirection === "More Polished" || refineMode === "polished") {
+        outfit.outerwear = pick(["tailored blazer", "structured layer", "sleek longline jacket", "soft tailored blazer"], 19);
+      }
 
-    return { top, bottom, shoes, outerwear, stylingAdjustment, why, note };
-  }
+      if (form.mood === "Minimalist" || form.styleDirection === "More Minimal") {
+        outfit.top = pick(["clean crew-neck top", "refined mock-neck knit top", "simple bateau-neck top"], 20);
+      }
 
-  function getMobileText(text, maxLength = 140) {
-    if (window.innerWidth > 760) return text;
-    if (!text) return text;
-    if (text.length <= maxLength) return text;
+      if (form.styleDirection === "More Statement") {
+        outfit.top = pick(["statement blouse with a clean neckline", "soft statement-sleeve blouse", "bold tailored top"], 21);
+      }
 
-    const shortened = text.slice(0, maxLength);
-    const lastSpace = shortened.lastIndexOf(" ");
-    return (lastSpace > 80 ? shortened.slice(0, lastSpace) : shortened).trim() + "...";
-  }
+      return outfit;
+    }
 
-  function renderResult(data, name) {
-    const cleanName = name && name.trim() ? name.trim() : "";
-    document.getElementById("resultTitle").textContent = cleanName ? `${cleanName}'s Outfit` : "Today’s Outfit";
-    document.getElementById("topResult").textContent = data.top;
-    document.getElementById("bottomResult").textContent = data.bottom;
-    document.getElementById("shoesResult").textContent = data.shoes;
-    document.getElementById("outerwearResult").textContent = data.outerwear;
-    document.getElementById("stylingResult").textContent = getMobileText(data.stylingAdjustment, 110);
-    document.getElementById("whyResult").textContent = getMobileText(
-      cleanName ? `${cleanName}, ${data.why.charAt(0).toLowerCase() + data.why.slice(1)}` : data.why,
-      150
-    );
-    document.getElementById("noteResult").textContent = getMobileText(
-      cleanName ? `${cleanName}, ${data.note.charAt(0).toLowerCase() + data.note.slice(1)}` : data.note,
-      110
-    );
-  }
+    function effortRules(outfit, form) {
+      if (form.effort === "Quick & Easy") {
+        outfit.outerwear = pick(["easy cardigan", "light jacket", "no outerwear needed"], 22);
+      }
 
-  function updateAgainButton() {
-    const againBtn = document.getElementById("againBtn");
-    const remaining = Math.max(0, 3 - generateCount);
-    againBtn.textContent = remaining > 0 ? `🔄 Generate Again (${remaining} left)` : "🔄 Generate Again";
-    againBtn.classList.toggle("btn-disabled", remaining === 0);
-  }
+      if (form.effort === "Full Styled Look") {
+        if (!outfit.outerwear.includes("tailored") && !outfit.outerwear.includes("structured") && outfit.outerwear !== "no outerwear needed") {
+          outfit.outerwear = pick(["tailored blazer", "soft tailored blazer", "refined longline jacket"], 23);
+        }
+      }
 
-  function updateSurpriseVisual() {
-    document.getElementById("surpriseBtn").classList.toggle("active", surpriseActive);
-  }
+      return outfit;
+    }
 
-  function openModal(id) {
-    const modal = document.getElementById(id);
-    modal.classList.add("show");
-    modal.setAttribute("aria-hidden", "false");
-  }
+    function conflictResolver(outfit, form) {
+      const formalOccasion = ["Work", "Dinner", "Special Occasion", "Date Night"].includes(form.occasion);
 
-  function closeModal(id) {
-    const modal = document.getElementById(id);
-    modal.classList.remove("show");
-    modal.setAttribute("aria-hidden", "true");
-  }
+      if (formalOccasion && outfit.shoes.includes("house slippers")) {
+        outfit.shoes = "polished flats";
+      }
 
-  fillAll();
-  renderResult(generateOutfit(currentForm(), 0, false), "");
-  updateAgainButton();
-  updateSurpriseVisual();
+      if (form.occasion === "Work" && (outfit.top.includes("tee") || outfit.bottom.includes("leggings"))) {
+        outfit.top = "clean collared shirt";
+        outfit.bottom = "tailored ankle trousers";
+      }
 
-  document.getElementById("generateBtn").addEventListener("click", () => {
-    surpriseActive = false;
-    updateSurpriseVisual();
-    const form = currentForm();
-    renderResult(generateOutfit(form, generateCount, false), form.name);
-  });
+      if ((form.weather === "Rainy" || form.weather === "Stormy") && outfit.shoes.includes("sandals")) {
+        outfit.shoes = "sleek ankle boots";
+      }
 
-  document.getElementById("surpriseBtn").addEventListener("click", () => {
-    surpriseActive = true;
-    updateSurpriseVisual();
-    const form = currentForm();
-    renderResult(generateOutfit(form, generateCount + 1, true), form.name);
-  });
+      if (form.temperature === "Hot" && outfit.outerwear.includes("winter")) {
+        outfit.outerwear = "no outerwear needed";
+      }
 
-  document.getElementById("againBtn").addEventListener("click", () => {
-    if (generateCount >= 3) return;
-    generateCount += 1;
-    updateAgainButton();
-    const form = currentForm();
-    renderResult(generateOutfit(form, generateCount, surpriseActive), form.name);
-  });
+      return outfit;
+    }
 
-  document.getElementById("premiumBtn").addEventListener("click", () => openModal("premiumModal"));
-  document.getElementById("privacyBtn").addEventListener("click", (e) => {
-    e.preventDefault();
-    openModal("privacyModal");
-  });
-  document.getElementById("termsBtn").addEventListener("click", (e) => {
-    e.preventDefault();
-    openModal("termsModal");
-  });
+    function titleFor(form) {
+      const name = form.name ? `${form.name}’s` : "Today’s";
+      return `${name} ${form.mood} ${form.occasion} Outfit`;
+    }
 
-  document.querySelectorAll("[data-close]").forEach(btn => {
-    btn.addEventListener("click", () => closeModal(btn.getAttribute("data-close")));
-  });
+    function whyText(form) {
+      return `This outfit combines your ${form.occasion.toLowerCase()} plan with ${form.weather.toLowerCase()} weather, ${form.temperature.toLowerCase()} temperature, a ${form.mood.toLowerCase()} mood and a ${form.comfort.toLowerCase()} comfort level. The result is meant to feel wearable, not random.`;
+    }
 
-  document.querySelectorAll(".modal").forEach(modal => {
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) closeModal(modal.id);
+    function generate() {
+      generation += 1;
+      const form = formData();
+
+      let outfit = baseOutfit(form);
+      outfit = weatherRules(outfit, form);
+      outfit = temperatureRules(outfit, form);
+      outfit = comfortRules(outfit, form);
+      outfit = moodRules(outfit, form);
+      outfit = effortRules(outfit, form);
+      outfit = conflictResolver(outfit, form);
+
+      el("resultTitle").textContent = titleFor(form);
+      el("resultChip").textContent = `${form.weather} • ${form.temperature}`;
+      el("topResult").textContent = outfit.top;
+      el("bottomResult").textContent = outfit.bottom;
+      el("shoesResult").textContent = outfit.shoes;
+      el("outerwearResult").textContent = outfit.outerwear;
+      el("stylingResult").textContent = pick(stylingDetails, 24);
+      el("alternativeResult").textContent = pick(alternativeTwists, 25);
+      el("whyResult").textContent = whyText(form);
+      el("noteResult").textContent = notes[form.temperature] || "The outfit is balanced around your selected situation.";
+
+      document.querySelector(".result-card").scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    function surprise() {
+      Object.keys(options).forEach(id => {
+        const list = options[id];
+        el(id).value = list[Math.floor(Math.random() * list.length)];
+      });
+      generate();
+    }
+
+    function openModal(id) {
+      el(id).classList.add("show");
+      el(id).setAttribute("aria-hidden", "false");
+    }
+
+    function closeModal(id) {
+      el(id).classList.remove("show");
+      el(id).setAttribute("aria-hidden", "true");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initForm();
+      generate();
+
+      el("generateBtn").addEventListener("click", () => {
+        refineMode = "";
+        generate();
+      });
+
+      el("againBtn").addEventListener("click", () => {
+        refineMode = "";
+        generate();
+      });
+
+      el("surpriseBtn").addEventListener("click", () => {
+        refineMode = "";
+        surprise();
+      });
+
+      document.querySelectorAll("[data-refine]").forEach(button => {
+        button.addEventListener("click", () => {
+          refineMode = button.dataset.refine;
+          generate();
+        });
+      });
+
+      el("premiumBtn").addEventListener("click", () => openModal("premiumModal"));
+      el("privacyBtn").addEventListener("click", event => {
+        event.preventDefault();
+        openModal("privacyModal");
+      });
+      el("termsBtn").addEventListener("click", event => {
+        event.preventDefault();
+        openModal("termsModal");
+      });
+
+      document.querySelectorAll("[data-close]").forEach(button => {
+        button.addEventListener("click", () => closeModal(button.dataset.close));
+      });
+
+      document.querySelectorAll(".modal").forEach(modal => {
+        modal.addEventListener("click", event => {
+          if (event.target === modal) closeModal(modal.id);
+        });
+      });
+
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+          document.querySelectorAll(".modal.show").forEach(modal => closeModal(modal.id));
+        }
+      });
     });
-  });
-</script>
-  <script defer src="/_vercel/insights/script.js"></script>
+  </script>
 </body>
 </html>
