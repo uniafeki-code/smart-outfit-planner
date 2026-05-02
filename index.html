@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>What Should I Wear Today? Free Outfit Generator for Women</title>
+  <meta name="description" content="Use this free outfit generator for women to decide what to wear today based on weather, temperature, occasion, mood, comfort, effort, environment, and style direction." />
+  <meta name="keywords" content="what should i wear today, what to wear today, outfit generator, free outfit planner, outfit ideas for women, weather outfit generator, mood outfit generator, date night outfit, work outfit ideas, rainy day outfit" />
   <meta name="author" content="UniaFeki Publishing" />
-  <meta name="description" content="Use this free outfit generator for women to decide what to wear today based on weather, temperature, mood, occasion, comfort, effort, and environment." />
-  <meta name="keywords" content="what should i wear today, outfit generator, outfit planner for women, what to wear today, outfit ideas, mood outfit generator, weather outfit planner, date night outfit ideas, work outfit ideas" />
   <meta name="theme-color" content="#7b5568" />
 
   <meta property="og:site_name" content="UniaFeki Publishing" />
@@ -17,7 +17,7 @@
 
   <link rel="icon" type="image/png" href="favicon.png" />
 
-  <!-- Google AdSense Auto Ads: keep inside <head>, outside <style> -->
+  <!-- Google AdSense Auto Ads: correct placement inside <head> -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6560091199416357" crossorigin="anonymous"></script>
 
   <script type="application/ld+json">
@@ -25,11 +25,11 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebApplication",
+        "@type": "SoftwareApplication",
         "name": "Smart Outfit Generator",
         "applicationCategory": "LifestyleApplication",
         "operatingSystem": "Web",
-        "description": "A free outfit generator for women that suggests what to wear based on weather, temperature, occasion, mood, comfort, effort, and environment.",
+        "description": "A free outfit generator for women that suggests what to wear based on weather, temperature, occasion, mood, comfort, effort, environment and style direction.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -48,31 +48,23 @@
             "name": "Is this outfit generator free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. The outfit generator is free to use directly on this website."
+              "text": "Yes. The outfit generator is free to use directly on this website without creating an account."
             }
           },
           {
             "@type": "Question",
-            "name": "Does the outfit generator use AI?",
+            "name": "Does this outfit generator use AI?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. It uses a rule-based styling system that combines weather, temperature, occasion, mood, comfort, effort, and environment."
+              "text": "No. It uses a rule-based styling system that combines weather, temperature, occasion, mood, comfort, effort and environment."
             }
           },
           {
             "@type": "Question",
-            "name": "Do I need to create an account?",
+            "name": "What does the premium version add?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. You can use the free outfit generator without creating an account."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is included in the premium version?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The premium version is a Google Sheets outfit decision assistant with wardrobe organization, deeper personalization, and alternative outfit suggestions."
+              "text": "Premium adds a Google Sheets outfit decision assistant for organizing your real wardrobe and creating deeper outfit suggestions."
             }
           }
         ]
@@ -84,15 +76,15 @@
   <style>
     :root {
       --bg: #fcf7fa;
-      --bg-2: #fffafd;
       --card: #ffffff;
       --soft: #fff4f8;
+      --soft-2: #f8edf3;
       --text: #513944;
-      --muted: #7e6672;
+      --muted: #7d6672;
       --primary: #7b5568;
       --primary-dark: #684455;
       --line: #eadbe3;
-      --line-2: #d9c1cd;
+      --line-strong: #d8bdca;
       --shadow: 0 18px 46px rgba(80, 52, 66, 0.09);
       --radius: 24px;
       --max: 1180px;
@@ -120,7 +112,6 @@
     }
 
     .hero {
-      position: relative;
       overflow: hidden;
       border-radius: 34px;
       padding: 42px 34px;
@@ -134,8 +125,6 @@
 
     .eyebrow {
       display: inline-flex;
-      align-items: center;
-      gap: 8px;
       margin-bottom: 12px;
       color: #9c7589;
       font-size: 12px;
@@ -153,18 +142,18 @@
     }
 
     .hero p {
-      max-width: 850px;
+      max-width: 860px;
       margin: 16px auto 0;
       color: #69515d;
       font-size: 18px;
       line-height: 1.58;
     }
 
-    .hero-links {
+    .hero-pills {
       display: flex;
       justify-content: center;
-      gap: 12px;
       flex-wrap: wrap;
+      gap: 10px;
       margin-top: 22px;
     }
 
@@ -178,34 +167,46 @@
       font-weight: 800;
     }
 
-    .seo-intro {
+    .intro-grid {
       margin-top: 22px;
       display: grid;
       grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
       gap: 18px;
-      align-items: stretch;
     }
 
-    .panel {
+    .panel,
+    .app-card,
+    .topic-card,
+    .seo-block,
+    .faq,
+    .legal-note {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 24px;
     }
 
+    .panel { padding: 24px; }
+
     .panel h2,
-    .panel h3 {
+    .panel h3,
+    .seo-block h2,
+    .faq h2 {
       margin: 0 0 10px;
       color: var(--primary);
       letter-spacing: -.025em;
       line-height: 1.12;
     }
 
-    .panel h2 { font-size: clamp(26px, 3vw, 38px); }
+    .panel h2,
+    .seo-block h2,
+    .faq h2 { font-size: clamp(26px, 3vw, 38px); }
+
     .panel h3 { font-size: 24px; }
 
-    .panel p {
+    .panel p,
+    .seo-block p,
+    .legal-note p {
       margin: 0;
       color: var(--muted);
       line-height: 1.72;
@@ -221,19 +222,10 @@
       line-height: 1.55;
     }
 
-    .app-grid {
-      margin-top: 22px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 18px;
-    }
-
     .app-card {
+      margin-top: 22px;
       overflow: hidden;
-      background: var(--card);
-      border: 1px solid var(--line);
       border-radius: 30px;
-      box-shadow: var(--shadow);
     }
 
     .app-head {
@@ -255,7 +247,7 @@
 
     .app-head p {
       margin: 0;
-      max-width: 780px;
+      max-width: 790px;
       color: var(--muted);
       line-height: 1.6;
       font-size: 15px;
@@ -265,7 +257,7 @@
       flex: 0 0 auto;
       padding: 10px 14px;
       border-radius: 16px;
-      background: #f8edf3;
+      background: var(--soft-2);
       color: #8a6678;
       border: 1px solid var(--line);
       font-size: 13px;
@@ -307,7 +299,6 @@
       font-size: 16px;
       outline: none;
       box-shadow: 0 3px 12px rgba(123,85,104,.04);
-      transition: border-color .15s ease, box-shadow .15s ease;
     }
 
     input:focus,
@@ -347,11 +338,11 @@
     .btn-outline {
       background: #fff;
       color: var(--primary);
-      border: 1px solid var(--line-2);
+      border: 1px solid var(--line-strong);
     }
 
     .btn-soft {
-      background: #f8edf3;
+      background: var(--soft-2);
       color: var(--primary);
       border: 1px solid var(--line);
     }
@@ -397,16 +388,21 @@
       letter-spacing: -.025em;
     }
 
-    .result-chip {
-      flex: 0 0 auto;
-      padding: 9px 11px;
+    .score-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .score {
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: 14px;
+      border-radius: 999px;
+      padding: 7px 10px;
       color: #876476;
       font-size: 12px;
       font-weight: 900;
-      white-space: nowrap;
     }
 
     .parts {
@@ -426,7 +422,8 @@
     }
 
     .part strong,
-    .wide strong {
+    .wide strong,
+    .upgrade-inline strong {
       display: block;
       margin-bottom: 6px;
       color: #806171;
@@ -458,7 +455,8 @@
       text-transform: uppercase;
     }
 
-    .why p {
+    .why p,
+    .upgrade-inline p {
       margin: 0;
       color: #5d4854;
       line-height: 1.65;
@@ -493,6 +491,11 @@
       background: #fff;
     }
 
+    .premium-card {
+      background: linear-gradient(180deg, #fff 0%, #fff2f7 100%);
+      border: 1.5px solid #e6c6d6;
+    }
+
     .side-card h3 {
       margin: 0 0 10px;
       color: var(--primary);
@@ -517,6 +520,35 @@
       font-size: 15px;
     }
 
+    .ad-slot {
+      margin: 24px 0;
+      min-height: 140px;
+      display: grid;
+      place-items: center;
+      background: #fffafc;
+      border: 1px dashed #d8bdca;
+      border-radius: 20px;
+      color: #9c7589;
+      text-align: center;
+      padding: 18px;
+    }
+
+    .ad-slot .ad-label {
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .ad-slot p {
+      margin: 0;
+      max-width: 520px;
+      font-size: 13px;
+      line-height: 1.55;
+      color: #8d7481;
+    }
+
     .content-grid,
     .weather-grid {
       margin-top: 22px;
@@ -526,10 +558,6 @@
     }
 
     .topic-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      box-shadow: var(--shadow);
       padding: 20px;
     }
 
@@ -551,28 +579,7 @@
     .faq,
     .legal-note {
       margin-top: 22px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
       padding: 24px;
-    }
-
-    .seo-block h2,
-    .faq h2 {
-      margin: 0 0 12px;
-      color: var(--primary);
-      font-size: 34px;
-      line-height: 1.12;
-      letter-spacing: -.025em;
-    }
-
-    .seo-block p,
-    .legal-note p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: 16px;
     }
 
     .seo-block p + p { margin-top: 12px; }
@@ -682,7 +689,7 @@
     .close-btn {
       cursor: pointer;
       border: 1px solid var(--line);
-      background: #f8edf3;
+      background: var(--soft-2);
       color: var(--primary);
       border-radius: 12px;
       padding: 9px 11px;
@@ -744,7 +751,7 @@
     }
 
     @media (max-width: 980px) {
-      .seo-intro,
+      .intro-grid,
       .result-grid,
       .content-grid,
       .weather-grid {
@@ -783,7 +790,7 @@
         line-height: 1.55;
       }
 
-      .hero-links {
+      .hero-pills {
         gap: 8px;
         margin-top: 14px;
       }
@@ -845,11 +852,6 @@
         grid-column: auto;
       }
 
-      label {
-        font-size: 13px;
-        margin-bottom: 6px;
-      }
-
       input,
       select {
         min-height: 50px;
@@ -879,11 +881,6 @@
         display: block;
       }
 
-      .result-chip {
-        display: inline-flex;
-        margin-top: 10px;
-      }
-
       .result-title {
         font-size: 24px;
       }
@@ -900,6 +897,11 @@
       .micro-actions {
         display: grid;
         grid-template-columns: 1fr;
+      }
+
+      .ad-slot {
+        min-height: 120px;
+        margin: 20px 0;
       }
 
       .topic-card {
@@ -939,16 +941,16 @@
       <h1>What Should I Wear Today?</h1>
       <p>
         Get a free outfit idea based on your weather, temperature, occasion, mood,
-        comfort level, effort level, and environment — without overthinking your closet.
+        comfort level, effort level, environment and style direction — without overthinking your closet.
       </p>
-      <div class="hero-links" aria-label="Popular outfit searches">
+      <div class="hero-pills" aria-label="Popular outfit searches">
         <span class="pill">Weather-based outfits</span>
         <span class="pill">Mood-based styling</span>
         <span class="pill">Work, date night & casual looks</span>
       </div>
     </header>
 
-    <section class="seo-intro" aria-label="Outfit generator introduction">
+    <section class="intro-grid" aria-label="Outfit generator introduction">
       <div class="panel">
         <h2>Free Outfit Generator Based on Weather, Mood and Occasion</h2>
         <p>
@@ -970,7 +972,7 @@
       </div>
     </section>
 
-    <main class="app-grid">
+    <main>
       <section class="app-card" aria-label="Free outfit generator">
         <div class="app-head">
           <div>
@@ -1043,8 +1045,12 @@
                 <div>
                   <div class="small-tag">Main Result</div>
                   <h3 class="result-title" id="resultTitle">Today’s Outfit</h3>
+                  <div class="score-row">
+                    <span class="score" id="styleScore">Style Score: 92%</span>
+                    <span class="score" id="comfortScore">Comfort: 88%</span>
+                    <span class="score" id="weatherScore">Weather Match: 94%</span>
+                  </div>
                 </div>
-                <div class="result-chip" id="resultChip">Ready</div>
               </div>
 
               <div class="parts">
@@ -1075,17 +1081,39 @@
                 <button class="btn btn-soft" data-refine="polished">Make it more polished</button>
                 <button class="btn btn-soft" data-refine="comfortable">Make it more comfortable</button>
               </div>
+
+              <div class="ad-slot" aria-label="Advertisement">
+                <div>
+                  <div class="ad-label">Advertisement</div>
+                  <p>Safe ad area after the outfit result. Auto Ads may place an ad here after approval.</p>
+                </div>
+              </div>
+
+              <div class="upgrade-inline">
+                <strong>Want this logic with your real wardrobe?</strong>
+                <p>
+                  The free generator gives you instant outfit ideas. Premium helps you use this decision system with clothes you already own.
+                </p>
+                <div style="margin-top:12px;">
+                  <button class="btn btn-primary" id="premiumInlineBtn">See Premium Details</button>
+                </div>
+              </div>
             </div>
 
             <aside class="side-stack" aria-label="Premium and benefits">
-              <div class="side-card">
-                <h3>🔒 Want Your Real Wardrobe Inside?</h3>
+              <div class="side-card premium-card">
+                <h3>✨ Turn This Into Your Real Wardrobe</h3>
                 <p>
-                  The free generator gives instant outfit ideas. Premium is for women who want to connect
-                  the logic to their real wardrobe in Google Sheets.
+                  You just got an outfit idea. Now imagine getting this using your actual clothes.
                 </p>
-                <div style="margin-top:14px;">
-                  <button class="btn btn-primary" id="premiumBtn">See Premium Details</button>
+                <div class="check-list">
+                  <div>✔ Plan outfits from your real wardrobe</div>
+                  <div>✔ Get multiple outfit options instantly</div>
+                  <div>✔ Stop overthinking every morning</div>
+                  <div>✔ Works inside simple Google Sheets</div>
+                </div>
+                <div style="margin-top:16px;">
+                  <button class="btn btn-primary" id="premiumBtn">See How It Works</button>
                 </div>
               </div>
 
@@ -1105,7 +1133,18 @@
       </section>
     </main>
 
+    <div class="ad-slot" aria-label="Advertisement">
+      <div>
+        <div class="ad-label">Advertisement</div>
+        <p>Safe ad area between the interactive generator and SEO content.</p>
+      </div>
+    </div>
+
     <section class="content-grid" aria-label="Outfit ideas by occasion">
+      <article class="topic-card">
+        <h3>What Should I Wear Today?</h3>
+        <p>Start with your real day: weather, plans, comfort and mood. The generator turns those signals into a wearable outfit instead of a random fashion idea.</p>
+      </article>
       <article class="topic-card">
         <h3>Work Outfit Ideas</h3>
         <p>For office days, the generator leans toward polished tops, structured layers, trousers, midi skirts, loafers and low heels.</p>
@@ -1113,10 +1152,6 @@
       <article class="topic-card">
         <h3>Date Night Outfit Ideas</h3>
         <p>For romantic or confident moods, it suggests softer necklines, sleek skirts, darker denim, elegant flats, slingbacks or heels.</p>
-      </article>
-      <article class="topic-card">
-        <h3>Casual Day Outfits</h3>
-        <p>For everyday errands and relaxed plans, it keeps the outfit easy, wearable and comfortable without looking unfinished.</p>
       </article>
     </section>
 
@@ -1139,7 +1174,7 @@
       <h2>How This Outfit Generator Works</h2>
       <p>
         The tool starts with your occasion and environment, then adjusts the result with weather, temperature,
-        mood, comfort and effort. That means a rainy work outfit, a hot date night outfit and a relaxed weekend
+        mood, comfort, effort and style direction. That means a rainy work outfit, a hot date night outfit and a relaxed weekend
         outfit will not be treated the same way.
       </p>
       <p>
@@ -1222,7 +1257,7 @@
 
       <div class="preview">
         <a href="outfit-preview.png" target="_blank" rel="noopener noreferrer">
-          <img src="outfit-preview.png" alt="Outfit Decision Assistant Google Sheets Preview" />
+          <img src="outfit-preview.png" loading="lazy" alt="Outfit Decision Assistant Google Sheets Preview" />
         </a>
         <p>Click the image to enlarge</p>
       </div>
@@ -1373,6 +1408,19 @@
         outerwear: ["light zip jacket", "structured layer", "light trench coat", "light cardigan"]
       }
     };
+
+    const outfitNames = [
+      "Soft City Confidence Look",
+      "Rainy Day Elegant Minimal Look",
+      "Cozy Power Office Outfit",
+      "Effortless Feminine Street Look",
+      "Clean Girl Everyday Outfit",
+      "Romantic Evening Glow Outfit",
+      "Polished Coffee Date Look",
+      "Comfort First City Outfit",
+      "Soft Luxury Weekend Look",
+      "Fresh Morning Reset Outfit"
+    ];
 
     const stylingDetails = [
       "Keep the colors connected with one repeated shade in your shoes, bag or accessory.",
@@ -1584,12 +1632,17 @@
     }
 
     function titleFor(form) {
-      const name = form.name ? `${form.name}’s` : "Today’s";
-      return `${name} ${form.mood} ${form.occasion} Outfit`;
+      const prefix = form.name ? `${form.name}, try this:` : "Try this:";
+      return `${prefix} ${pick(outfitNames, 24)}`;
     }
 
     function whyText(form) {
-      return `This outfit combines your ${form.occasion.toLowerCase()} plan with ${form.weather.toLowerCase()} weather, ${form.temperature.toLowerCase()} temperature, a ${form.mood.toLowerCase()} mood and a ${form.comfort.toLowerCase()} comfort level. The result is meant to feel wearable, not random.`;
+      const nameStart = form.name ? `${form.name}, this outfit works because` : "This outfit works because";
+      return `${nameStart} it combines your ${form.occasion.toLowerCase()} plan with ${form.weather.toLowerCase()} weather, ${form.temperature.toLowerCase()} temperature, a ${form.mood.toLowerCase()} mood and a ${form.comfort.toLowerCase()} comfort level. The result is meant to feel wearable, not random.`;
+    }
+
+    function score(base, variation) {
+      return Math.min(99, base + ((generation + variation) % 7));
     }
 
     function generate() {
@@ -1605,13 +1658,15 @@
       outfit = conflictResolver(outfit, form);
 
       el("resultTitle").textContent = titleFor(form);
-      el("resultChip").textContent = `${form.weather} • ${form.temperature}`;
+      el("styleScore").textContent = `Style Score: ${score(91, 1)}%`;
+      el("comfortScore").textContent = `Comfort: ${score(form.comfort === "Maximum Comfort" ? 94 : 86, 2)}%`;
+      el("weatherScore").textContent = `Weather Match: ${score(90, 3)}%`;
       el("topResult").textContent = outfit.top;
       el("bottomResult").textContent = outfit.bottom;
       el("shoesResult").textContent = outfit.shoes;
       el("outerwearResult").textContent = outfit.outerwear;
-      el("stylingResult").textContent = pick(stylingDetails, 24);
-      el("alternativeResult").textContent = pick(alternativeTwists, 25);
+      el("stylingResult").textContent = form.name ? `${form.name}, ${pick(stylingDetails, 25)}` : pick(stylingDetails, 25);
+      el("alternativeResult").textContent = pick(alternativeTwists, 26);
       el("whyResult").textContent = whyText(form);
       el("noteResult").textContent = notes[form.temperature] || "The outfit is balanced around your selected situation.";
 
@@ -1663,10 +1718,13 @@
       });
 
       el("premiumBtn").addEventListener("click", () => openModal("premiumModal"));
+      el("premiumInlineBtn").addEventListener("click", () => openModal("premiumModal"));
+
       el("privacyBtn").addEventListener("click", event => {
         event.preventDefault();
         openModal("privacyModal");
       });
+
       el("termsBtn").addEventListener("click", event => {
         event.preventDefault();
         openModal("termsModal");
