@@ -1,0 +1,1 @@
+The live homepage redesign was promoted from preview-v2.html on 2026-09-15. The previous homepage is recoverable from Git history if needed.
